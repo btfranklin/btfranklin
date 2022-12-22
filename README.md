@@ -1,5 +1,3 @@
-# B.T. Franklin
-
 Hi!  I'm B.T. Franklin, a software architect and computational creativity researcher.
 
 ## Socials

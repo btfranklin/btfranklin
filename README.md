@@ -2,8 +2,6 @@
 
 Hi!  I'm B.T. Franklin, a software architect and computational creativity researcher.
 
-![btfranklin's GitHub stats](https://github-readme-stats.vercel.app/api?username=btfranklin)
-
 ## Socials
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/BT_Franklin?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/BT_Franklin)

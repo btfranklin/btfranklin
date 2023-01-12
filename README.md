@@ -1,4 +1,6 @@
-Hi!  I'm B.T. Franklin, and I'm a software architect and computational creativity researcher based in Phoenix, Arizona. With over 30 years of experience as a software engineer and architect, I have a strong background in UI/UX design and implementation.
+# Hi! I'm B.T. Franklin
+
+I'm a software architect and computational creativity researcher based in Phoenix, Arizona. With over 30 years of experience as a software engineer and architect, I have a strong background in UI/UX design and implementation.
 
 Currently, I'm working remotely at Zilliant where I help to guide the technological future of the company by providing vision and direction for the design of our systems. In addition to my full-time work, I'm also an independent researcher, focusing on the development of software to explore computational creativity and artificial intelligence. I have presented at international conferences and have published several papers on the subject.
 

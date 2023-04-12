@@ -8,6 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
+<style>
+    .card:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+</style>
+
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-12">
         <h1 class="text-4xl font-bold mb-4">B.T. Franklin</h1>
@@ -23,33 +31,42 @@
 
         <h2 class="text-2xl font-semibold mb-2">Projects</h2>
         <div class="grid grid-cols-3 gap-4">
-            <div class="bg-white shadow-md rounded-md overflow-hidden max-w-xs mx-auto my-4">
-                <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-4">
-                    <h3 class="text-white font-semibold text-lg">Lost Rituals</h3>
+            <a href="http://test.com/LostRituals">
+                <div class="bg-white shadow-md rounded-md overflow-hidden max-w-xs mx-auto my-4 card">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-4">
+                        <h3 class="text-white font-semibold text-lg">Lost Rituals</h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-700">An endless, procedurally-generated book filled with descriptions of mysterious
+                            rituals
+                            from a fictional world. Choose a narrator and swipe to explore new rituals.</p>
+                    </div>
                 </div>
-                <div class="p-4">
-                    <p class="text-gray-700">An endless, procedurally-generated book filled with descriptions of mysterious rituals
-                        from a fictional world. Choose a narrator and swipe to explore new rituals.</p>
+            </a>
+            <a href="http://test.com/ResonantElements">
+                <div class="bg-white shadow-md rounded-md overflow-hidden max-w-xs mx-auto my-4 card">
+                    <div class="bg-gradient-to-r from-green-500 to-blue-500 p-4">
+                        <h3 class="text-white font-semibold text-lg">Resonant Elements</h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-700">A personal music laboratory that generates unique musical styles using an
+                            album-like
+                            interface. Save and replay styles to experience endless new compositions.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-white shadow-md rounded-md overflow-hidden max-w-xs mx-auto my-4">
-                <div class="bg-gradient-to-r from-green-500 to-blue-500 p-4">
-                    <h3 class="text-white font-semibold text-lg">Resonant Elements</h3>
+            </a>
+            <a href="http://test.com/IntegratedAIforXcode">
+                <div class="bg-white shadow-md rounded-md overflow-hidden max-w-xs mx-auto my-4 card">
+                    <div class="bg-gradient-to-r from-purple-500 to-indigo-500 p-4">
+                        <h3 class="text-white font-semibold text-lg">Integrated AI for Xcode</h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-700">An Xcode Source Editor Extension utilizing ChatGPT to enhance Swift code.
+                            Offers
+                            powerful commands for documentation, code improvement, and adhering to Swift conventions.</p>
+                    </div>
                 </div>
-                <div class="p-4">
-                    <p class="text-gray-700">A personal music laboratory that generates unique musical styles using an album-like
-                        interface. Save and replay styles to experience endless new compositions.</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-md overflow-hidden max-w-xs mx-auto my-4">
-                <div class="bg-gradient-to-r from-purple-500 to-indigo-500 p-4">
-                    <h3 class="text-white font-semibold text-lg">Integrated AI for Xcode</h3>
-                </div>
-                <div class="p-4">
-                    <p class="text-gray-700">An Xcode Source Editor Extension utilizing ChatGPT to enhance Swift code. Offers
-                        powerful commands for documentation, code improvement, and adhering to Swift conventions.</p>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 </body>

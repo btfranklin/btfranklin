@@ -17,7 +17,7 @@
 </style>
 
 <body class="bg-zinc-100">
-    <div class="container mx-auto px-4 py-12">
+    <div class="container mx-auto px-4 pb-6 pt-12">
         <h1 class="text-4xl font-bold mb-4">B.T. Franklin</h1>
         <p class="text-xl mb-6">Software Architect and Computational Creativity Researcher</p>
 
@@ -31,7 +31,13 @@
                 desire to make a positive impact on the world through my work.
             </p>
         </div>
+    </div>
 
+    <div id="circuitContainer" class="mb-8 w-full h-[100px] overflow-hidden relative">
+        <canvas id="circuitCanvas" class="absolute top-0 left-0"></canvas>
+    </div>
+
+    <div class="container mx-auto px-4 pt-6 pb-12">
         <div class="mb-8">
             <h2 class="text-2xl font-semibold mb-2">Projects</h2>
             <div class="grid grid-cols-3 gap-4">
@@ -100,5 +106,7 @@
         </div>
     </div>
 </body>
+
+<script src="circuits.js"></script>
 
 </html>

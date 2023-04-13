@@ -1,14 +1,16 @@
 const CIRCUIT_COLOR = '60, 210, 240' // RGB values for the light blue/teal circuit color
 const BACKGROUND_COLOR = '20, 30, 60' // RGB values for the dark blue background color
+const CIRCUIT_COUNT = 16
 
 class Circuit {
-    constructor(x, y, angle, speed, trailLength, color) {
+    constructor(x, y, angle, speed, trailLength, color, directionGroup) {
         this.x = x
         this.y = y
         this.angle = angle
         this.speed = speed
         this.trailLength = trailLength
         this.color = color
+        this.directionGroup = directionGroup
         this.trail = []
     }
 
@@ -38,15 +40,7 @@ class Circuit {
     }
 
     changeDirection() {
-        const directions = [-1, 0, 1]
-        const currentDirectionIndex = DIRECTIONS.indexOf(this.angle)
-        const newDirectionIndex =
-            currentDirectionIndex +
-            directions[Math.floor(Math.random() * directions.length)]
-
-        if (newDirectionIndex >= 0 && newDirectionIndex < DIRECTIONS.length) {
-            this.angle = DIRECTIONS[newDirectionIndex]
-        }
+        this.angle = getAdjacentDirection(this.angle, this.directionGroup)
     }
 
     draw(ctx) {
@@ -98,31 +92,75 @@ const container = document.getElementById('circuitContainer')
 canvas.width = container.offsetWidth
 canvas.height = container.offsetHeight
 
-const DIRECTIONS = [
-    //Math.PI / 2, // N
+const EASTERLY_DIRECTIONS = [
     Math.PI / 4, // NE
     0, // E
-    0, // E
     (7 * Math.PI) / 4, // SE
-    //(3 * Math.PI) / 2, // S
-    (5 * Math.PI) / 4, // SW
-    Math.PI, // W
-    Math.PI, // W
+]
+
+const WESTERLY_DIRECTIONS = [
     (3 * Math.PI) / 4, // NW
+    Math.PI, // W
+    (5 * Math.PI) / 4, // SW
 ]
 
 let circuits = []
 
 function createCircuits() {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < CIRCUIT_COUNT; i++) {
         const x = Math.random() * canvas.width
         const y = Math.random() * canvas.height
-        const angle = DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)]
+        const directionGroup = x > canvas.width / 2 ? 'WESTERLY' : 'EASTERLY'
+        const directions =
+            directionGroup === 'EASTERLY'
+                ? EASTERLY_DIRECTIONS
+                : WESTERLY_DIRECTIONS
+        const angle = directions[Math.floor(Math.random() * directions.length)]
         const speed = 1 + Math.random() * 3
-        const trailLength = 200 + Math.random() * 400 // Increase trail length here
+        const trailLength = 200 + Math.random() * 400
         const color = `rgba(${CIRCUIT_COLOR}, ${Math.random() * 0.5 + 0.2})`
 
-        circuits.push(new Circuit(x, y, angle, speed, trailLength, color))
+        circuits.push(
+            new Circuit(x, y, angle, speed, trailLength, color, directionGroup)
+        )
+    }
+}
+
+function getAdjacentDirection(currentDirection, directionGroup) {
+    const currentDirectionGroup =
+        directionGroup === 'EASTERLY'
+            ? EASTERLY_DIRECTIONS
+            : WESTERLY_DIRECTIONS
+
+    if (currentDirection === null) {
+        return currentDirectionGroup[
+            Math.floor(Math.random() * currentDirectionGroup.length)
+        ]
+    }
+
+    const currentDirectionIndex =
+        currentDirectionGroup.indexOf(currentDirection)
+    let directions
+
+    if (currentDirectionIndex === 0) {
+        directions = [0, 1]
+    } else if (currentDirectionIndex === currentDirectionGroup.length - 1) {
+        directions = [-1, 0]
+    } else {
+        directions = [-1, 0, 1]
+    }
+
+    const newDirectionIndex =
+        currentDirectionIndex +
+        directions[Math.floor(Math.random() * directions.length)]
+
+    if (
+        newDirectionIndex >= 0 &&
+        newDirectionIndex < currentDirectionGroup.length
+    ) {
+        return currentDirectionGroup[newDirectionIndex]
+    } else {
+        return currentDirection
     }
 }
 
@@ -136,14 +174,23 @@ function update() {
         if (circuit.update()) {
             const x = Math.random() * canvas.width
             const y = Math.random() * canvas.height
-            const angle =
-                DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)]
+            const directionGroup =
+                x > canvas.width / 2 ? 'WESTERLY' : 'EASTERLY'
+            const angle = getAdjacentDirection(null, directionGroup)
             const speed = 1 + Math.random() * 3
             const trailLength = 200
-            const color = `rgba(0, 255, 0, ${Math.random() * 0.5 + 0.2})`
+            const color = `rgba(${CIRCUIT_COLOR}, ${Math.random() * 0.5 + 0.2})`
 
             newCircuits.push(
-                new Circuit(x, y, angle, speed, trailLength, color)
+                new Circuit(
+                    x,
+                    y,
+                    angle,
+                    speed,
+                    trailLength,
+                    color,
+                    directionGroup
+                )
             )
         } else {
             circuit.draw(ctx)

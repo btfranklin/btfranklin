@@ -1,17 +1,61 @@
+const CIRCUIT_COUNT = 16
 const CIRCUIT_COLOR = '60, 210, 240' // RGB values for the light blue/teal circuit color
 const BACKGROUND_COLOR = '20, 30, 60' // RGB values for the dark blue background color
-const CIRCUIT_COUNT = 16
+const BACKGROUND_ALPHA = 0.3
+
+const EASTERLY_DIRECTIONS = [
+    Math.PI / 4, // NE
+    0, // E
+    (7 * Math.PI) / 4, // SE
+]
+
+const WESTERLY_DIRECTIONS = [
+    (3 * Math.PI) / 4, // NW
+    Math.PI, // W
+    (5 * Math.PI) / 4, // SW
+]
+
+const canvas = document.getElementById('circuitCanvas')
+const ctx = canvas.getContext('2d')
+
+const container = document.getElementById('circuitContainer')
+canvas.width = container.offsetWidth
+canvas.height = container.offsetHeight
 
 class Circuit {
-    constructor(x, y, angle, speed, trailLength, color, directionGroup) {
-        this.x = x
-        this.y = y
-        this.angle = angle
-        this.speed = speed
-        this.trailLength = trailLength
-        this.color = color
-        this.directionGroup = directionGroup
+    constructor() {
+        this.x = Math.random() * canvas.width
+        this.y = Math.random() * canvas.height
+        this.directionGroup =
+            this.x > canvas.width / 2 ? 'WESTERLY' : 'EASTERLY'
+        this.directions =
+            this.directionGroup === 'EASTERLY'
+                ? EASTERLY_DIRECTIONS
+                : WESTERLY_DIRECTIONS
+        this.angle =
+            this.directions[Math.floor(Math.random() * this.directions.length)]
+        this.speed = 1 + Math.random() * 3
+        this.trailLength = 100
+
         this.trail = []
+    }
+
+    isOutOfBounds() {
+        return (
+            this.x < 0 ||
+            this.x > canvas.width ||
+            this.y < 0 ||
+            this.y > canvas.height
+        )
+    }
+
+    isBeyondTrailLength() {
+        return (
+            this.x < -this.trailLength ||
+            this.x > canvas.width + this.trailLength ||
+            this.y < -this.trailLength ||
+            this.y > canvas.height + this.trailLength
+        )
     }
 
     update() {
@@ -26,21 +70,10 @@ class Circuit {
         if (Math.random() < 0.01) {
             this.changeDirection()
         }
-
-        if (
-            this.x < 0 ||
-            this.x > canvas.width ||
-            this.y < 0 ||
-            this.y > canvas.height
-        ) {
-            return true
-        }
-
-        return false
     }
 
     changeDirection() {
-        this.angle = getAdjacentDirection(this.angle, this.directionGroup)
+        this.angle = getRandomDirection(this.angle, this.directionGroup)
     }
 
     draw(ctx) {
@@ -52,10 +85,7 @@ class Circuit {
             ctx.lineTo(this.trail[i].x, this.trail[i].y)
 
             const opacity = i / fadeDistance
-            ctx.strokeStyle = `rgba(${CIRCUIT_COLOR}, ${
-                opacity * (Math.random() * 0.5 + 0.2)
-            })`
-
+            ctx.strokeStyle = `rgba(${CIRCUIT_COLOR}, ${opacity})`
             ctx.lineWidth = 2
             ctx.stroke()
         }
@@ -85,48 +115,10 @@ class Circuit {
     }
 }
 
-const canvas = document.getElementById('circuitCanvas')
-const ctx = canvas.getContext('2d')
-
-const container = document.getElementById('circuitContainer')
-canvas.width = container.offsetWidth
-canvas.height = container.offsetHeight
-
-const EASTERLY_DIRECTIONS = [
-    Math.PI / 4, // NE
-    0, // E
-    (7 * Math.PI) / 4, // SE
-]
-
-const WESTERLY_DIRECTIONS = [
-    (3 * Math.PI) / 4, // NW
-    Math.PI, // W
-    (5 * Math.PI) / 4, // SW
-]
-
 let circuits = []
+let decayingCircuits = []
 
-function createCircuits() {
-    for (let i = 0; i < CIRCUIT_COUNT; i++) {
-        const x = Math.random() * canvas.width
-        const y = Math.random() * canvas.height
-        const directionGroup = x > canvas.width / 2 ? 'WESTERLY' : 'EASTERLY'
-        const directions =
-            directionGroup === 'EASTERLY'
-                ? EASTERLY_DIRECTIONS
-                : WESTERLY_DIRECTIONS
-        const angle = directions[Math.floor(Math.random() * directions.length)]
-        const speed = 1 + Math.random() * 3
-        const trailLength = 200 + Math.random() * 400
-        const color = `rgba(${CIRCUIT_COLOR}, ${Math.random() * 0.5 + 0.2})`
-
-        circuits.push(
-            new Circuit(x, y, angle, speed, trailLength, color, directionGroup)
-        )
-    }
-}
-
-function getAdjacentDirection(currentDirection, directionGroup) {
+function getRandomDirection(currentDirection, directionGroup) {
     const currentDirectionGroup =
         directionGroup === 'EASTERLY'
             ? EASTERLY_DIRECTIONS
@@ -164,47 +156,43 @@ function getAdjacentDirection(currentDirection, directionGroup) {
     }
 }
 
-function update() {
-    ctx.fillStyle = `rgba(${BACKGROUND_COLOR}, 0.3)`
+function updateCanvas() {
+    ctx.fillStyle = `rgba(${BACKGROUND_COLOR}, ${BACKGROUND_ALPHA})`
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-    let newCircuits = []
-
+    let liveCircuits = []
     circuits.forEach((circuit) => {
-        if (circuit.update()) {
-            const x = Math.random() * canvas.width
-            const y = Math.random() * canvas.height
-            const directionGroup =
-                x > canvas.width / 2 ? 'WESTERLY' : 'EASTERLY'
-            const angle = getAdjacentDirection(null, directionGroup)
-            const speed = 1 + Math.random() * 3
-            const trailLength = 200
-            const color = `rgba(${CIRCUIT_COLOR}, ${Math.random() * 0.5 + 0.2})`
-
-            newCircuits.push(
-                new Circuit(
-                    x,
-                    y,
-                    angle,
-                    speed,
-                    trailLength,
-                    color,
-                    directionGroup
-                )
-            )
+        circuit.update()
+        circuit.draw(ctx)
+        if (circuit.isOutOfBounds()) {
+            decayingCircuits.push(circuit)
+            liveCircuits.push(new Circuit())
         } else {
-            circuit.draw(ctx)
-            newCircuits.push(circuit)
+            liveCircuits.push(circuit)
         }
     })
 
-    circuits = newCircuits
-    requestAnimationFrame(update)
+    let stillDecayingCircuits = []
+    decayingCircuits.forEach((decayingCircuit) => {
+        decayingCircuit.update()
+        decayingCircuit.draw(ctx)
+        if (!decayingCircuit.isBeyondTrailLength()) {
+            stillDecayingCircuits.push(decayingCircuit)
+        }
+    })
+
+    circuits = liveCircuits
+    decayingCircuits = stillDecayingCircuits
+    requestAnimationFrame(updateCanvas)
 }
 
-createCircuits()
-update()
+// Create the initial circuits
+for (let i = 0; i < CIRCUIT_COUNT; i++) {
+    circuits.push(new Circuit())
+}
+updateCanvas()
 
+// Resize the canvas when the window is resized
 window.addEventListener('resize', () => {
     const container = document.getElementById('circuitContainer')
     canvas.width = container.offsetWidth

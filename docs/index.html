@@ -39,7 +39,21 @@
                 on the world through my work.
             </p>
         </div>
+        <div>
+            <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
+            <p>
+                If you need to get in touch with me about any of my projects or for any other reason, you can reach me
+                at
+                <span id="email" class="text-blue-600 cursor-pointer"></span>.
+            </p>
+        </div>
+        <script>
+            const emailAddress = 'brandon.franklin' + '&#64;' + 'gmail.com'
+            const emailLink = '<a href="mailto:' + emailAddress + '">' + emailAddress + '</a>'
+            document.getElementById('email').innerHTML = emailLink;
+        </script>
     </div>
+
 
     <div id="circuitContainer" class="mb-8 w-full h-[100px] overflow-hidden relative">
         <canvas id="circuitCanvas" class="absolute top-0 left-0"></canvas>

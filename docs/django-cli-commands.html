@@ -1,126 +1,156 @@
 <!DOCTYPE html>
 <html>
 
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django CLI Commands Cheat Sheet</title>
+    <link href="styles.min.css" rel="stylesheet" />
+</head>
 
-    <h1>Django CLI Commands Cheat Sheet</h1>
+<body class="bg-gray-100 text-gray-800 font-sans p-8">
 
-    <ol>
-        <li><strong>Starting a Project</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>django-admin startproject projectname</code></li>
-                <li><strong>Purpose</strong>: Creates a new Django project directory structure.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>django-admin startproject myproject</code></pre>
+    <h1 class="text-4xl font-bold text-center mb-10">Django CLI Commands Cheat Sheet</h1>
+
+    <ol class="list-decimal list-inside space-y-6">
+        <li><strong class="text-2xl text-blue-600">Starting a Project</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">django-admin startproject projectname</code>
+                </li>
+                <li><strong class="font-semibold">Purpose</strong>: Creates a new Django project directory structure.
+                </li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>django-admin startproject myproject</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Running the Development Server</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py runserver</code></li>
-                <li><strong>Purpose</strong>: Starts a lightweight development web server on the local machine.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py runserver</code></pre>
+        <li><strong class="text-2xl text-blue-600">Running the Development Server</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py runserver</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Starts a lightweight development web server on the
+                    local machine.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py runserver</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Creating an App</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py startapp appname</code></li>
-                <li><strong>Purpose</strong>: Creates a new Django app with its own directory inside the project.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py startapp myapp</code></pre>
+        <li><strong class="text-2xl text-blue-600">Creating an App</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py startapp appname</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Creates a new Django app with its own directory
+                    inside the project.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py startapp myapp</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Creating Database Migrations</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py makemigrations</code></li>
-                <li><strong>Purpose</strong>: Creates new migrations based on the changes detected in the models.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py makemigrations</code></pre>
+        <li><strong class="text-2xl text-blue-600">Creating Database Migrations</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py makemigrations</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Creates new migrations based on the changes detected
+                    in the models.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py makemigrations</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Applying Database Migrations</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py migrate</code></li>
-                <li><strong>Purpose</strong>: Applies the migrations to the database to keep the schema in sync with the
+        <li><strong class="text-2xl text-blue-600">Applying Database Migrations</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py migrate</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Applies the migrations to the database to keep the
+                    schema in sync with the
                     model changes.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py migrate</code></pre>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py migrate</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Creating a Superuser for the Admin Site</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py createsuperuser</code></li>
-                <li><strong>Purpose</strong>: Creates a user who can log into the Django admin site.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py createsuperuser</code></pre>
+        <li><strong class="text-2xl text-blue-600">Creating a Superuser for the Admin Site</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py createsuperuser</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Creates a user who can log into the Django admin
+                    site.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py createsuperuser</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Collecting Static Files</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py collectstatic</code></li>
-                <li><strong>Purpose</strong>: Collects static files from each of your applications (and any other places
+        <li><strong class="text-2xl text-blue-600">Collecting Static Files</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py collectstatic</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Collects static files from each of your applications
+                    (and any other places
                     you
                     specify) into a single location.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py collectstatic</code></pre>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py collectstatic</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Running Tests</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py test</code></li>
-                <li><strong>Purpose</strong>: Runs tests for your project.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py test</code></pre>
+        <li><strong class="text-2xl text-blue-600">Running Tests</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py test</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Runs tests for your project.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py test</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Accessing the Django Shell</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py shell</code></li>
-                <li><strong>Purpose</strong>: Invokes the interactive Python shell with the Django environment set up.
+        <li><strong class="text-2xl text-blue-600">Accessing the Django Shell</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py shell</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Invokes the interactive Python shell with the Django
+                    environment set up.
                 </li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py shell</code></pre>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py shell</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Checking for Problems</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py check</code></li>
-                <li><strong>Purpose</strong>: Checks for any problems in your project without making database migrations
+        <li><strong class="text-2xl text-blue-600">Checking for Problems</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py check</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Checks for any problems in your project without
+                    making database migrations
                     or
                     touching the database.</li>
 
 
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py check</code></pre>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py check</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Creating Custom Management Commands</strong>
-            <ul>
-                <li><strong>Command</strong>: Create a new management/commands directory inside your app and write a new
+        <li><strong class="text-2xl text-blue-600">Creating Custom Management Commands</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: Create a new management/commands directory inside
+                    your app and write a new
                     Python file with a Command class.</li>
-                <li><strong>Purpose</strong>: Allows you to add custom <code>manage.py</code> commands.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code># Inside your_app/management/commands/your_command.py
+                <li><strong class="font-semibold">Purpose</strong>: Allows you to add custom <code
+                        class="bg-gray-200 rounded p-1">manage.py</code>
+                    commands.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code># Inside your_app/management/commands/your_command.py
 from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):
@@ -132,53 +162,66 @@ class Command(BaseCommand):
             </ul>
         </li>
 
-        <li><strong>Database Shell Access</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py dbshell</code></li>
-                <li><strong>Purpose</strong>: Provides command-line access to your project's database.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py dbshell</code></pre>
+        <li><strong class="text-2xl text-blue-600">Database Shell Access</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py dbshell</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Provides command-line access to your project's
+                    database.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py dbshell</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Viewing SQL Migrations</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py sqlmigrate appname migrationname</code></li>
-                <li><strong>Purpose</strong>: Shows the SQL statements for a named migration.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py sqlmigrate myapp 0001</code></pre>
+        <li><strong class="text-2xl text-blue-600">Viewing SQL Migrations</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>:
+                    <code class="bg-gray-200 rounded p-1">python manage.py sqlmigrate appname migrationname</code>
+                </li>
+                <li><strong class="font-semibold">Purpose</strong>: Shows the SQL statements for a named migration.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py sqlmigrate myapp 0001</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Loading Data from Fixtures</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py loaddata fixturename</code></li>
-                <li><strong>Purpose</strong>: Loads data from a fixture into the database.</li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py loaddata mydata</code></pre>
+        <li><strong class="text-2xl text-blue-600">Loading Data from Fixtures</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py loaddata fixturename</code>
+                </li>
+                <li><strong class="font-semibold">Purpose</strong>: Loads data from a fixture into the database.</li>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre class="bg-gray-100 p-4 rounded"><code>python manage.py loaddata mydata</code></pre>
                 </li>
             </ul>
         </li>
 
-        <li><strong>Dumping Data to a Fixture</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py dumpdata appname</code></li>
-                <li><strong>Purpose</strong>: Outputs all data in the database associated with the named app as a
+        <li><strong class="text-2xl text-blue-600">Dumping Data to a Fixture</strong>
+            <ul class="list-disc list-inside ml-6 text-lg space-y-3 mt-3">
+                <li><strong class="font-semibold">Command</strong>: <code
+                        class="bg-gray-200 rounded p-1">python manage.py dumpdata appname</code></li>
+                <li><strong class="font-semibold">Purpose</strong>: Outputs all data in the database associated with the
+                    named app as a
                     fixture.
                 </li>
-                <li><strong>Usage</strong>:
-                    <pre><code>python manage.py dumpdata myapp &gt; myapp_fixture.json</code></pre>
+                <li><strong class="font-semibold">Usage</strong>:
+                    <pre
+                        class="bg-gray-100 p-4 rounded"><code>python manage.py dumpdata myapp &gt; myapp_fixture.json</code></pre>
                 </li>
             </ul>
         </li>
     </ol>
 
-    <p>Remember to replace <code>projectname</code>, <code>appname</code>, <code>migrationname</code>, and
-        <code>fixturename</code> with your actual project, app, migration, and fixture names respectively. These
-        commands
-        form the backbone of your interactions with Django's manage.py utility and are essential for efficient Django
+    <p class="mt-8 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded">
+        Remember to replace <code class="bg-gray-200 rounded p-1">projectname</code>, <code
+            class="bg-gray-200 rounded p-1">appname</code>, <code class="bg-gray-200 rounded p-1">migrationname</code>,
+        and
+        <code class="bg-gray-200 rounded p-1">fixturename</code> with your actual project, app, migration, and fixture
+        names respectively. These
+        commands form the backbone of your interactions with Django's manage.py utility and are essential for efficient
+        Django
         development.
     </p>
 

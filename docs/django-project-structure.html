@@ -21,12 +21,12 @@
                     <li><strong>Contains</strong>: Classes that extend Django's <code
                             class="bg-gray-200 p-1 rounded">models.Model</code>, field definitions, and metadata.</li>
                     <li><strong>Example</strong>:
-                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
 from django.db import models
 
 class MyModel(models.Model):
     my_field = models.CharField(max_length=100)
-&lt;/python&gt;</code></pre>
+</code></pre>
                     </li>
                 </ul>
             </li>
@@ -39,12 +39,12 @@ class MyModel(models.Model):
                     <li><strong>Contains</strong>: Functions or classes (class-based views) that take a web request and
                         return a web response.</li>
                     <li><strong>Example</strong>:
-                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
 from django.http import HttpResponse
 
 def my_view(request):
     return HttpResponse("Hello, World!")
-&lt;/python&gt;</code></pre>
+</code></pre>
                     </li>
                 </ul>
             </li>
@@ -56,14 +56,14 @@ def my_view(request):
                         views.</li>
                     <li><strong>Contains</strong>: URL patterns that are matched with view functions or classes.</li>
                     <li><strong>Example</strong>:
-                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
 from django.urls import path
 from . import views
 
 urlpatterns = [
     path('hello/', views.my_view, name='my-view'),
 ]
-&lt;/python&gt;</code></pre>
+</code></pre>
                     </li>
                 </ul>
             </li>
@@ -96,12 +96,12 @@ urlpatterns = [
                     <li><strong>Contains</strong>: Code to customize how models are displayed and interacted within the
                         admin interface.</li>
                     <li><strong>Example</strong>:
-                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
 from django.contrib import admin
 from .models import MyModel
 
 admin.site.register(MyModel)
-&lt;/python&gt;</code></pre>
+</code></pre>
                     </li>
                 </ul>
             </li>
@@ -112,7 +112,7 @@ admin.site.register(MyModel)
                     <li><strong>Purpose</strong>: Defines forms for user input, usually tied to models.</li>
                     <li><strong>Contains</strong>: Form classes that define fields and validation behaviors.</li>
                     <li><strong>Example</strong>:
-                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
 from django import forms
 from .models import MyModel
 
@@ -120,7 +120,7 @@ class MyForm(forms.ModelForm):
     class Meta:
         model = MyModel
         fields = ['my_field']
-&lt;/python&gt;</code></pre>
+</code></pre>
                     </li>
                 </ul>
             </li>
@@ -132,7 +132,7 @@ class MyForm(forms.ModelForm):
                     <li><strong>Contains</strong>: Test functions or classes to check for the correct behavior of your
                         views, models, and other parts of the application.</li>
                     <li><strong>Example</strong>:
-                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
 from django.test import TestCase
 from .models import MyModel
 
@@ -140,7 +140,7 @@ class MyModelTests(TestCase):
     def test_str_representation(self):
         entry = MyModel(my_field="Test")
         self.assertEqual(str(entry), entry.my_field)
-&lt;/python&gt;</code></pre>
+</code></pre>
                     </li>
                 </ul>
             </li>

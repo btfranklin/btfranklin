@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
 
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Step-by-Step Process</title>
+    <link href="styles.min.css" rel="stylesheet" />
+</head>
 
-    <h1>Django Step-by-Step Process</h1>
+<body class="bg-gray-100 mb-10">
 
-    <ol>
-        <li><strong>Update or Create the Model:</strong>
-            <ul>
-                <li><strong>Location</strong>: <code>models.py</code></li>
-                <li><strong>Action</strong>: Define a new model <code>Comment</code> that references <code>Post</code>
-                    using a ForeignKey.</li>
-                <li><strong>Example</strong>:
-                    <pre><code>&lt;!-- language: lang-python --&gt;
+    <h1 class="text-4xl font-bold text-center text-gray-800 mt-10 mb-6">Django Step-by-Step Process</h1>
+
+    <div class="flex justify-center">
+        <ol class="list-decimal list-inside max-w-4xl">
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Update or Create
+                    the Model:</strong>
+                <ul>
+                    <li><strong>Location</strong>: <code>models.py</code></li>
+                    <li><strong>Action</strong>: Define a new model <code>Comment</code> that references
+                        <code>Post</code> using a ForeignKey.
+                    </li>
+                    <li><strong>Example</strong>:
+                        <pre><code>&lt;!-- language: lang-python --&gt;
 from django.db import models
 
 class Post(models.Model):
@@ -22,47 +33,53 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     content = models.TextField()
     # other fields like author, timestamp, etc.
-        </code></pre>
-                </li>
-            </ul>
-        </li>
-        <li><strong>Create Database Migrations:</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py makemigrations</code></li>
-                <li><strong>Purpose</strong>: Generates migration files based on the changes you made to your models.
-                </li>
-                <li><strong>Action</strong>: Run this command in the terminal from your Django project directory.</li>
-            </ul>
-        </li>
-        <li><strong>Apply the Migrations:</strong>
-            <ul>
-                <li><strong>Command</strong>: <code>python manage.py migrate</code></li>
-                <li><strong>Purpose</strong>: Applies the migration to the database, updating the database schema.</li>
-                <li><strong>Action</strong>: Execute this command to apply the newly created migrations.</li>
-            </ul>
-        </li>
-        <li><strong>Update Admin Interface</strong> (Optional but recommended):
-            <ul>
-                <li><strong>Location</strong>: <code>admin.py</code></li>
-                <li><strong>Action</strong>: Register the new <code>Comment</code> model to manage it through the Django
-                    admin interface.</li>
-                <li><strong>Example</strong>:
-                    <pre><code>&lt;!-- language: lang-python --&gt;
+                        </code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Create Database Migrations:</strong>
+                <ul>
+                    <li><strong>Command</strong>: <code>python manage.py makemigrations</code></li>
+                    <li><strong>Purpose</strong>: Generates migration files based on the changes you made to your
+                        models.</li>
+                    <li><strong>Action</strong>: Run this command in the terminal from your Django project directory.
+                    </li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Apply the Migrations:</strong>
+                <ul>
+                    <li><strong>Command</strong>: <code>python manage.py migrate</code></li>
+                    <li><strong>Purpose</strong>: Applies the migration to the database, updating the database schema.
+                    </li>
+                    <li><strong>Action</strong>: Execute this command to apply the newly created migrations.</li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Update Admin Interface</strong> (Optional but recommended):
+                <ul>
+                    <li><strong>Location</strong>: <code>admin.py</code></li>
+                    <li><strong>Action</strong>: Register the new <code>Comment</code> model to manage it through the
+                        Django admin interface.</li>
+                    <li><strong>Example</strong>:
+                        <pre><code>&lt;!-- language: lang-python --&gt;
 from django.contrib import admin
 from .models import Comment
 
 admin.site.register(Comment)
-        </code></pre>
-                </li>
-            </ul>
-        </li>
-        <li><strong>Create or Update Forms</strong> (if user input is required):
-            <ul>
-                <li><strong>Location</strong>: <code>forms.py</code></li>
-                <li><strong>Action</strong>: Create a form for the <code>Comment</code> model to handle user
-                    submissions.</li>
-                <li><strong>Example</strong>:
-                    <pre><code>&lt;!-- language: lang-python --&gt;
+                        </code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Create or Update Forms</strong> (if user input is required):
+                <ul>
+                    <li><strong>Location</strong>: <code>forms.py</code></li>
+                    <li><strong>Action</strong>: Create a form for the <code>Comment</code> model to handle user
+                        submissions.</li>
+                    <li><strong>Example</strong>:
+                        <pre><code>&lt;!-- language: lang-python --&gt;
 from django import forms
 from .models import Comment
 
@@ -70,17 +87,18 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
-        </code></pre>
-                </li>
-            </ul>
-        </li>
-        <li><strong>Update or Create Views:</strong>
-            <ul>
-                <li><strong>Location</strong>: <code>views.py</code></li>
-                <li><strong>Action</strong>: Create or update views to handle the logic for creating, reading, updating,
-                    or deleting comments.</li>
-                <li><strong>Example</strong>:
-                    <pre><code>&lt;!-- language: lang-python --&gt;
+                        </code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Update or Create Views:</strong>
+                <ul>
+                    <li><strong>Location</strong>: <code>views.py</code></li>
+                    <li><strong>Action</strong>: Create or update views to handle the logic for creating, reading,
+                        updating, or deleting comments.</li>
+                    <li><strong>Example</strong>:
+                        <pre><code>&lt;!-- language: lang-python --&gt;
 from django.shortcuts import render, redirect
 from .models import Post, Comment
 from .forms import CommentForm
@@ -97,16 +115,17 @@ def post_detail(request, post_id):
     else:
         form = CommentForm()
     return render(request, 'post_detail.html', {'post': post, 'form': form})
-        </code></pre>
-                </li>
-            </ul>
-        </li>
-        <li><strong>Update Templates:</strong>
-            <ul>
-                <li><strong>Location</strong>: <code>templates/</code></li>
-                <li><strong>Action</strong>: Edit the templates to display the comments and the comment form.</li>
-                <li><strong>Example</strong>:
-                    <pre><code>&lt;!-- language: lang-html --&gt;
+                        </code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Update Templates:</strong>
+                <ul>
+                    <li><strong>Location</strong>: <code>templates/</code></li>
+                    <li><strong>Action</strong>: Edit the templates to display the comments and the comment form.</li>
+                    <li><strong>Example</strong>:
+                        <pre><code>&lt;!-- language: lang-html --&gt;
 &lt;!-- Inside post_detail.html --&gt;
 &lt;h1&gt;{{ post.title }}&lt;/h1&gt;
 &lt;p&gt;{{ post.content }}&lt;/p&gt;
@@ -122,26 +141,26 @@ def post_detail(request, post_id):
     {{ form.as_p }}
     &lt;button type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
-        </code></pre>
-                </li>
-            </ul>
-        </li>
-        <li><strong>Test Your Changes:</strong>
-            <ul>
-                <li><strong>Action</strong>: Test the new functionality in your development environment to ensure
-                    everything works as expected. Make sure to test both the backend (model, admin) and the frontend
-                    (views, templates).</li>
-            </ul>
-        </li>
-        <li><strong>Commit Changes:</strong>
-            <ul>
-                <li><strong>Action</strong>: Commit your changes to version control (e.g., git) after testing.</li>
-            </ul>
-        </li>
-    </ol>
-
-    <p>By following these steps, you should be able to successfully add a new sub-object or related model to an existing
-        Django app, integrating it into various components of the app as required.</p>
+                        </code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Test Your Changes:</strong>
+                <ul>
+                    <li><strong>Action</strong>: Test the new functionality in your development environment to ensure
+                        everything works as expected. Make sure to test both the backend (model, admin) and the frontend
+                        (views, templates).</li>
+                </ul>
+            </li>
+            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+                <strong class="text-xl text-gray-700">Commit Changes:</strong>
+                <ul>
+                    <li><strong>Action</strong>: Commit your changes to version control (e.g., git) after testing.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
 
 </body>
 

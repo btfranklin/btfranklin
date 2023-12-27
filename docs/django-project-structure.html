@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Project Structure Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-200 text-gray-900 font-sans p-8">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">Django Project Structure: A Layer-Oriented Cheat Sheet</h1>
+
+        <ol class="list-decimal list-inside space-y-6">
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">models.py</code></strong>
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Defines the data structure. This file is used to create database
+                        schema (tables, fields, and relationships).</li>
+                    <li><strong>Contains</strong>: Classes that extend Django's <code
+                            class="bg-gray-200 p-1 rounded">models.Model</code>, field definitions, and metadata.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+from django.db import models
+
+class MyModel(models.Model):
+    my_field = models.CharField(max_length=100)
+&lt;/python&gt;</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">views.py</code></strong>
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Contains the logic and control flow for handling requests and defines
+                        HTTP responses.</li>
+                    <li><strong>Contains</strong>: Functions or classes (class-based views) that take a web request and
+                        return a web response.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+from django.http import HttpResponse
+
+def my_view(request):
+    return HttpResponse("Hello, World!")
+&lt;/python&gt;</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">urls.py</code></strong>
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Defines URL patterns (URLconf) to route requests to the appropriate
+                        views.</li>
+                    <li><strong>Contains</strong>: URL patterns that are matched with view functions or classes.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('hello/', views.my_view, name='my-view'),
+]
+&lt;/python&gt;</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">templates/</code></strong>
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Contains HTML files that define the structure and layout of web pages
+                        (the frontend).</li>
+                    <li><strong>Contains</strong>: HTML files with Django Template Language (DTL) for dynamic content
+                        rendering.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;{{ page_title }}&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">admin.py</code></strong>
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Registers models to include them in the Django admin site for CRUD
+                        operations.</li>
+                    <li><strong>Contains</strong>: Code to customize how models are displayed and interacted within the
+                        admin interface.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+from django.contrib import admin
+from .models import MyModel
+
+admin.site.register(MyModel)
+&lt;/python&gt;</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">forms.py</code></strong> (Optional)
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Defines forms for user input, usually tied to models.</li>
+                    <li><strong>Contains</strong>: Form classes that define fields and validation behaviors.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+from django import forms
+from .models import MyModel
+
+class MyForm(forms.ModelForm):
+    class Meta:
+        model = MyModel
+        fields = ['my_field']
+&lt;/python&gt;</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">tests.py</code></strong>
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Contains test cases to test your app's functionality.</li>
+                    <li><strong>Contains</strong>: Test functions or classes to check for the correct behavior of your
+                        views, models, and other parts of the application.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">&lt;python&gt;
+from django.test import TestCase
+from .models import MyModel
+
+class MyModelTests(TestCase):
+    def test_str_representation(self):
+        entry = MyModel(my_field="Test")
+        self.assertEqual(str(entry), entry.my_field)
+&lt;/python&gt;</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">static/</code></strong> (Optional)
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Stores static files like CSS, JavaScript, and images.</li>
+                    <li><strong>Contains</strong>: Subdirectories for different types of static files.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
+/static/
+    /css/
+    /js/
+    /images/
+</code></pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong class="text-xl"><code class="bg-gray-200 p-1 rounded">migrations/</code></strong>
+                <ul class="list-disc list-inside ml-5 mt-2">
+                    <li><strong>Purpose</strong>: Contains migration files that Django uses to evolve the database
+                        schema over time.</li>
+                    <li><strong>Contains</strong>: Automatically generated files that represent the changes in your
+                        models.</li>
+                    <li><strong>Example</strong>:
+                        <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
+/migrations/
+    0001_initial.py
+    0002_auto_20230101_1234.py
+</code></pre>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>

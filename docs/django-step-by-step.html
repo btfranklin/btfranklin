@@ -23,7 +23,7 @@
                         <code>Post</code> using a ForeignKey.
                     </li>
                     <li><strong>Example</strong>:
-                        <pre><code>&lt;!-- language: lang-python --&gt;
+                        <pre><code>
 from django.db import models
 
 class Post(models.Model):
@@ -63,7 +63,7 @@ class Comment(models.Model):
                     <li><strong>Action</strong>: Register the new <code>Comment</code> model to manage it through the
                         Django admin interface.</li>
                     <li><strong>Example</strong>:
-                        <pre><code>&lt;!-- language: lang-python --&gt;
+                        <pre><code>
 from django.contrib import admin
 from .models import Comment
 
@@ -79,7 +79,7 @@ admin.site.register(Comment)
                     <li><strong>Action</strong>: Create a form for the <code>Comment</code> model to handle user
                         submissions.</li>
                     <li><strong>Example</strong>:
-                        <pre><code>&lt;!-- language: lang-python --&gt;
+                        <pre><code>
 from django import forms
 from .models import Comment
 
@@ -98,7 +98,7 @@ class CommentForm(forms.ModelForm):
                     <li><strong>Action</strong>: Create or update views to handle the logic for creating, reading,
                         updating, or deleting comments.</li>
                     <li><strong>Example</strong>:
-                        <pre><code>&lt;!-- language: lang-python --&gt;
+                        <pre><code>
 from django.shortcuts import render, redirect
 from .models import Post, Comment
 from .forms import CommentForm
@@ -125,7 +125,7 @@ def post_detail(request, post_id):
                     <li><strong>Location</strong>: <code>templates/</code></li>
                     <li><strong>Action</strong>: Edit the templates to display the comments and the comment form.</li>
                     <li><strong>Example</strong>:
-                        <pre><code>&lt;!-- language: lang-html --&gt;
+                        <pre><code>
 &lt;!-- Inside post_detail.html --&gt;
 &lt;h1&gt;{{ post.title }}&lt;/h1&gt;
 &lt;p&gt;{{ post.content }}&lt;/p&gt;

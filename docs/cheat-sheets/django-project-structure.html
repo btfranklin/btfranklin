@@ -42,11 +42,25 @@ class MyModel(models.Model):
                     <li><strong>Example</strong>:
                         <pre class="bg-black p-2 rounded overflow-x-auto"><code class="text-gray-300">
 from django.http import HttpResponse
+from django.views import View
+from django.views.generic import TemplateView
 
 def my_view(request):
     return HttpResponse("Hello, World!")
 
-</code></pre>
+class MyView(View):
+    def get(self, request):
+        return HttpResponse("Hello, World from Class-Based View!")
+
+class MyTemplateView(TemplateView):
+    template_name = "base/home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['custom_data'] = "This is custom data"
+        return context
+            
+            </code></pre>
                     </li>
                 </ul>
             </li>
@@ -63,10 +77,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('hello/', views.my_view, name='my-view'),
+    path('hello-func/', views.my_view, name='my-func-view'),
+    path('hello-class/', views.MyView.as_view(), name='my-class-view'),
+    path('', views.MyTemplateView.as_view(), name='home'),
 ]
-
-</code></pre>
+            
+            </code></pre>
                     </li>
                 </ul>
             </li>

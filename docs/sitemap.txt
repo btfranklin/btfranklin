@@ -13,3 +13,4 @@ https://btfranklin.info/gpts/serverless-sage.html
 https://btfranklin.info/gpts/tailwind-template-designer.html
 https://btfranklin.info/white-papers/index.html
 https://btfranklin.info/white-papers/promptdown.whitepaper.html
+https://btfranklin.info/white-papers/spooklight.whitepaper.html

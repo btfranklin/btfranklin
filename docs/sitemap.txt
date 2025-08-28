@@ -3,14 +3,3 @@ https://btfranklin.info/cheat-sheets/index.html
 https://btfranklin.info/cheat-sheets/django-cli-commands.html
 https://btfranklin.info/cheat-sheets/django-project-structure.html
 https://btfranklin.info/cheat-sheets/django-step-by-step.html
-https://btfranklin.info/gpts/index.html
-https://btfranklin.info/gpts/api-architect.html
-https://btfranklin.info/gpts/art-genre-innovator.html
-https://btfranklin.info/gpts/django-djenius.html
-https://btfranklin.info/gpts/ether-guide.html
-https://btfranklin.info/gpts/htmx-hypergenius.html
-https://btfranklin.info/gpts/serverless-sage.html
-https://btfranklin.info/gpts/tailwind-template-designer.html
-https://btfranklin.info/white-papers/index.html
-https://btfranklin.info/white-papers/promptdown.whitepaper.html
-https://btfranklin.info/white-papers/spooklight.whitepaper.html

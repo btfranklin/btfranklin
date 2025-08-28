@@ -3,7 +3,7 @@
     "defaults"
   ],
   "devDependencies": {
-    "tailwindcss": "^3.4.4"
+    "tailwindcss": "^3.4.17"
   },
   "scripts": {
     "build:css": "npx tailwindcss build -o ../docs/styles.min.css"

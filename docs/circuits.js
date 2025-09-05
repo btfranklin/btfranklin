@@ -19,15 +19,38 @@ const canvas = document.getElementById('circuitCanvas')
 const ctx = canvas.getContext('2d')
 
 const container = document.getElementById('circuitContainer')
-canvas.width = container.offsetWidth
-canvas.height = container.offsetHeight
+
+function resizeCanvasForHiDPI() {
+    const devicePixelRatioValue = window.devicePixelRatio || 1
+    const cssWidth = container.offsetWidth
+    const cssHeight = container.offsetHeight
+
+    canvas.style.width = cssWidth + 'px'
+    canvas.style.height = cssHeight + 'px'
+
+    canvas.width = Math.floor(cssWidth * devicePixelRatioValue)
+    canvas.height = Math.floor(cssHeight * devicePixelRatioValue)
+
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+    ctx.scale(devicePixelRatioValue, devicePixelRatioValue)
+}
+
+function getLogicalWidth() {
+    return canvas.clientWidth
+}
+
+function getLogicalHeight() {
+    return canvas.clientHeight
+}
+
+resizeCanvasForHiDPI()
 
 class Circuit {
     constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+        this.x = Math.random() * getLogicalWidth()
+        this.y = Math.random() * getLogicalHeight()
         this.directionGroup =
-            this.x > canvas.width / 2 ? 'WESTERLY' : 'EASTERLY'
+            this.x > getLogicalWidth() / 2 ? 'WESTERLY' : 'EASTERLY'
         this.directions =
             this.directionGroup === 'EASTERLY'
                 ? EASTERLY_DIRECTIONS
@@ -43,18 +66,18 @@ class Circuit {
     isOutOfBounds() {
         return (
             this.x < 0 ||
-            this.x > canvas.width ||
+            this.x > getLogicalWidth() ||
             this.y < 0 ||
-            this.y > canvas.height
+            this.y > getLogicalHeight()
         )
     }
 
     isBeyondTrailLength() {
         return (
             this.x < -this.trailLength ||
-            this.x > canvas.width + this.trailLength ||
+            this.x > getLogicalWidth() + this.trailLength ||
             this.y < -this.trailLength ||
-            this.y > canvas.height + this.trailLength
+            this.y > getLogicalHeight() + this.trailLength
         )
     }
 
@@ -136,7 +159,7 @@ function getRandomDirection(currentDirection, directionGroup) {
 
 function updateCanvas() {
     ctx.fillStyle = `rgba(${BACKGROUND_COLOR}, ${BACKGROUND_ALPHA})`
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.fillRect(0, 0, getLogicalWidth(), getLogicalHeight())
 
     let liveCircuits = []
     circuits.forEach((circuit) => {
@@ -172,6 +195,5 @@ updateCanvas()
 
 // Resize the canvas when the window is resized
 window.addEventListener('resize', () => {
-    canvas.width = container.offsetWidth
-    canvas.height = container.offsetHeight
+    resizeCanvasForHiDPI()
 })

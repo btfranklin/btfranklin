@@ -96,22 +96,6 @@ class Circuit {
         ctx.arc(head.x, head.y, 4, 0, 2 * Math.PI)
         ctx.fillStyle = `rgba(${CIRCUIT_COLOR}, 1)`
         ctx.fill()
-
-        // Create a radial gradient for the glow effect
-        const glowRadius = 10
-        const glowGradient = ctx.createRadialGradient(
-            head.x,
-            head.y,
-            0,
-            head.x,
-            head.y,
-            glowRadius
-        )
-        glowGradient.addColorStop(0, `rgba(${CIRCUIT_COLOR}, 0.8)`)
-        glowGradient.addColorStop(1, `rgba(${CIRCUIT_COLOR}, 0)`)
-
-        ctx.fillStyle = glowGradient
-        ctx.fill()
     }
 }
 

@@ -13,7 +13,6 @@ This guide highlights pages that are stable, structured, and optimized for compr
 
 ## Projects (External Repositories)
 
-- [Compendium Keeper](https://github.com/btfranklin/compendiumkeeper): Open-source project repository
 - [Compendium Scribe](https://github.com/btfranklin/compendiumscribe): Open-source project repository
 - [Spooklight](https://github.com/btfranklin/spooklight): Open-source project repository
 - [Pickled Pipeline](https://github.com/btfranklin/pickled_pipeline): Open-source project repository

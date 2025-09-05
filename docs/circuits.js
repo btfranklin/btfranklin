@@ -124,12 +124,6 @@ function getRandomDirection(currentDirection, directionGroup) {
             ? EASTERLY_DIRECTIONS
             : WESTERLY_DIRECTIONS
 
-    if (currentDirection === null) {
-        return currentDirectionGroup[
-            Math.floor(Math.random() * currentDirectionGroup.length)
-        ]
-    }
-
     const currentDirectionIndex =
         currentDirectionGroup.indexOf(currentDirection)
     let directions
@@ -194,7 +188,6 @@ updateCanvas()
 
 // Resize the canvas when the window is resized
 window.addEventListener('resize', () => {
-    const container = document.getElementById('circuitContainer')
     canvas.width = container.offsetWidth
     canvas.height = container.offsetHeight
 })

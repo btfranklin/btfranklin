@@ -1,7 +1,6 @@
-const CIRCUIT_COUNT = 16
+const CIRCUIT_COUNT = 20 // Increased slightly for full screen
 const CIRCUIT_COLOR = '60, 210, 240' // RGB values for the light blue/teal circuit color
-const BACKGROUND_COLOR = '20, 30, 60' // RGB values for the dark blue background color
-const BACKGROUND_ALPHA = 0.3
+// We don't need BACKGROUND_COLOR anymore as we are transparent
 
 const EASTERLY_DIRECTIONS = [
     Math.PI / 4, // NE
@@ -18,12 +17,13 @@ const WESTERLY_DIRECTIONS = [
 const canvas = document.getElementById('circuitCanvas')
 const ctx = canvas.getContext('2d')
 
-const container = document.getElementById('circuitContainer')
+// Remove container dependency
+// const container = document.getElementById('circuitContainer')
 
 function resizeCanvasForHiDPI() {
     const devicePixelRatioValue = window.devicePixelRatio || 1
-    const cssWidth = container.offsetWidth
-    const cssHeight = container.offsetHeight
+    const cssWidth = window.innerWidth
+    const cssHeight = window.innerHeight
 
     canvas.style.width = cssWidth + 'px'
     canvas.style.height = cssHeight + 'px'
@@ -36,11 +36,11 @@ function resizeCanvasForHiDPI() {
 }
 
 function getLogicalWidth() {
-    return canvas.clientWidth
+    return window.innerWidth
 }
 
 function getLogicalHeight() {
-    return canvas.clientHeight
+    return window.innerHeight
 }
 
 resizeCanvasForHiDPI()
@@ -107,7 +107,7 @@ class Circuit {
             ctx.moveTo(this.trail[i - 1].x, this.trail[i - 1].y)
             ctx.lineTo(this.trail[i].x, this.trail[i].y)
 
-            const opacity = i / fadeDistance
+            const opacity = (i / fadeDistance) * 0.5 // Lower opacity for background subtlety
             ctx.strokeStyle = `rgba(${CIRCUIT_COLOR}, ${opacity})`
             ctx.lineWidth = 2
             ctx.stroke()
@@ -116,8 +116,8 @@ class Circuit {
         // Draw the filled circle at the head of the circuit
         const head = this.trail[this.trail.length - 1]
         ctx.beginPath()
-        ctx.arc(head.x, head.y, 4, 0, 2 * Math.PI)
-        ctx.fillStyle = `rgba(${CIRCUIT_COLOR}, 1)`
+        ctx.arc(head.x, head.y, 3, 0, 2 * Math.PI) // Slightly smaller head
+        ctx.fillStyle = `rgba(${CIRCUIT_COLOR}, 0.8)`
         ctx.fill()
     }
 }
@@ -158,8 +158,7 @@ function getRandomDirection(currentDirection, directionGroup) {
 }
 
 function updateCanvas() {
-    ctx.fillStyle = `rgba(${BACKGROUND_COLOR}, ${BACKGROUND_ALPHA})`
-    ctx.fillRect(0, 0, getLogicalWidth(), getLogicalHeight())
+    ctx.clearRect(0, 0, getLogicalWidth(), getLogicalHeight())
 
     let liveCircuits = []
     circuits.forEach((circuit) => {

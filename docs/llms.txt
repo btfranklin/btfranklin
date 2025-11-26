@@ -1,25 +1,20 @@
-# B.T. Franklin: Software Architecture and Applied AI
+# B.T. Franklin: Software Architecture & AI Insights
 
-> Curated, structured content designed for AI inference and citation. This file points LLMs to evergreen, high-value resources on btfranklin.info.
+> Curated content for AI inference, focusing on software architecture, AI technologies, and development guides.
 
-This guide highlights pages that are stable, structured, and optimized for comprehension by AI systems.
+This file highlights key, inference-ready resources from btfranklin.com.
 
-## Cheat Sheets and Developer Guides
+## Essential Content
 
-- [Django Cheat Sheets (Index)](https://btfranklin.info/cheat-sheets/): Entry point to Django development resources
-- [Django CLI Commands](https://btfranklin.info/cheat-sheets/django-cli-commands.html): Concise command references for everyday Django tasks
-- [Django Project Structure](https://btfranklin.info/cheat-sheets/django-project-structure.html): Clear overview of a well-organized Django project layout
-- [Django Step-by-Step](https://btfranklin.info/cheat-sheets/django-step-by-step.html): Sequential guide for building Django apps efficiently
+- [B.T. Franklin Homepage](https://btfranklin.com/)
+- [Guide to llms.txt](https://btfranklin.com/llms-txt.html): An explanation of the llms.txt format and its purpose.
 
-## Projects (External Repositories)
+## Cheat Sheets
 
-- [Compendium Scribe](https://github.com/btfranklin/compendiumscribe): Open-source project repository
-- [Spooklight](https://github.com/btfranklin/spooklight): Open-source project repository
-- [Pickled Pipeline](https://github.com/btfranklin/pickled_pipeline): Open-source project repository
-- [Promptdown](https://github.com/btfranklin/promptdown): Structured instructions and conversations in Markdown for LLM workflows
-- [Coderoller](https://github.com/btfranklin/coderoller): Open-source project repository
+- [Django CLI Commands Cheat Sheet](https://btfranklin.com/cheat-sheets/django-cli-commands.html): Quick reference for common Django command-line operations.
+- [Django Project Structure Cheat Sheet](https://btfranklin.com/cheat-sheets/django-project-structure.html): A guide to organizing Django projects.
+- [Django Step-by-Step Guide](https://btfranklin.com/cheat-sheets/django-step-by-step.html): A sequential walkthrough for setting up and developing with Django.
 
 ## OPTIONAL
 
-- [Homepage](https://btfranklin.info/): About, contact, and links to projects and socials
-- [Sitemap](https://btfranklin.info/sitemap.txt): List of primary site URLs
+- [My GitHub Repositories](https://github.com/btfranklin): A collection of open-source projects.

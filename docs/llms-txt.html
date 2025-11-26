@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,113 +7,134 @@
     <title>Guide: llms.txt — B.T. Franklin</title>
     <meta name="description"
         content="A beautiful, concise guide to the llms.txt format — your AI treasure map for inference-ready content." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="styles.min.css" rel="stylesheet" />
+    <style>
+        /* Custom scrollbar for a tech feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+    </style>
 </head>
 
-<body class="bg-zinc-100 dark:bg-gray-900 text-black dark:text-zinc-300">
+<body class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
 
-    <header class="relative overflow-hidden">
-        <div class="bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600">
-            <div class="container mx-auto px-4 py-16">
-                <div class="max-w-3xl">
-                    <a href="index.html" class="inline-flex items-center text-white/90 hover:text-white mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="w-5 h-5 mr-2">
-                            <path fill-rule="evenodd"
-                                d="M7.72 11.47a.75.75 0 0 0 0 1.06l4.5 4.5a.75.75 0 1 0 1.06-1.06L9.81 12l3.47-3.47a.75.75 0 1 0-1.06-1.06l-4.5 4.5Z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        Back to Home
-                    </a>
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Guide for Creating an llms.txt File</h1>
-                    <p class="text-lg text-indigo-100 max-w-2xl">llms.txt is your AI treasure map — a curated,
-                        markdown-formatted guide that directs Large Language Models to your site’s most valuable,
-                        inference-ready content.</p>
-                    <div class="mt-6">
-                        <a href="llms.txt"
-                            class="inline-flex items-center px-4 py-2 rounded-lg bg-white/10 text-white hover:bg-white/20 transition">
-                            View this site's llms.txt
+    <!-- Full Screen Background Animation -->
+    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
+        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
+    </div>
+    <script async defer src="circuits.js"></script>
+
+    <div class="relative min-h-screen flex flex-col">
+        <header class="relative overflow-hidden shadow-xl">
+            <div class="bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600">
+                <div class="container mx-auto px-4 py-16">
+                    <div class="max-w-3xl">
+                        <a href="index.html" class="inline-flex items-center text-white/90 hover:text-white mb-4 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-4 h-4 ml-2">
-                                <path
-                                    d="M13.5 4.5a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 .75.75v5a.75.75 0 0 1-1.5 0V6.31l-7.72 7.72a.75.75 0 1 1-1.06-1.06l7.72-7.72h-3.19a.75.75 0 0 1-.75-.75Z" />
-                                <path
-                                    d="M5.25 6.75A2.25 2.25 0 0 1 7.5 4.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 0-.75.75v9a.75.75 0 0 0 .75.75h9a.75.75 0 0 0 .75-.75v-3a.75.75 0 0 1 1.5 0v3A2.25 2.25 0 0 1 16.5 18h-9A2.25 2.25 0 0 1 5.25 15.75v-9Z" />
+                                class="w-5 h-5 mr-2">
+                                <path fill-rule="evenodd"
+                                    d="M7.72 11.47a.75.75 0 0 0 0 1.06l4.5 4.5a.75.75 0 1 0 1.06-1.06L9.81 12l3.47-3.47a.75.75 0 1 0-1.06-1.06l-4.5 4.5Z"
+                                    clip-rule="evenodd" />
                             </svg>
+                            Back to Home
                         </a>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Guide for Creating an llms.txt File</h1>
+                        <p class="text-lg text-indigo-100 max-w-2xl font-light leading-relaxed">llms.txt is your AI treasure map — a curated,
+                            markdown-formatted guide that directs Large Language Models to your site’s most valuable,
+                            inference-ready content.</p>
+                        <div class="mt-8">
+                            <a href="llms.txt"
+                                class="inline-flex items-center px-5 py-2.5 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-all border border-white/20 backdrop-blur-sm">
+                                View this site's llms.txt
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="w-4 h-4 ml-2">
+                                    <path
+                                        d="M13.5 4.5a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 .75.75v5a.75.75 0 0 1-1.5 0V6.31l-7.72 7.72a.75.75 0 1 1-1.06-1.06l7.72-7.72h-3.19a.75.75 0 0 1-.75-.75Z" />
+                                    <path
+                                        d="M5.25 6.75A2.25 2.25 0 0 1 7.5 4.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 0-.75.75v9a.75.75 0 0 0 .75.75h9a.75.75 0 0 0 .75-.75v-3a.75.75 0 0 1 1.5 0v3A2.25 2.25 0 0 1 16.5 18h-9A2.25 2.25 0 0 1 5.25 15.75v-9Z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div id="circuitContainer" class="mb-8 mt-8 w-full h-[100px] overflow-hidden relative">
-        <canvas id="circuitCanvas" class="absolute top-0 left-0"></canvas>
-        <script async defer src="circuits.js"></script>
-    </div>
+        <main class="container mx-auto px-4 pt-12 pb-16 flex-grow">
+            <div class="grid grid-cols-1 gap-6">
+                <section class="backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 text-zinc-900 dark:text-gray-200 shadow-md rounded-xl p-8 border border-zinc-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 font-mono text-violet-600 dark:text-violet-400">Overview</h2>
+                    <p class="mb-2 leading-relaxed">An llms.txt file is a curated, markdown-formatted guide placed at the root of a website
+                        domain (<span class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">https://example.com/llms.txt</span>). It helps Large Language Models
+                        (LLMs) quickly find your site’s most valuable, inference-friendly content.</p>
+                </section>
 
-    <main class="container mx-auto px-4 pt-2 pb-16">
-        <div class="grid grid-cols-1 gap-6">
-            <section class="bg-white dark:bg-gray-800 text-black dark:text-gray-200 shadow-md rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4">Overview</h2>
-                <p class="mb-2">An llms.txt file is a curated, markdown-formatted guide placed at the root of a website
-                    domain (<span class="font-mono">https://example.com/llms.txt</span>). It helps Large Language Models
-                    (LLMs) quickly find your site’s most valuable, inference-friendly content.</p>
-            </section>
+                <section class="backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 text-zinc-900 dark:text-gray-200 shadow-md rounded-xl p-8 border border-zinc-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 font-mono text-violet-600 dark:text-violet-400">Purpose</h2>
+                    <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+                        <li>Not a replacement or extension of <span class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">robots.txt</span>. It doesn’t control
+                            crawling or indexing.</li>
+                        <li>Acts as a curated map highlighting your site’s best content for inference by AI models.</li>
+                        <li>Provides direct guidance to AI, increasing the likelihood of your content being cited by
+                            AI-driven search results.</li>
+                    </ul>
+                </section>
 
-            <section class="bg-white dark:bg-gray-800 text-black dark:text-gray-200 shadow-md rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4">Purpose</h2>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Not a replacement or extension of <span class="font-mono">robots.txt</span>. It doesn’t control
-                        crawling or indexing.</li>
-                    <li>Acts as a curated map highlighting your site’s best content for inference by AI models.</li>
-                    <li>Provides direct guidance to AI, increasing the likelihood of your content being cited by
-                        AI-driven search results.</li>
-                </ul>
-            </section>
+                <section class="backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 text-zinc-900 dark:text-gray-200 shadow-md rounded-xl p-8 border border-zinc-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 font-mono text-violet-600 dark:text-violet-400">Ideal Content for Inclusion</h2>
+                    <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+                        <li>Evergreen, structured, authoritative resources.</li>
+                        <li>High-value guides, detailed FAQs, resource hubs, and clearly written blog posts.</li>
+                        <li>Content demonstrating expertise, experience, authority, and trustworthiness (E-E-A-T).</li>
+                        <li>Pages structured specifically for comprehension by AI.</li>
+                    </ul>
+                </section>
 
-            <section class="bg-white dark:bg-gray-800 text-black dark:text-gray-200 shadow-md rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4">Ideal Content for Inclusion</h2>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Evergreen, structured, authoritative resources.</li>
-                    <li>High-value guides, detailed FAQs, resource hubs, and clearly written blog posts.</li>
-                    <li>Content demonstrating expertise, experience, authority, and trustworthiness (E-E-A-T).</li>
-                    <li>Pages structured specifically for comprehension by AI.</li>
-                </ul>
-            </section>
+                <section class="backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 text-zinc-900 dark:text-gray-200 shadow-md rounded-xl p-8 border border-zinc-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 font-mono text-violet-600 dark:text-violet-400">Structure of llms.txt (Markdown Format)</h2>
+                    <ul class="list-disc pl-6 space-y-2 mb-6 leading-relaxed">
+                        <li><span class="font-semibold">Filename</span>: Must be exactly <span
+                                class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">llms.txt</span> (plural form).</li>
+                        <li><span class="font-semibold">Location</span>: Root directory of your domain (e.g., <span
+                                class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">/llms.txt</span>).</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mb-2 text-zinc-800 dark:text-zinc-100">Required Elements</h3>
+                    <ul class="list-disc pl-6 space-y-2 mb-6 leading-relaxed">
+                        <li>A single H1 heading (<span class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">#</span>) naming your site or project.</li>
+                        <li>A blockquote (<span class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">&gt;</span>) summarizing the content that follows.</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mb-2 text-zinc-800 dark:text-zinc-100">Optional Elements (Recommended for clarity)</h3>
+                    <ul class="list-disc pl-6 space-y-2 mb-6 leading-relaxed">
+                        <li>Additional context or notes provided in standard Markdown paragraphs or lists.</li>
+                        <li>One or more H2 headings (<span class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">##</span>) categorizing your URLs clearly.</li>
+                        <li>Under each category, list URLs in Markdown link format, optionally followed by a colon and brief
+                            description:</li>
+                    </ul>
+                    <div class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm border border-gray-700 shadow-inner font-mono">
+                        <pre><code>- [Link Title](https://example.com/url): Short description of content</code></pre>
+                    </div>
+                    <h3 class="text-xl font-semibold mt-8 mb-2 text-zinc-800 dark:text-zinc-100">Special Section</h3>
+                    <p class="leading-relaxed">You may include an <span class="font-mono text-sm bg-zinc-100 dark:bg-gray-800 px-1 py-0.5 rounded">## OPTIONAL</span> section. URLs in this section can be
+                        skipped by AI if a shorter context is required.</p>
+                </section>
 
-            <section class="bg-white dark:bg-gray-800 text-black dark:text-gray-200 shadow-md rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4">Structure of llms.txt (Markdown Format)</h2>
-                <ul class="list-disc pl-6 space-y-2 mb-4">
-                    <li><span class="font-semibold">Filename</span>: Must be exactly <span
-                            class="font-mono">llms.txt</span> (plural form).</li>
-                    <li><span class="font-semibold">Location</span>: Root directory of your domain (e.g., <span
-                            class="font-mono">/llms.txt</span>).</li>
-                </ul>
-                <h3 class="text-xl font-semibold mb-2">Required Elements</h3>
-                <ul class="list-disc pl-6 space-y-2 mb-4">
-                    <li>A single H1 heading (<span class="font-mono">#</span>) naming your site or project.</li>
-                    <li>A blockquote (<span class="font-mono">&gt;</span>) summarizing the content that follows.</li>
-                </ul>
-                <h3 class="text-xl font-semibold mb-2">Optional Elements (Recommended for clarity)</h3>
-                <ul class="list-disc pl-6 space-y-2 mb-4">
-                    <li>Additional context or notes provided in standard Markdown paragraphs or lists.</li>
-                    <li>One or more H2 headings (<span class="font-mono">##</span>) categorizing your URLs clearly.</li>
-                    <li>Under each category, list URLs in Markdown link format, optionally followed by a colon and brief
-                        description:</li>
-                </ul>
-                <div class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm">
-                    <pre><code>- [Link Title](https://example.com/url): Short description of content</code></pre>
-                </div>
-                <h3 class="text-xl font-semibold mt-6 mb-2">Special Section</h3>
-                <p>You may include an <span class="font-mono">## OPTIONAL</span> section. URLs in this section can be
-                    skipped by AI if a shorter context is required.</p>
-            </section>
-
-            <section class="bg-white dark:bg-gray-800 text-black dark:text-gray-200 shadow-md rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4">Formatting Example</h2>
-                <div class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm">
-                    <pre><code># Example.com: AI Resources and Insights
+                <section class="backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 text-zinc-900 dark:text-gray-200 shadow-md rounded-xl p-8 border border-zinc-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 font-mono text-violet-600 dark:text-violet-400">Formatting Example</h2>
+                    <div class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm border border-gray-700 shadow-inner font-mono">
+                        <pre><code># Example.com: AI Resources and Insights
 
 &gt; Curated, structured content designed specifically for AI inference and citation.
 
@@ -128,36 +149,42 @@ This file provides clear access points to authoritative, evergreen information.
 ## OPTIONAL
 
 - [Secondary Resource](https://example.com/secondary): Useful, but less critical for immediate AI inference</code></pre>
-                </div>
-            </section>
+                    </div>
+                </section>
 
-            <section class="bg-white dark:bg-gray-800 text-black dark:text-gray-200 shadow-md rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4">Content Formatting Recommendations for Linked Pages</h2>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Short, clear paragraphs.</li>
-                    <li>Explicit headings (H1–H3).</li>
-                    <li>Bullet points, numbered lists, and tables.</li>
-                    <li>Clear semantic signals (e.g., “Step 1”, “Key takeaway”).</li>
-                    <li>Minimal distractions (no intrusive pop-ups/modals).</li>
-                </ul>
-            </section>
+                <section class="backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 text-zinc-900 dark:text-gray-200 shadow-md rounded-xl p-8 border border-zinc-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 font-mono text-violet-600 dark:text-violet-400">Content Formatting Recommendations for Linked Pages</h2>
+                    <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+                        <li>Short, clear paragraphs.</li>
+                        <li>Explicit headings (H1–H3).</li>
+                        <li>Bullet points, numbered lists, and tables.</li>
+                        <li>Clear semantic signals (e.g., “Step 1”, “Key takeaway”).</li>
+                        <li>Minimal distractions (no intrusive pop-ups/modals).</li>
+                    </ul>
+                </section>
 
-            <section class="bg-white dark:bg-gray-800 text-black dark:text-gray-200 shadow-md rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4">Homepage Inclusion</h2>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Include homepage only if it provides meaningful, structured content for inference.</li>
-                    <li>Typically, prioritize deeper, more content-rich pages over general homepage content.</li>
-                </ul>
-            </section>
+                <section class="backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 text-zinc-900 dark:text-gray-200 shadow-md rounded-xl p-8 border border-zinc-200 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold mb-4 font-mono text-violet-600 dark:text-violet-400">Homepage Inclusion</h2>
+                    <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+                        <li>Include homepage only if it provides meaningful, structured content for inference.</li>
+                        <li>Typically, prioritize deeper, more content-rich pages over general homepage content.</li>
+                    </ul>
+                </section>
 
-            <section
-                class="rounded-xl p-6 shadow-md bg-gradient-to-r from-indigo-50 to-violet-50 dark:from-indigo-900/30 dark:to-violet-900/30 border border-indigo-200/50 dark:border-indigo-700/40">
-                <h2 class="text-2xl font-semibold mb-2">Key Takeaway</h2>
-                <p class="text-indigo-900 dark:text-indigo-200">Treat llms.txt as your AI “treasure map,” directing
-                    models straight to your most valuable, inference-ready content, not as a restrictive measure.</p>
-            </section>
-        </div>
-    </main>
+                <section
+                    class="rounded-xl p-8 shadow-md bg-gradient-to-r from-indigo-50 to-violet-50 dark:from-indigo-900/30 dark:to-violet-900/30 border border-indigo-200/50 dark:border-indigo-700/40">
+                    <h2 class="text-2xl font-bold mb-2 text-indigo-900 dark:text-indigo-200">Key Takeaway</h2>
+                    <p class="text-indigo-900 dark:text-indigo-200 leading-relaxed">Treat llms.txt as your AI “treasure map,” directing
+                        models straight to your most valuable, inference-ready content, not as a restrictive measure.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="text-center py-6 text-zinc-500 dark:text-zinc-400 text-sm">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS &amp; Coffee.</p>
+        </footer>
+
+    </div>
 
 </body>
 

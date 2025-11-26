@@ -107,7 +107,7 @@ class Circuit {
             ctx.moveTo(this.trail[i - 1].x, this.trail[i - 1].y)
             ctx.lineTo(this.trail[i].x, this.trail[i].y)
 
-            const opacity = (i / fadeDistance) * 0.5 // Lower opacity for background subtlety
+            const opacity = (i / fadeDistance) * 0.8 // Increased opacity for background subtlety
             ctx.strokeStyle = `rgba(${CIRCUIT_COLOR}, ${opacity})`
             ctx.lineWidth = 2
             ctx.stroke()
@@ -116,8 +116,8 @@ class Circuit {
         // Draw the filled circle at the head of the circuit
         const head = this.trail[this.trail.length - 1]
         ctx.beginPath()
-        ctx.arc(head.x, head.y, 3, 0, 2 * Math.PI) // Slightly smaller head
-        ctx.fillStyle = `rgba(${CIRCUIT_COLOR}, 0.8)`
+        ctx.arc(head.x, head.y, 4, 0, 2 * Math.PI) // Slightly smaller head
+        ctx.fillStyle = `rgba(${CIRCUIT_COLOR}, 1)`
         ctx.fill()
     }
 }
@@ -167,7 +167,8 @@ function updateCanvas() {
         if (circuit.isOutOfBounds()) {
             decayingCircuits.push(circuit)
             liveCircuits.push(new Circuit())
-        } else {
+        }
+        else {
             liveCircuits.push(circuit)
         }
     })

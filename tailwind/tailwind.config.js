@@ -9,6 +9,6 @@ module.exports = {
             },
         },
     },
-    darkMode: 'media', // Activate dark mode based on the viewer's OS setting
+    darkMode: 'class', // Activate dark mode manually
     plugins: [],
 }

@@ -1,7 +1,0 @@
----
-description: Rules for applying visual styling
-globs:
-alwaysApply: false
----
-
-- Use TailwindCSS for all visual styling

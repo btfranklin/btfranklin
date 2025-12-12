@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B.T. Franklin - Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="styles.min.css" rel="stylesheet" />
+    <style>
+        /* Custom scrollbar for a tech feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Full Screen Background Animation -->
+    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
+        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
+    </div>
+    <script async defer src="circuits.js"></script>
+
+    <!-- Main Content Wrapper with Glassmorphism -->
+    <div class="relative min-h-screen flex flex-col">
+
+        <!-- Header / Nav -->
+        <div class="container mx-auto px-4 py-8">
+            <a href="index.html"
+                class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline font-mono group transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2 transform transition-transform group-hover:-translate-x-1" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <!-- content -->
+        <div class="container mx-auto px-4 pt-4 pb-12">
+            <div
+                class="backdrop-blur-sm bg-white/70 dark:bg-gray-900/60 p-8 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 transform transition-all hover:scale-[1.005] duration-500 mb-12">
+                <h1
+                    class="text-4xl md:text-6xl font-bold mb-6 font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">
+                    Project Showcase
+                </h1>
+                <p class="text-xl text-zinc-700 dark:text-zinc-300 font-light">
+                    A collection of open-source tools, libraries, and experiments I've built.
+                </p>
+            </div>
+
+            <!-- Active Projects Section -->
+            <h2 class="text-3xl font-bold mb-8 font-mono text-zinc-800 dark:text-zinc-100 flex items-center">
+                <span class="border-b-4 border-cyan-500 pb-2">Active Projects</span>
+            </h2>
+
+            <!-- Larger Grid for Active Projects -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+
+                <!-- promptdown -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/promptdown/main/.github/social%20preview/promptdown_social_preview.png"
+                            alt="promptdown"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/promptdown" target="_blank"
+                                    class="hover:text-cyan-500 transition-colors">promptdown</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Writing complex prompts shouldn't feel like guessing. I built this to treat prompts like
+                            code—structured, modular, and written in markdown, so you can compose and test them with the
+                            same rigor as your Python logic.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                December 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- openai-for-ai -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/openai-for-ai/main/.github/social%20preview/openai-for-ai_social_preview.png"
+                            alt="openai-for-ai"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/openai-for-ai" target="_blank"
+                                    class="hover:text-cyan-500 transition-colors">openai-for-ai</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Ever tried to get an LLM to read its own API docs? It's a mess. This CLI tool grabs the
+                            massive OpenAI spec and compiles it into clean, deterministic, AI-friendly HTML blocks that
+                            your agents can actually understand and use.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                October 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- compendiumscribe -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/compendiumscribe/main/.github/social%20preview/compendiumscribe_social_preview.jpg"
+                            alt="Compendium Scribe"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/compendiumscribe" target="_blank"
+                                    class="hover:text-cyan-500 transition-colors">compendiumscribe</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Feeding random text to an LLM is easy; building a reliable knowledge base is hard. This tool
+                            automates the creation of structured, domain-specific knowledge "compendiums" to ground your
+                            AI applications in reality.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                October 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- fakedin -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/fakedin/main/.github/social%20preview/fakedin_social_preview.jpg"
+                            alt="fakedin"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/fakedin" target="_blank"
+                                    class="hover:text-cyan-500 transition-colors">fakedin</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Need to test an HR system? Generating believable test data is a pain. `fakedin` uses AI and
+                            Faker to hallucinate shockingly realistic résumés and job descriptions that look and feel
+                            like the real thing.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in April
+                                2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- spooklight -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/spooklight/main/.github/social%20preview/spooklight_social_preview.jpg"
+                            alt="Spooklight"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/spooklight" target="_blank"
+                                    class="hover:text-cyan-500 transition-colors">spooklight</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            An experiment in generative storytelling. It takes an image and uses multimodal LLMs to
+                            weave a dynamic, unfolding narrative around it, creating a feedback loop between visual and
+                            textual creativity.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in March
+                                2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- pickled_pipeline -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/pickled_pipeline/main/.github/social%20preview/pickled_pipeline_social_preview.jpg"
+                            alt="Pickled Pipeline"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/pickled_pipeline" target="_blank"
+                                    class="hover:text-cyan-500 transition-colors">pickled_pipeline</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Stop re-running your expensive data processing steps every time you change one line of code.
+                            This tool intelligently caches intermediate steps in your pipeline, letting you iterate on
+                            the end of your workflow instantly.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                January 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- coderoller -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/coderoller/main/.github/social%20preview/coderoller_social_preview.jpg"
+                            alt="Coderoller"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/coderoller" target="_blank"
+                                    class="hover:text-cyan-500 transition-colors">coderoller</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Sometimes you just need to feed your entire codebase into ChatGPT. Coderoller smashes your
+                            whole source tree into a single, organized Markdown file so you can drag-and-drop your
+                            context in one go.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                December 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- Archived Projects Section -->
+            <h2 class="text-3xl font-bold mb-8 font-mono text-zinc-500 dark:text-zinc-400 flex items-center">
+                <span class="border-b-4 border-zinc-300 dark:border-zinc-700 pb-2">Archived Projects</span>
+            </h2>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 opacity-80 hover:opacity-100 transition-opacity">
+
+                <!-- hiredar -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/hiredar" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">hiredar</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A complete AI recruiting workspace I built with Django and Celery. It used explainable AI to
+                            match resumes to job descriptions before that was cool.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                November 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- guru-translator -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/guru-translator" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">guru-translator</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A specialized Django application for translating Gurmukhi text to English, focused on
+                            preserving the nuances of the original script.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in June
+                                2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CleverBird -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/CleverBird" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">CleverBird</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Before OpenAI had an official Swift library, I built this. It offered a clean, Swifty
+                            interface for chat completions, embeddings, and token management.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in July
+                                2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SongSprout -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/SongSprout" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">SongSprout</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            An experimental system for generating procedural music based on "style genotypes," allowing
+                            you to breed songs like digital plants.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ShipShape -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/ShipShape" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">ShipShape</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A procedural generation engine for creating 2D sci-fi spaceship sprites. Useful for
+                            populating game worlds with infinite unique vessels.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Greebler -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/Greebler" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Greebler</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Generates those little mechanical details (greebles) that make sci-fi surfaces look complex.
+                            A fun exercise in recursive 2D geometry.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Aesthete -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/Aesthete" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Aesthete</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A Swift library for modeling and generating aesthetic concepts like color palettes and
+                            schemes, making generative art more harmonious.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Wordsmith -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/Wordsmith" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Wordsmith</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A tool for procedural text generation—names, places, items. Perfect for when you need a
+                            thousand unique names for your RPG NPCs.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                September 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- StringBooster -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/StringBooster" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">StringBooster</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A utility belt for Swift Strings. It adds all those missing convenience methods you wish the
+                            standard library had for text manipulation.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in May
+                                2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PersonalityKit -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/PersonalityKit" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">PersonalityKit</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Simulates human-like personalities using the Big Five (OCEAN) model. Great for giving game
+                            characters distinct behavioral traits.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ControlledChaos -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/ControlledChaos" target="_blank"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">ControlledChaos</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            RNG is boring. This library provides sophisticated randomness tools, including Gaussian
+                            distributions and probability bags, for more organic procedural generation.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+        <footer class="text-center py-6 text-zinc-500 dark:text-zinc-400 text-sm">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS &amp;
+                Coffee.
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

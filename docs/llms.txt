@@ -7,6 +7,7 @@ This file highlights key, inference-ready resources from btfranklin.com.
 ## Essential Content
 
 - [B.T. Franklin Homepage](https://btfranklin.com/)
+- [Software Projects](https://btfranklin.com/projects.html): A curated showcase of active and archived open-source projects with detailed descriptions.
 - [Guide to llms.txt](https://btfranklin.com/llms-txt.html): An explanation of the llms.txt format and its purpose.
 
 ## Cheat Sheets

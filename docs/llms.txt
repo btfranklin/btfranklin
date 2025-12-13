@@ -6,15 +6,15 @@ This file highlights key, inference-ready resources from btfranklin.com.
 
 ## Essential Content
 
-- [B.T. Franklin Homepage](https://btfranklin.com/)
-- [Software Projects](https://btfranklin.com/projects.html): A curated showcase of active and archived open-source projects with detailed descriptions.
-- [Guide to llms.txt](https://btfranklin.com/llms-txt.html): An explanation of the llms.txt format and its purpose.
+- [B.T. Franklin Homepage](https://btfranklin.info/)
+- [Software Projects](https://btfranklin.info/projects.html): A curated showcase of active and archived open-source projects with detailed descriptions.
+- [Guide to llms.txt](https://btfranklin.info/llms-txt.html): An explanation of the llms.txt format and its purpose.
 
 ## Cheat Sheets
 
-- [Django CLI Commands Cheat Sheet](https://btfranklin.com/cheat-sheets/django-cli-commands.html): Quick reference for common Django command-line operations.
-- [Django Project Structure Cheat Sheet](https://btfranklin.com/cheat-sheets/django-project-structure.html): A guide to organizing Django projects.
-- [Django Step-by-Step Guide](https://btfranklin.com/cheat-sheets/django-step-by-step.html): A sequential walkthrough for setting up and developing with Django.
+- [Django CLI Commands Cheat Sheet](https://btfranklin.info/cheat-sheets/django-cli-commands.html): Quick reference for common Django command-line operations.
+- [Django Project Structure Cheat Sheet](https://btfranklin.info/cheat-sheets/django-project-structure.html): A guide to organizing Django projects.
+- [Django Step-by-Step Guide](https://btfranklin.info/cheat-sheets/django-step-by-step.html): A sequential walkthrough for setting up and developing with Django.
 
 ## OPTIONAL
 

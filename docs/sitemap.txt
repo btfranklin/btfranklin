@@ -1,4 +1,5 @@
 https://btfranklin.info/index.html
+https://btfranklin.info/projects.html
 https://btfranklin.info/cheat-sheets/index.html
 https://btfranklin.info/cheat-sheets/django-cli-commands.html
 https://btfranklin.info/cheat-sheets/django-project-structure.html

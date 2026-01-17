@@ -14,6 +14,7 @@ gh repo list btfranklin --visibility=public --limit 100 --json name,description,
 When processing the list, apply these filters:
 *   **Exclude the website repo**: Ignore `btfranklin` to avoid "inception".
 *   **Exclude forks**: Ignore any repo where `isFork` is `true` (e.g., `cerebras-moa`).
+*   **Exclude example repos**: Skip any repo with `example` in the name (case-insensitive).
 *   **Separate by Status**: Split the remaining repos into two groups based on `isArchived`.
 
 ## 3. Sorting Strategy
@@ -24,9 +25,11 @@ When processing the list, apply these filters:
 
 ## 4. Crafting Descriptions
 **Do not just use the repository description.**
-*   Fetch the `README.md` for proper context (e.g., `gh repo view <repo> --json readme`).
+*   Fetch the `README.md` for proper context (e.g., `gh api repos/btfranklin/<repo>/readme --jq .content | base64 -D`).
 *   **Voice**: Write a custom, enthusiastic 1-2 sentence description in the first person ("I built this because..."). Avoid generic "A library for..." text.
+*   **Tone match**: Keep descriptions punchy and conversational, mirroring the existing voice across the page.
 *   **Format**: Keep it punchy.
+*   **Only for new projects**: If a project already exists on the page, keep its description exactly as-is.
 
 ## 5. Handling Images
 Check for a social preview image for **Active Projects**.

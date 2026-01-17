@@ -3,9 +3,10 @@
     "defaults"
   ],
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
   },
   "scripts": {
-    "build:css": "npx tailwindcss build -o ../docs/styles.min.css"
+    "build:css": "npx tailwindcss -i ./input.css -o ../docs/styles.min.css"
   }
 }

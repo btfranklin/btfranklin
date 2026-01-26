@@ -35,6 +35,8 @@ When processing the list, apply these filters:
 Check for a social preview image for **Active Projects**.
 *   **Standard Path**: `https://raw.githubusercontent.com/btfranklin/<repo>/main/.github/social%20preview/<repo>_social_preview.[jpg|png]`
 *   **Verification**: Run a quick `curl -I` to verify the image exists (check both `.jpg` and `.png`) before including it.
+*   **Naming edge case**: If the standard path 404s, also try the same filename with `-` replaced by `_`
+    (some repos still use the underscore form, e.g., `wordsmith_engine_social_preview.jpg`).
 *   **HTML**: If it exists, use the "Image Div" structure (see below).
 
 ## 6. HTML Structure

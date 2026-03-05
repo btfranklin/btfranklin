@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update Projects Page"
+  short_description: "Maintains docs/projects.html from GitHub repo metadata"
+  default_prompt: "Update docs/projects.html using the update-projects-page workflow skill."

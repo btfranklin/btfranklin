@@ -22,6 +22,7 @@ gh repo list btfranklin \
 ## 2. Apply Filtering Rules
 
 - Exclude the website repo: ignore `btfranklin`
+- Exclude the public skills repo: ignore `skills`
 - Exclude forks: ignore repos where `isFork` is `true`
 - Exclude example repos: ignore names containing `example` (case-insensitive)
 - Split the remaining repos into active vs archived based on `isArchived`

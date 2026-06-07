@@ -59,7 +59,7 @@ class MyTemplateView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['custom_data'] = "This is custom data"
         return context
-            
+
             </code></pre>
                     </li>
                 </ul>
@@ -81,7 +81,7 @@ urlpatterns = [
     path('hello-class/', views.MyView.as_view(), name='my-class-view'),
     path('', views.MyTemplateView.as_view(), name='home'),
 ]
-            
+
             </code></pre>
                     </li>
                 </ul>

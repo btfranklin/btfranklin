@@ -3,10 +3,13 @@
     "defaults"
   ],
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.18",
-    "tailwindcss": "^4.1.18"
+    "@tailwindcss/cli": ">=4.3.0",
+    "html-validate": ">=11.5.2",
+    "tailwindcss": ">=4.3.0"
   },
   "scripts": {
-    "build:css": "npx tailwindcss -i ./input.css -o ../docs/styles.min.css"
+    "build:css": "npx tailwindcss -i ./input.css -o ../docs/styles.min.css",
+    "validate": "npm run validate:html && node ./scripts/validate-site.mjs",
+    "validate:html": "html-validate --config ./.htmlvalidate.json '../docs/**/*.html'"
   }
 }

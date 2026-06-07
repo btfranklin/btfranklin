@@ -1,11 +1,11 @@
 ---
 name: update-projects-page
-description: Update `docs/projects.html` for btfranklin.info by gathering repository metadata with `gh`, filtering and sorting projects, writing project descriptions, handling social preview images, and preserving the active/archived card layout. Use for any task that adds, removes, or refreshes entries on the projects page. Do not use for unrelated pages or general site copy updates.
+description: Update the projects landing page at `docs/index.html` for btfranklin.info by gathering repository metadata with `gh`, filtering and sorting projects, writing project descriptions, handling social preview images, and preserving the active/archived card layout. Use for any task that adds, removes, or refreshes project entries on the site landing page. Do not use for unrelated pages or general site copy updates.
 ---
 
 # Update Projects Page
 
-Maintain `docs/projects.html` with consistent data quality and visual structure.
+Maintain the projects landing page at `docs/index.html` with consistent data quality and visual structure.
 Follow this workflow exactly to keep project cards accurate and aligned with existing page conventions.
 
 ## 1. Fetch Authoritative Data
@@ -65,7 +65,8 @@ For active projects, check whether a social preview image exists.
 
 ## 6. Preserve Projects Page Layout
 
-Use the existing two-section structure in `docs/projects.html`:
+Use the existing two-section structure in `docs/index.html`.
+The projects page is the site landing page; do not create or update `docs/projects.html`.
 
 ### Active Projects
 

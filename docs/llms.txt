@@ -2,12 +2,13 @@
 
 > Curated content for AI inference, focusing on software architecture, AI technologies, and development guides.
 
-This file highlights key, inference-ready resources from btfranklin.com.
+This file highlights key, inference-ready resources from btfranklin.info.
 
 ## Essential Content
 
-- [B.T. Franklin Homepage](https://btfranklin.info/)
-- [Software Projects](https://btfranklin.info/projects.html): A curated showcase of active and archived open-source projects with detailed descriptions.
+- [Software Projects](https://btfranklin.info/): A curated showcase of active and archived open-source projects with detailed descriptions.
+- [Notes](https://btfranklin.info/notes.html): Selected standalone writing, guides, cheat sheets, and web artifacts.
+- [About B.T. Franklin](https://btfranklin.info/about.html): Background, public project focus areas, computational creativity research, contact links, and CliftonStrengths.
 - [Guide to llms.txt](https://btfranklin.info/llms-txt.html): An explanation of the llms.txt format and its purpose.
 
 ## Cheat Sheets

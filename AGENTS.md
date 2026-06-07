@@ -9,6 +9,7 @@
 ## Build, Test, and Development Commands
 - `cd tailwind && npm install` — install Tailwind dependencies once per machine.
 - `npm run build:css` (inside `tailwind/`) — compiles Tailwind utilities into `../docs/styles.min.css`.
+- `npm run validate` (inside `tailwind/`) — verifies generated CSS freshness, static links/assets, semantic page structure, link policy, and crawler metadata.
 - `npx tailwindcss --watch -o ../docs/styles.min.css` — optional watch mode while editing markup or config.
 - `python3 -m http.server 9000 --directory docs` — serves the site locally; visit `http://localhost:9000` to verify content and assets.
 
@@ -19,7 +20,7 @@
 - Static assets live beside their consumers (e.g., `docs/cheat-sheets/`); use lowercase, hyphenated filenames and web-safe formats.
 
 ## Testing Guidelines
-- No automated suite. After each change, run `npm run build:css`, start the local server, and smoke-test in light/dark OS themes plus desktop/mobile breakpoints. Confirm `circuitCanvas` renders without console errors and that `email` obfuscation still injects correctly. Describe manual coverage in your PR.
+- After each change, run `npm run build:css` and `npm run validate` from `tailwind/`, then start the local server and smoke-test desktop/mobile breakpoints. The site intentionally forces dark mode on modern top-level pages, so verify that dark rendering remains correct rather than expecting OS theme switching. Confirm `circuitCanvas` renders without console errors and that `email` obfuscation still injects correctly. Describe manual coverage in your PR.
 
 ## Commit & Pull Request Guidelines
 - Follow the existing history: imperative, single-sentence commit subjects that describe the change (“Remove glow effect…”, “Refactor canvas resizing…”). Group unrelated work into separate commits.

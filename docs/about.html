@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About B.T. Franklin</title>
+    <meta name="description"
+        content="About B.T. Franklin, a software architect and applied AI technologist building open-source AI and creative systems." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link href="styles.min.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
+        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
+    </div>
+    <script async defer src="circuits.js"></script>
+
+    <div class="relative min-h-screen flex flex-col">
+        <header
+            class="sticky top-0 z-20 border-b border-zinc-200/60 dark:border-zinc-800/70 bg-zinc-50/80 dark:bg-gray-950/75 backdrop-blur-md">
+            <div class="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
+                <a href="index.html" class="font-mono text-sm md:text-base font-bold uppercase tracking-wider">
+                    B.T. Franklin
+                </a>
+                <nav class="flex items-center gap-4 md:gap-6 text-xs md:text-sm font-mono uppercase tracking-wider">
+                    <a href="index.html"
+                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Projects</a>
+                    <a href="notes.html"
+                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Notes</a>
+                    <a href="about.html" class="text-cyan-600 dark:text-cyan-300">About Me</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <section class="container mx-auto px-4 pt-12 pb-10 md:pt-18 md:pb-14">
+                <div
+                    class="border border-zinc-200 dark:border-zinc-800 bg-white/75 dark:bg-gray-900/70 backdrop-blur-sm rounded-lg shadow-2xl">
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 items-center border-b border-zinc-200 dark:border-zinc-800 p-6 md:p-8">
+                        <img src="https://avatars.githubusercontent.com/u/23176608?v=4" alt="Portrait of B.T. Franklin"
+                            class="mx-auto lg:mx-0 h-44 w-44 rounded-full border-4 border-cyan-500/70 object-cover shadow-xl">
+                        <div>
+                            <h1
+                                class="font-mono text-3xl md:text-4xl font-bold leading-tight text-zinc-950 dark:text-white">
+                                B.T. Franklin
+                            </h1>
+                            <p class="mt-3 text-2xl md:text-3xl text-zinc-700 dark:text-zinc-300 font-light">
+                                Software Architect <span class="text-cyan-500">&amp;</span> Applied AI Technologist
+                            </p>
+                            <p class="mt-6 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300 max-w-4xl">
+                                I'm a
+                                <span class="font-bold text-blue-600 dark:text-blue-400">passionate software developer</span>
+                                and
+                                <span class="font-bold text-blue-600 dark:text-blue-400">entrepreneur</span>
+                                specializing in
+                                <span class="font-bold text-blue-600 dark:text-blue-400">AI-driven applications</span>.
+                                With over
+                                <span class="font-bold text-blue-600 dark:text-blue-400">two decades of experience</span>
+                                in the tech industry, I've had the opportunity to work on a
+                                <span class="font-bold text-blue-600 dark:text-blue-400">diverse range of projects</span>, from
+                                <span class="font-bold text-blue-600 dark:text-blue-400">game development</span> to
+                                <span class="font-bold text-blue-600 dark:text-blue-400">enterprise software</span> to
+                                <span class="font-bold text-blue-600 dark:text-blue-400">generative art</span> and
+                                <span class="font-bold text-blue-600 dark:text-blue-400">music</span>.
+                            </p>
+                            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center text-center">
+                                <div>
+                                    <h2
+                                        class="text-sm uppercase tracking-widest font-mono text-zinc-500 dark:text-zinc-400 mb-2">
+                                        Currently
+                                    </h2>
+                                    <p class="text-zinc-700 dark:text-zinc-300">
+                                        Software Architect &amp; AI Tech Lead at Zilliant
+                                    </p>
+                                </div>
+                                <div>
+                                    <h2
+                                        class="text-sm uppercase tracking-widest font-mono text-zinc-500 dark:text-zinc-400 mb-2">
+                                        Connect
+                                    </h2>
+                                    <div class="flex justify-center space-x-4">
+                                        <a href="https://www.linkedin.com/in/btfranklin/" aria-label="btfranklin on LinkedIn"
+                                            title="btfranklin on LinkedIn" rel="nofollow noopener noreferrer"
+                                            target="_blank" class="group">
+                                            <div
+                                                class="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-700 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-blue-500">
+                                                <svg class="h-8 w-8 text-blue-700 dark:text-blue-400" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                                                    fill="currentColor">
+                                                    <path
+                                                        d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        <a href="https://github.com/btfranklin" aria-label="btfranklin on GitHub"
+                                            title="btfranklin on GitHub" target="_blank" rel="noopener noreferrer"
+                                            class="group">
+                                            <div
+                                                class="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-700 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-gray-400">
+                                                <svg class="h-8 w-8 text-gray-900 dark:text-white" aria-hidden="true"
+                                                    viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                                    fill="currentColor">
+                                                    <path
+                                                        d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        <a href="https://bsky.app/profile/btfranklin.info" aria-label="btfranklin.info on BlueSky"
+                                            title="btfranklin.info on BlueSky" target="_blank" rel="noopener noreferrer"
+                                            class="group">
+                                            <div
+                                                class="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-700 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-blue-500">
+                                                <svg class="h-8 w-8 text-blue-500 dark:text-blue-400"
+                                                    viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                                    fill="currentColor">
+                                                    <path
+                                                        d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948" />
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2
+                                        class="text-sm uppercase tracking-widest font-mono text-zinc-500 dark:text-zinc-400 mb-2">
+                                        Email
+                                    </h2>
+                                    <span id="email" class="inline-flex"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 md:p-8">
+                        <div class="space-y-5 max-w-4xl">
+                            <section>
+                                <h2 class="font-mono text-lg text-cyan-600 dark:text-cyan-300 mb-2">Applied AI</h2>
+                                <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                    I care about turning LLM capabilities into understandable tools, stable
+                                    workflows, and useful interfaces instead of demos that only work once.
+                                </p>
+                            </section>
+                            <section>
+                                <h2 class="font-mono text-lg text-cyan-600 dark:text-cyan-300 mb-2">Creative Systems</h2>
+                                <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                    A lot of my work explores generation, simulation, procedural structure, and the
+                                    boundary between deterministic tools and creative output.
+                                </p>
+                            </section>
+                            <section>
+                                <h2 class="font-mono text-lg text-cyan-600 dark:text-cyan-300 mb-2">Computational Creativity</h2>
+                                <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                    I have presented my independent research in computational creativity
+                                    internationally at the Generative Art Conference and Computer Simulation of
+                                    Musical Creativity Conference, covering generative music,
+                                    behavioral-data-driven text generation, and AI-driven visual storytelling.
+                                </p>
+                            </section>
+                            <section>
+                                <h2 class="font-mono text-lg text-cyan-600 dark:text-cyan-300 mb-2">Open Source</h2>
+                                <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                    My public repositories show a long arc from Swift creative libraries to current
+                                    Python, TypeScript, JavaScript, Django, and agentic AI projects.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container mx-auto px-4 py-12">
+                <h2 class="text-3xl font-bold mb-8 text-center font-mono text-zinc-800 dark:text-zinc-100">
+                    <span class="border-b-4 border-purple-500 pb-2">My CliftonStrengths</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div
+                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md border-t-4 border-blue-600 hover:shadow-lg transition-shadow">
+                        <div class="bg-blue-600/10 dark:bg-blue-600/20 p-4 text-center">
+                            <h3 class="text-blue-700 dark:text-blue-300 font-bold text-lg uppercase tracking-wider">
+                                Futuristic</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
+                                Visionary dreamer, sees detailed and inspirational visions of the future, energizes
+                                self and others.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md border-t-4 border-amber-500 hover:shadow-lg transition-shadow">
+                        <div class="bg-amber-500/10 dark:bg-amber-500/20 p-4 text-center">
+                            <h3 class="text-amber-700 dark:text-amber-300 font-bold text-lg uppercase tracking-wider">
+                                Activator</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
+                                Impatient for action, believes that only action leads to performance and learning, eager
+                                to take the next step.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md border-t-4 border-emerald-600 hover:shadow-lg transition-shadow">
+                        <div class="bg-emerald-600/10 dark:bg-emerald-600/20 p-4 text-center">
+                            <h3
+                                class="text-emerald-700 dark:text-emerald-300 font-bold text-lg uppercase tracking-wider">
+                                Intellection</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
+                                Enjoys thinking and mental activity, cherishes introspective time alone for musing and
+                                reflection.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md border-t-4 border-violet-600 hover:shadow-lg transition-shadow">
+                        <div class="bg-violet-600/10 dark:bg-violet-600/20 p-4 text-center">
+                            <h3 class="text-violet-700 dark:text-violet-300 font-bold text-lg uppercase tracking-wider">
+                                Strategic</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
+                                Possesses a distinct way of thinking, sees patterns and evaluates potential obstacles,
+                                selecting the best strategy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md border-t-4 border-red-600 hover:shadow-lg transition-shadow">
+                        <div class="bg-red-600/10 dark:bg-red-600/20 p-4 text-center">
+                            <h3 class="text-red-700 dark:text-red-300 font-bold text-lg uppercase tracking-wider">
+                                Learner</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
+                                Energized by the process of learning, enjoys the journey from ignorance to competence,
+                                thrives in dynamic environments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center py-8 text-zinc-500 dark:text-zinc-400 text-sm">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS, Coffee, and Codex.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const emailAddress = 'brandon.franklin' + '&#64;' + 'gmail.com'
+        const emailLink = `
+            <a href="mailto:${emailAddress}" title="Email B.T. Franklin" class="group inline-flex">
+                <span class="inline-flex bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-700 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-cyan-500">
+                    <svg class="h-8 w-8 text-cyan-600 dark:text-cyan-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"></path>
+                        <path d="m22 8-9.1 5.7a1.8 1.8 0 0 1-1.8 0L2 8"></path>
+                    </svg>
+                </span>
+            </a>`
+        document.getElementById('email').innerHTML = emailLink
+    </script>
+</body>
+
+</html>

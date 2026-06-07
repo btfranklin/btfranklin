@@ -9,6 +9,6 @@ module.exports = {
             },
         },
     },
-    darkMode: 'class', // Activate dark mode manually
+    darkMode: 'class', // Site intentionally forces dark mode on top-level pages
     plugins: [],
 }

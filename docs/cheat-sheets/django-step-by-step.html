@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,13 +8,14 @@
     <link href="../styles.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-gray-100 mb-10">
+<body
+    class="bg-gray-100 mb-10 px-4 max-w-full overflow-x-hidden [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_pre]:whitespace-pre [&_code]:break-words">
 
-    <h1 class="text-4xl font-bold text-center text-gray-800 mt-10 mb-6">Django Step-by-Step Process</h1>
+    <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mt-10 mb-6">Django Step-by-Step Process</h1>
 
-    <div class="flex justify-center">
-        <ol class="list-decimal list-inside max-w-4xl">
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+    <div class="flex justify-center max-w-full">
+        <ol class="list-decimal list-outside ml-5 max-w-4xl w-full">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Update or Create
                     the Model:</strong>
                 <ul>
@@ -37,7 +38,7 @@ class Comment(models.Model):
                     </li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Create Database Migrations:</strong>
                 <ul>
                     <li><strong>Command</strong>: <code>python manage.py makemigrations</code></li>
@@ -47,7 +48,7 @@ class Comment(models.Model):
                     </li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Apply the Migrations:</strong>
                 <ul>
                     <li><strong>Command</strong>: <code>python manage.py migrate</code></li>
@@ -56,7 +57,7 @@ class Comment(models.Model):
                     <li><strong>Action</strong>: Execute this command to apply the newly created migrations.</li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Update Admin Interface</strong> (Optional but recommended):
                 <ul>
                     <li><strong>Location</strong>: <code>admin.py</code></li>
@@ -72,7 +73,7 @@ admin.site.register(Comment)
                     </li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Create or Update Forms</strong> (if user input is required):
                 <ul>
                     <li><strong>Location</strong>: <code>forms.py</code></li>
@@ -91,7 +92,7 @@ class CommentForm(forms.ModelForm):
                     </li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Update or Create Views:</strong>
                 <ul>
                     <li><strong>Location</strong>: <code>views.py</code></li>
@@ -119,7 +120,7 @@ def post_detail(request, post_id):
                     </li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Update Templates:</strong>
                 <ul>
                     <li><strong>Location</strong>: <code>templates/</code></li>
@@ -145,7 +146,7 @@ def post_detail(request, post_id):
                     </li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Test Your Changes:</strong>
                 <ul>
                     <li><strong>Action</strong>: Test the new functionality in your development environment to ensure
@@ -153,7 +154,7 @@ def post_detail(request, post_id):
                         (views, templates).</li>
                 </ul>
             </li>
-            <li class="m-4 bg-white rounded-lg shadow-lg p-6">
+            <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
                 <strong class="text-xl text-gray-700">Commit Changes:</strong>
                 <ul>
                     <li><strong>Action</strong>: Commit your changes to version control (e.g., git) after testing.</li>

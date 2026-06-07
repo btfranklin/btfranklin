@@ -4,32 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B.T. Franklin - Software Architect and Applied AI Technologist</title>
+    <title>B.T. Franklin - Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
         rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link href="styles.min.css" rel="stylesheet" />
-    <style>
-        /* Custom scrollbar for a tech feel */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #4b5563;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280;
-        }
-    </style>
 </head>
 
 <body
@@ -44,261 +26,700 @@
     <!-- Main Content Wrapper with Glassmorphism -->
     <div class="relative min-h-screen flex flex-col">
 
-        <!-- Hero Section -->
-        <div class="container mx-auto px-4 pt-20 pb-12 flex-grow flex flex-col justify-center items-start min-h-[80vh]">
-            <div
-                class="backdrop-blur-sm bg-white/70 dark:bg-gray-900/60 p-8 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 max-w-4xl transform transition-all hover:scale-[1.01] duration-500">
-                <h1
-                    class="text-5xl md:text-7xl font-bold mb-6 font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">
+        <!-- Header / Nav -->
+        <header
+            class="sticky top-0 z-20 border-b border-zinc-200/60 dark:border-zinc-800/70 bg-zinc-50/80 dark:bg-gray-950/75 backdrop-blur-md">
+            <div class="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
+                <a href="index.html" class="font-mono text-sm md:text-base font-bold uppercase tracking-wider">
                     B.T. Franklin
-                </h1>
-                <p class="text-2xl md:text-3xl mb-8 text-zinc-700 dark:text-zinc-300 font-light">
-                    Software Architect <span class="text-cyan-500">&amp;</span> Applied AI Technologist
-                </p>
+                </a>
+                <nav class="flex items-center gap-4 md:gap-6 text-xs md:text-sm font-mono uppercase tracking-wider">
+                    <a href="index.html" class="text-cyan-600 dark:text-cyan-300">Projects</a>
+                    <a href="notes.html"
+                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Notes</a>
+                    <a href="about.html"
+                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">About
+                        Me</a>
+                </nav>
+            </div>
+        </header>
 
-                <div class="mb-8 prose dark:prose-invert max-w-none">
-                    <p class="text-lg leading-relaxed">
-                        I'm a
-                        <span class="font-bold text-blue-600 dark:text-blue-400">passionate software developer</span>
-                        and
-                        <span class="font-bold text-blue-600 dark:text-blue-400">entrepreneur</span>
-                        specializing in
-                        <span class="font-bold text-cyan-600 dark:text-cyan-400">AI-driven applications</span>.
-                        With over
-                        <span class="font-bold">two decades of experience</span>
-                        in the tech industry, I've had the opportunity to work on a
-                        <span class="font-bold">diverse range of projects</span>, from
-                        <span class="font-bold">game development</span> to
-                        <span class="font-bold">enterprise software</span> to
-                        <span class="font-bold">generative art</span> and
-                        <span class="font-bold">music</span>.
-                    </p>
-                </div>
+        <main class="container mx-auto px-4 pt-10 pb-12 flex-grow">
+            <h1 class="sr-only">
+                Projects
+            </h1>
 
-                <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
-                    <div>
-                        <h3 class="text-sm uppercase tracking-widest font-mono text-zinc-500 dark:text-zinc-400 mb-2">
-                            Connect</h3>
-                        <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/btfranklin/" title="btfranklin on LinkedIn"
-                                rel="nofollow noopener" target="_blank" class="group">
-                                <div
-                                    class="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-700 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-blue-500">
-                                    <svg class="h-8 w-8 text-blue-700 dark:text-blue-400" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
-                                        <path
-                                            d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z">
-                                        </path>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="https://github.com/btfranklin" title="btfranklin on GitHub" target="_blank"
-                                rel="noopener noreferrer" class="group">
-                                <div
-                                    class="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-700 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-gray-400">
-                                    <svg class="h-8 w-8 text-gray-900 dark:text-white" aria-hidden="true"
-                                        viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                                        <path
-                                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="https://bsky.app/profile/btfranklin.bsky.social" title="btfranklin on BlueSky"
-                                target="_blank" rel="noopener noreferrer" class="group">
-                                <div
-                                    class="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-700 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-blue-500">
-                                    <svg class="h-8 w-8 text-blue-500 dark:text-blue-400" viewBox="0 0 16 16"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                                        <path
-                                            d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948" />
-                                    </svg>
-                                </div>
-                            </a>
+            <!-- Active Projects Section -->
+            <h2 class="text-3xl font-bold mb-8 font-mono text-zinc-800 dark:text-zinc-100 flex items-center">
+                <span class="border-b-4 border-cyan-500 pb-2">Active Projects</span>
+            </h2>
+
+            <!-- Larger Grid for Active Projects -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+                <!-- personalitygen -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/personalitygen/main/.github/social%20preview/personalitygen_social_preview.jpg"
+                            alt="Personalitygen"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/personalitygen" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">personalitygen</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            If you're simulating NPCs or fictional characters, you need them to feel distinct. This
+                            library generates full Big Five personality profiles—complete with life-stage biases and
+                            conflict-resolution styles—for storytelling and testing.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                May 2026</span>
                         </div>
                     </div>
+                </article>
 
-                    <div>
-                        <h3 class="text-sm uppercase tracking-widest font-mono text-zinc-500 dark:text-zinc-400 mb-2">
-                            Email</h3>
-                        <span id="email"
-                            class="text-lg font-mono text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer transition-colors"></span>
+                <!-- pywebview-htmx -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/pywebview-htmx/main/.github/social%20preview/pywebview_htmx_social_preview.jpg"
+                            alt="pywebview-htmx"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            const emailAddress = 'brandon.franklin' + '&#64;' + 'gmail.com'
-            const emailLink = '<a href="mailto:' + emailAddress + '">' + emailAddress + '</a>'
-            document.getElementById('email').innerHTML = emailLink;
-        </script>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/pywebview-htmx" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">pywebview-htmx</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            I wanted HTMX-style ergonomics in desktop apps, so I built this bridge for PyWebview. It
+                            lets me wire `py-*` attributes directly to Python methods and swap HTML responses without
+                            custom front-end glue code.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                May 2026</span>
+                        </div>
+                    </div>
+                </article>
 
-        <!-- Projects Section -->
-        <div class="container mx-auto px-4 py-12">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center font-mono text-zinc-800 dark:text-zinc-100">
-                    <span class="border-b-4 border-cyan-500 pb-2">Things I've Made</span>
-                </h2>
+                <!-- release-notes-scribe -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/release-notes-scribe/main/.github/social%20preview/release_notes_scribe_social_preview.jpg"
+                            alt="Release Notes Scribe"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/release-notes-scribe" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">release-notes-scribe</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Releases should not start with a blank page, so I built this GitHub Action to draft release
+                            notes from tag diffs using the OpenAI Responses API. It pulls commit messages and focused
+                            diff slices into a clean draft you can ship fast.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                May 2026</span>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <!-- Marquee Projects -->
-                    <a href="https://github.com/btfranklin/compendiumscribe" target="_blank" rel="noopener noreferrer"
-                        class="group relative block h-64 rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                <!-- paintcan -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/paintcan/main/.github/social%20preview/paintcan_social_preview.jpg"
+                            alt="PaintCan"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/paintcan" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">paintcan</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Colors are hard. This library makes them easy. It provides a Pythonic API for HSBA colors
+                            and includes factory methods for generating harmonious color schemes like split
+                            complementary, triadic, and monochromatic palettes.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                May 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- compendiumscribe -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
                         <img src="https://raw.githubusercontent.com/btfranklin/compendiumscribe/main/.github/social%20preview/compendiumscribe_social_preview.jpg"
                             alt="Compendium Scribe"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="text-white">
-                                <h3 class="text-xl font-bold font-mono mb-1">Compendium Scribe</h3>
-                                <p class="text-sm text-gray-300">Python tool for creating AI domain knowledge bases</p>
-                            </div>
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/compendiumscribe" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">compendiumscribe</a>
+                            </h2>
                         </div>
-                    </a>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Feeding random text to an LLM is easy; building a reliable knowledge base is hard. This tool
+                            automates the creation of structured, domain-specific knowledge "compendiums" to ground your
+                            AI applications in reality.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                May 2026</span>
+                        </div>
+                    </div>
+                </article>
 
-                    <a href="https://github.com/btfranklin/spooklight" target="_blank" rel="noopener noreferrer"
-                        class="group relative block h-64 rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                <!-- agentic-django -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/agentic-django/main/.github/social%20preview/agentic_django_social_preview.jpg"
+                            alt="Agentic Django"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/agentic-django" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">agentic-django</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Building agentic workflows in Django shouldn't require a pile of custom glue. This package
+                            wraps the OpenAI Agents SDK with Django-native sessions, runs, and background tasks, so you
+                            can kick off multi-step agents and poll status from any UI.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                April 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- wordsmith-engine -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/wordsmith-engine/main/.github/social%20preview/wordsmith_engine_social_preview.jpg"
+                            alt="Wordsmith Engine"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/wordsmith-engine" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">wordsmith-engine</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            A composable, deterministic-friendly text-generation toolkit. I ported (and expanded) my
+                            original Swift `Wordsmith` library to Python because I needed reliable, seeded procedural
+                            name and title generation for other projects.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                February 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- robot_ecology_lab -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/robot_ecology_lab/main/.github/social%20preview/robot_ecology_lab_social_preview.jpg"
+                            alt="Robot Ecology Lab"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/robot_ecology_lab" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">robot_ecology_lab</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            I rebuilt a simulation I first wrote in 1996 because I wanted to watch emergent behavior in
+                            a browser instead of a terminal. It turns a 50x50 world into an evolving robot ecosystem
+                            with genes, combat, mating, and dramatic population crashes.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                February 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- nanorobotics_simulator -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/nanorobotics_simulator/main/.github/social%20preview/nanorobotics_simulator_social_preview.jpg"
+                            alt="Nanorobotics Simulator"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/nanorobotics_simulator" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">nanorobotics_simulator</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            I ported my old nanobot sandbox to HTML-first TypeScript so I could preserve the chaos and
+                            make it easier to extend. The neon lab UI lets you track swarm behavior, signals, deposits,
+                            and camera movement in real time.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                February 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- promptdown -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
+                        <img src="https://raw.githubusercontent.com/btfranklin/promptdown/main/.github/social%20preview/promptdown_social_preview.png"
+                            alt="Promptdown"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/promptdown" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">promptdown</a>
+                            </h2>
+                        </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Writing complex prompts shouldn't feel like guessing. I built this to treat prompts like
+                            code—structured, modular, and written in markdown, so you can compose and test them with the
+                            same rigor as your Python logic.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                January 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- spooklight -->
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col transform transition-all hover:shadow-xl hover:scale-[1.01] duration-300">
+                    <div class="h-64 overflow-hidden relative group">
                         <img src="https://raw.githubusercontent.com/btfranklin/spooklight/main/.github/social%20preview/spooklight_social_preview.jpg"
                             alt="Spooklight"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="text-white">
-                                <h3 class="text-xl font-bold font-mono mb-1">Spooklight</h3>
-                                <p class="text-sm text-gray-300">Image-driven generative storytelling engine</p>
-                            </div>
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                                <a href="https://github.com/btfranklin/spooklight" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="hover:text-cyan-500 transition-colors">spooklight</a>
+                            </h2>
                         </div>
-                    </a>
-                </div>
-
-                <div
-                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md p-6 border border-zinc-200 dark:border-zinc-700">
-                    <ul class="divide-y divide-zinc-200 dark:divide-zinc-700">
-                        <li class="py-4 group">
-                            <a href="projects.html"
-                                class="text-xl font-semibold text-blue-600 dark:text-blue-400 group-hover:underline font-mono">
-                                My Software Projects
-                            </a>
-                            <p class="mt-1 text-zinc-600 dark:text-gray-300">
-                                Explore my collection of repositories on GitHub, showcasing a range of projects and
-                                contributions to the open-source community.
-                            </p>
-                        </li>
-                        <li class="py-4 group">
-                            <a href="cheat-sheets/"
-                                class="text-xl font-semibold text-blue-600 dark:text-blue-400 group-hover:underline font-mono">
-                                My Django Cheat Sheets
-                            </a>
-                            <p class="mt-1 text-zinc-600 dark:text-gray-300">
-                                Access my personal collection of Django cheat sheets, covering essential commands,
-                                project
-                                structure, and step-by-step processes for efficient development.
-                            </p>
-                        </li>
-                        <li class="py-4 group">
-                            <a href="llms-txt.html"
-                                class="text-xl font-semibold text-blue-600 dark:text-blue-400 group-hover:underline font-mono">
-                                What is llms.txt? A Guide for AI-Friendly Content
-                            </a>
-                            <p class="mt-1 text-zinc-600 dark:text-gray-300">
-                                Learn how to create an effective <span
-                                    class="font-mono text-sm bg-zinc-200 dark:bg-zinc-700 px-1 rounded">llms.txt</span>
-                                — a curated map for
-                                LLMs to find your site’s most valuable content.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
+                        <p class="text-lg text-zinc-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                            An experiment in generative storytelling. It takes an image and uses multimodal LLMs to
+                            weave a dynamic, unfolding narrative around it, creating a feedback loop between visual and
+                            textual creativity.
+                        </p>
+                        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
+                            <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 block">Last updated in
+                                December 2025</span>
+                        </div>
+                    </div>
+                </article>
             </div>
 
-            <!-- CliftonStrengths -->
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold mb-8 text-center font-mono text-zinc-800 dark:text-zinc-100">
-                    <span class="border-b-4 border-purple-500 pb-2">My CliftonStrengths</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                    <div
-                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-md border-t-4 border-blue-600 hover:shadow-lg transition-shadow">
-                        <div class="bg-blue-600/10 dark:bg-blue-600/20 p-4 text-center">
-                            <h3 class="text-blue-700 dark:text-blue-300 font-bold text-lg uppercase tracking-wider">
-                                Futuristic</h3>
-                        </div>
-                        <div class="p-4">
-                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
-                                Visionary dreamer, sees detailed and inspirational visions of the future, energizes
-                                self and others.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div
-                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-md border-t-4 border-amber-500 hover:shadow-lg transition-shadow">
-                        <div class="bg-amber-500/10 dark:bg-amber-500/20 p-4 text-center">
-                            <h3 class="text-amber-700 dark:text-amber-300 font-bold text-lg uppercase tracking-wider">
-                                Activator</h3>
-                        </div>
-                        <div class="p-4">
-                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
-                                Impatient for action, believes that only action leads to performance and learning, eager
-                                to
-                                take the next step.
-                            </p>
-                        </div>
-                    </div>
+            <!-- Archived Projects Section -->
+            <h2 class="text-3xl font-bold mb-8 font-mono text-zinc-500 dark:text-zinc-400 flex items-center">
+                <span class="border-b-4 border-zinc-300 dark:border-zinc-700 pb-2">Archived Projects</span>
+            </h2>
 
-                    <div
-                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-md border-t-4 border-emerald-600 hover:shadow-lg transition-shadow">
-                        <div class="bg-emerald-600/10 dark:bg-emerald-600/20 p-4 text-center">
-                            <h3
-                                class="text-emerald-700 dark:text-emerald-300 font-bold text-lg uppercase tracking-wider">
-                                Intellection</h3>
-                        </div>
-                        <div class="p-4">
-                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
-                                Enjoys thinking and mental activity, cherishes introspective time alone for musing and
-                                reflection.
-                            </p>
-                        </div>
-                    </div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 opacity-80 hover:opacity-100 transition-opacity">
 
-                    <div
-                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-md border-t-4 border-violet-600 hover:shadow-lg transition-shadow">
-                        <div class="bg-violet-600/10 dark:bg-violet-600/20 p-4 text-center">
-                            <h3 class="text-violet-700 dark:text-violet-300 font-bold text-lg uppercase tracking-wider">
-                                Strategic</h3>
-                        </div>
-                        <div class="p-4">
-                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
-                                Possesses a distinct way of thinking, sees patterns and evaluates potential obstacles,
-                                selecting the best strategy.
-                            </p>
+                <!-- openai-for-ai -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/openai-for-ai" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">openai-for-ai</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            I built this CLI to compile the OpenAI OpenAPI spec into deterministic, AI-friendly HTML
+                            blocks before newer OpenAI docs tooling made it obsolete.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                May 2026</span>
                         </div>
                     </div>
+                </article>
 
-                    <div
-                        class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-md border-t-4 border-red-600 hover:shadow-lg transition-shadow">
-                        <div class="bg-red-600/10 dark:bg-red-600/20 p-4 text-center">
-                            <h3 class="text-red-700 dark:text-red-300 font-bold text-lg uppercase tracking-wider">
-                                Learner</h3>
-                        </div>
-                        <div class="p-4">
-                            <p class="text-sm text-zinc-600 dark:text-gray-300 leading-relaxed">
-                                Energized by the process of learning, enjoys the journey from ignorance to competence,
-                                thrives in dynamic environments.
-                            </p>
+                <!-- pickled_pipeline -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/pickled_pipeline" target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+                                pickled_pipeline
+                            </a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Stop re-running your expensive data processing steps every time you change one line of code.
+                            This tool intelligently caches intermediate steps in your pipeline, letting you iterate on
+                            the end of your workflow instantly.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                May 2026</span>
                         </div>
                     </div>
-                </div>
+                </article>
+
+                <!-- repozest -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/repozest" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">repozest</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A solo SaaS reference project I built to explore GitHub App-backed repository intelligence:
+                            architecture, ownership, hotspots, expertise, and deployment automation.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                April 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- fakedin -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/fakedin" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">fakedin</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Need to test an HR system? Generating believable test data is a pain. `fakedin` uses AI and
+                            Faker to hallucinate shockingly realistic résumés and job descriptions that look and feel
+                            like the real thing.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- hiredar -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/hiredar" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">hiredar</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A complete AI recruiting workspace I built with Django and Celery. It used explainable AI to
+                            match resumes to job descriptions before that was cool.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                November 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- guru-translator -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/guru-translator" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">guru-translator</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A specialized Django application for translating Gurmukhi text to English, focused on
+                            preserving the nuances of the original script.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                June 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- coderoller -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/coderoller" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">coderoller</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Sometimes you just need to feed your entire codebase into ChatGPT. Coderoller smashes your
+                            whole source tree into a single, organized Markdown file so you can drag-and-drop your
+                            context in one go.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                December 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CleverBird -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/CleverBird" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">CleverBird</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Before OpenAI had an official Swift library, I built this. It offered a clean, Swifty
+                            interface for chat completions, embeddings, and token management.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                July 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SongSprout -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/SongSprout" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">SongSprout</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            An experimental system for generating procedural music based on "style genotypes," allowing
+                            you to breed songs like digital plants.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ShipShape -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/ShipShape" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">ShipShape</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A procedural generation engine for creating 2D sci-fi spaceship sprites. Useful for
+                            populating game worlds with infinite unique vessels.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Greebler -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/Greebler" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Greebler</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Generates those little mechanical details (greebles) that make sci-fi surfaces look complex.
+                            A fun exercise in recursive 2D geometry.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Aesthete -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/Aesthete" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Aesthete</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A Swift library for modeling and generating aesthetic concepts like color palettes and
+                            schemes, making generative art more harmonious.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Wordsmith -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/Wordsmith" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Wordsmith</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A tool for procedural text generation—names, places, items. Perfect for when you need a
+                            thousand unique names for your RPG NPCs.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                September 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- StringBooster -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/StringBooster" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">StringBooster</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            A utility belt for Swift Strings. It adds all those missing convenience methods you wish the
+                            standard library had for text manipulation.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                May 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PersonalityKit -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/PersonalityKit" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">PersonalityKit</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            Simulates human-like personalities using the Big Five (OCEAN) model. Great for giving game
+                            characters distinct behavioral traits.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2023</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ControlledChaos -->
+                <article
+                    class="bg-zinc-100 dark:bg-zinc-900/50 backdrop-blur-md rounded-xl shadow border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h2 class="text-xl font-bold font-mono mb-2 text-zinc-600 dark:text-zinc-300">
+                            <a href="https://github.com/btfranklin/ControlledChaos" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">ControlledChaos</a>
+                        </h2>
+                        <p class="text-zinc-500 dark:text-gray-500 mb-4 flex-grow text-sm">
+                            RNG is boring. This library provides sophisticated randomness tools, including Gaussian
+                            distributions and probability bags, for more organic procedural generation.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                            <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 block">Last updated in
+                                January 2023</span>
+                        </div>
+                    </div>
+                </article>
+
             </div>
-        </div>
+
+        </main>
 
         <footer class="text-center py-6 text-zinc-500 dark:text-zinc-400 text-sm">
             <p>&copy;
-                <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS &amp;
-                Coffee.
+                <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS, Coffee, and Codex.
             </p>
         </footer>
     </div>
+    <script>
+        const projectCards = document.querySelectorAll('article')
+        projectCards.forEach((card) => {
+            const link = card.querySelector('a[href]')
+            if (!link) {
+                return
+            }
+            card.addEventListener('click', (event) => {
+                if (event.target.closest('a')) {
+                    return
+                }
+                link.click()
+            })
+        })
+    </script>
 </body>
 
 </html>

@@ -18,7 +18,7 @@ This file highlights key, inference-ready resources from btfranklin.info.
 
 - [Django CLI Commands Cheat Sheet](https://btfranklin.info/cheat-sheets/django-cli-commands.html): Quick reference for common Django command-line operations.
 - [Django Project Structure Cheat Sheet](https://btfranklin.info/cheat-sheets/django-project-structure.html): A guide to organizing Django projects.
-- [Django Step-by-Step Guide](https://btfranklin.info/cheat-sheets/django-step-by-step.html): A sequential walkthrough for setting up and developing with Django.
+- [Django Step-by-Step Guide](https://btfranklin.info/cheat-sheets/django-step-by-step.html): A sequential walkthrough for developing a model-backed Django feature.
 
 ## OPTIONAL
 

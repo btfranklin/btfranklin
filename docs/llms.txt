@@ -8,7 +8,7 @@ This file highlights key, inference-ready resources from btfranklin.info.
 ## Essential Content
 
 - [Software Projects](https://btfranklin.info/): A curated showcase of active and archived open-source projects with detailed descriptions.
-- [Experiments](https://btfranklin.info/experiments.html): Small interactive web experiences, simulations, and toys.
+- [Web Toys](https://btfranklin.info/web-toys.html): Small interactive web experiences, simulations, and toys.
 - [Notes](https://btfranklin.info/notes.html): Selected standalone writing, guides, cheat sheets, and web artifacts.
 - [About B.T. Franklin](https://btfranklin.info/about.html): Identity-focused background covering software
   architecture, applied AI, computational creativity, futurist and extropian ideas, travel, contact links, and

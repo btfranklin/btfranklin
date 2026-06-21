@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiments - B.T. Franklin</title>
+    <meta name="description"
+        content="Small web experiments, simulations, and interactive toys by B.T. Franklin." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link href="styles.min.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
+        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
+    </div>
+    <script async defer src="circuits.js"></script>
+
+    <div class="relative min-h-screen flex flex-col">
+        <header
+            class="sticky top-0 z-20 border-b border-zinc-200/60 dark:border-zinc-800/70 bg-zinc-50/80 dark:bg-gray-950/75 backdrop-blur-md">
+            <div
+                class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+                <a href="index.html" class="font-mono text-sm md:text-base font-bold uppercase tracking-wider">
+                    B.T. Franklin
+                </a>
+                <nav
+                    class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-xs md:text-sm font-mono uppercase tracking-wider">
+                    <a href="index.html"
+                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Projects</a>
+                    <a href="experiments.html" class="text-cyan-600 dark:text-cyan-300">Experiments</a>
+                    <a href="notes.html"
+                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Notes</a>
+                    <a href="about.html"
+                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">About
+                        Me</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-4 pt-10 pb-12 flex-grow">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold mb-4 font-mono text-zinc-800 dark:text-zinc-100 flex items-center">
+                    <span class="border-b-4 border-cyan-500 pb-2">Experiments</span>
+                </h1>
+                <p class="max-w-3xl text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    Small interactive web experiences, simulations, and toys that are worth keeping around even when
+                    they are not full product-sized projects.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8">
+                <article
+                    class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700 overflow-hidden md:grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] transform transition-all hover:shadow-xl hover:scale-[1.005] duration-300">
+                    <a href="https://btfranklin.github.io/nanorobotics_simulator/" target="_blank"
+                        rel="noopener noreferrer" title="Open the Nanorobotics Simulator"
+                        class="block min-h-64 bg-gray-950">
+                        <img src="experiments/nanorobotics-simulator-social-preview.jpg"
+                            alt="Nanorobotics Simulator preview"
+                            class="w-full h-full min-h-64 object-cover transition-transform duration-500 hover:scale-105">
+                    </a>
+                    <div class="p-6 md:p-8 flex flex-col">
+                        <p class="font-mono text-xs uppercase tracking-wider text-cyan-600 dark:text-cyan-300 mb-3">
+                            Simulation
+                        </p>
+                        <h2 class="text-2xl md:text-3xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
+                            Nanorobotics Simulator
+                        </h2>
+                        <p class="mt-4 text-zinc-600 dark:text-gray-300 leading-relaxed flex-grow">
+                            A modernized HTML-first TypeScript port of a 1996-era nanobot swarm simulator, with bots
+                            exploring, signaling, and collecting in a toroidal world.
+                        </p>
+                        <div
+                            class="mt-6 pt-5 border-t border-zinc-200 dark:border-zinc-700 flex flex-col sm:flex-row gap-3 sm:items-center">
+                            <a href="https://btfranklin.github.io/nanorobotics_simulator/" target="_blank"
+                                rel="noopener noreferrer" title="Open the Nanorobotics Simulator"
+                                class="inline-flex justify-center rounded-lg bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cyan-500">
+                                Launch experiment
+                            </a>
+                            <a href="https://github.com/btfranklin/nanorobotics_simulator" target="_blank"
+                                rel="noopener noreferrer" title="View nanorobotics_simulator on GitHub"
+                                class="inline-flex justify-center rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 transition-colors hover:border-cyan-500 hover:text-cyan-600 dark:border-zinc-600 dark:text-zinc-200 dark:hover:border-cyan-300 dark:hover:text-cyan-300">
+                                Source repo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <footer class="text-center py-8 text-zinc-500 dark:text-zinc-400 text-sm">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS, Coffee,
+                and Codex.
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

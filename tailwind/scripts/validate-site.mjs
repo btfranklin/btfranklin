@@ -10,6 +10,7 @@ const docsDir = join(repoRoot, 'docs')
 const generatedCss = join(docsDir, 'styles.min.css')
 const primaryPages = new Set([
     'docs/about.html',
+    'docs/experiments.html',
     'docs/index.html',
     'docs/llms-txt.html',
     'docs/notes.html',

@@ -1,4 +1,5 @@
 https://btfranklin.info/index.html
+https://btfranklin.info/experiments.html
 https://btfranklin.info/notes.html
 https://btfranklin.info/about.html
 https://btfranklin.info/llms-txt.html

@@ -1,2 +1,4 @@
 tailwind/node_modules
 .DS_Store
+resume/.pdm-python
+resume/.venv/

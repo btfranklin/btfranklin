@@ -10,6 +10,8 @@ This file highlights key, inference-ready resources from btfranklin.info.
 - [Software Projects](https://btfranklin.info/): A curated showcase of active and archived open-source projects with detailed descriptions.
 - [Creations](https://btfranklin.info/creations.html): Small interactive web experiences, simulations, and toys.
 - [Notes](https://btfranklin.info/notes.html): Selected standalone writing, guides, cheat sheets, and web artifacts.
+- [Resume](https://btfranklin.info/resume/): Structured resume for B.T. Franklin, including applied AI leadership,
+  software architecture, founder-led AI products, open-source AI work, research, education, and skills.
 - [About B.T. Franklin](https://btfranklin.info/about.html): Identity-focused background covering software
   architecture, applied AI, computational creativity, futurist and extropian ideas, travel, contact links, and
   CliftonStrengths.

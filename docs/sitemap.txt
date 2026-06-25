@@ -1,6 +1,7 @@
 https://btfranklin.info/index.html
 https://btfranklin.info/creations.html
 https://btfranklin.info/notes.html
+https://btfranklin.info/resume/
 https://btfranklin.info/about.html
 https://btfranklin.info/llms-txt.html
 https://btfranklin.info/cheat-sheets/index.html

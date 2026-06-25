@@ -1,0 +1,14 @@
+[project]
+name = "btfranklin-resume"
+version = "0.1.0"
+description = "Resume source and build automation for btfranklin.info."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["python-docx>=1.2.0"]
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+build = "python scripts/build_resume.py"
+check = "python scripts/build_resume.py --check"

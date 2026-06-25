@@ -1226,13 +1226,6 @@
       }
     }
   }
-  .hover\:text-cyan-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-700);
-      }
-    }
-  }
   .hover\:text-white {
     &:hover {
       @media (hover: hover) {
@@ -1740,6 +1733,11 @@
       overflow-wrap: break-word;
     }
   }
+  .\[\&_h1\]\:text-center {
+    & h1 {
+      text-align: center;
+    }
+  }
   .\[\&_h1\]\:font-mono {
     & h1 {
       font-family: JetBrains Mono, monospace;
@@ -1767,6 +1765,26 @@
       & h1 {
         color: var(--color-white);
       }
+    }
+  }
+  .\[\&_h1\+p\]\:text-center {
+    & h1+p {
+      text-align: center;
+    }
+  }
+  .\[\&_h1\+p\+p\]\:text-center {
+    & h1+p+p {
+      text-align: center;
+    }
+  }
+  .\[\&_h1\+p\+p\+p\]\:text-center {
+    & h1+p+p+p {
+      text-align: center;
+    }
+  }
+  .\[\&_h1\+p\+p\+p\+p\]\:text-center {
+    & h1+p+p+p+p {
+      text-align: center;
     }
   }
   .\[\&_h2\]\:pt-6 {

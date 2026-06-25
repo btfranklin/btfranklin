@@ -397,8 +397,13 @@ def render_web_page(metadata: dict[str, str], body_html: str) -> str:
             "[&_h1]:font-mono",
             "[&_h1]:text-4xl",
             "[&_h1]:font-bold",
+            "[&_h1]:text-center",
             "[&_h1]:text-zinc-950",
             "dark:[&_h1]:text-white",
+            "[&_h1+p]:text-center",
+            "[&_h1+p+p]:text-center",
+            "[&_h1+p+p+p]:text-center",
+            "[&_h1+p+p+p+p]:text-center",
             "[&_h2]:pt-6",
             "[&_h2]:font-mono",
             "[&_h2]:text-2xl",
@@ -489,7 +494,7 @@ def render_web_page(metadata: dict[str, str], body_html: str) -> str:
                             Download PDF
                         </a>
                         <a href="../downloads/bt-franklin-resume-full.docx"
-                            class="inline-flex items-center rounded-md border border-zinc-300 dark:border-zinc-700 px-4 py-2 text-sm font-mono text-zinc-700 dark:text-zinc-300 hover:border-cyan-500 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors">
+                            class="inline-flex items-center rounded-md border border-cyan-500 px-4 py-2 text-sm font-mono text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500 hover:text-white transition-colors">
                             Download DOCX
                         </a>
                     </div>

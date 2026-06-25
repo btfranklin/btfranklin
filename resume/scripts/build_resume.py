@@ -469,7 +469,7 @@ def render_web_page(metadata: dict[str, str], body_html: str) -> str:
                     class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-xs md:text-sm font-mono uppercase tracking-wider">
                     <a href="../index.html"
                         class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Projects</a>
-                    <a href="../creations.html"
+                    <a href="../creations/"
                         class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Creations</a>
                     <a href="../notes.html"
                         class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Notes</a>

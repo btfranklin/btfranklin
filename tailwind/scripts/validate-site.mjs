@@ -13,7 +13,7 @@ const primaryPages = new Set([
     'docs/index.html',
     'docs/llms-txt.html',
     'docs/notes.html',
-    'docs/creations.html',
+    'docs/creations/index.html',
 ])
 
 const errors = []

@@ -19,13 +19,17 @@ from docx.shared import Inches, Pt, RGBColor
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = SCRIPT_DIR.parent
 REPO_ROOT = PROJECT_DIR.parent
-SOURCE = PROJECT_DIR / "source.md"
+VARIANTS_DIR = PROJECT_DIR / "variants"
+FULL_SOURCE = VARIANTS_DIR / "full.md"
+APPLICATION_SOURCE = VARIANTS_DIR / "application.md"
 DOCS_DIR = REPO_ROOT / "docs"
 WEB_DIR = DOCS_DIR / "resume"
 DOWNLOADS_DIR = DOCS_DIR / "downloads"
 WEB_OUTPUT = WEB_DIR / "index.html"
-DOCX_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume.docx"
-PDF_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume.pdf"
+FULL_DOCX_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-full.docx"
+FULL_PDF_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-full.pdf"
+APPLICATION_DOCX_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-application.docx"
+APPLICATION_PDF_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-application.pdf"
 BODY_FONT = "Helvetica Neue"
 BODY_COLOR = RGBColor(0x0C, 0x0C, 0x0C)
 LINK_COLOR = RGBColor(0x05, 0x63, 0xC1)
@@ -300,7 +304,7 @@ def add_contact_header(document: Document, blocks: list[tuple[str, int | None, s
     return 5
 
 
-def build_styled_docx(body: str) -> None:
+def build_styled_docx(body: str, output_path: Path) -> None:
     blocks = parse_markdown_blocks(body)
     if len(blocks) < 5:
         raise BuildError("Resume source is missing the expected header blocks.")
@@ -355,16 +359,16 @@ def build_styled_docx(body: str) -> None:
             continue
         index += 1
 
-    document.save(DOCX_OUTPUT)
+    document.save(output_path)
 
 
-def convert_markdown_to_html() -> tuple[dict[str, str], str]:
-    source = SOURCE.read_text(encoding="utf-8")
+def convert_markdown_to_html(source_path: Path) -> tuple[dict[str, str], str]:
+    source = source_path.read_text(encoding="utf-8")
     metadata, _body = parse_frontmatter(source)
     body_html = run(
         [
             "pandoc",
-            str(SOURCE),
+            str(source_path),
             "--from=gfm+yaml_metadata_block",
             "--to=html",
         ],
@@ -480,11 +484,11 @@ def render_web_page(metadata: dict[str, str], body_html: str) -> str:
                     </p>
                     {updated_html}
                     <div class="mt-6 flex flex-wrap gap-3">
-                        <a href="../downloads/bt-franklin-resume.pdf"
+                        <a href="../downloads/bt-franklin-resume-full.pdf"
                             class="inline-flex items-center rounded-md border border-cyan-500 px-4 py-2 text-sm font-mono text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500 hover:text-white transition-colors">
                             Download PDF
                         </a>
-                        <a href="../downloads/bt-franklin-resume.docx"
+                        <a href="../downloads/bt-franklin-resume-full.docx"
                             class="inline-flex items-center rounded-md border border-zinc-300 dark:border-zinc-700 px-4 py-2 text-sm font-mono text-zinc-700 dark:text-zinc-300 hover:border-cyan-500 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors">
                             Download DOCX
                         </a>
@@ -504,12 +508,12 @@ def render_web_page(metadata: dict[str, str], body_html: str) -> str:
 """
 
 
-def build_docx() -> None:
-    _metadata, body = parse_frontmatter(SOURCE.read_text(encoding="utf-8"))
-    build_styled_docx(body)
+def build_docx(source_path: Path, output_path: Path) -> None:
+    _metadata, body = parse_frontmatter(source_path.read_text(encoding="utf-8"))
+    build_styled_docx(body, output_path)
 
 
-def build_pdf() -> None:
+def build_pdf(docx_output: Path) -> None:
     with tempfile.TemporaryDirectory(prefix="btfranklin-lo-") as profile_dir:
         run(
             [
@@ -520,13 +524,19 @@ def build_pdf() -> None:
                 "pdf",
                 "--outdir",
                 str(DOWNLOADS_DIR),
-                str(DOCX_OUTPUT),
+                str(docx_output),
             ]
         )
 
 
 def validate_outputs() -> None:
-    for output in [WEB_OUTPUT, DOCX_OUTPUT, PDF_OUTPUT]:
+    for output in [
+        WEB_OUTPUT,
+        FULL_DOCX_OUTPUT,
+        FULL_PDF_OUTPUT,
+        APPLICATION_DOCX_OUTPUT,
+        APPLICATION_PDF_OUTPUT,
+    ]:
         if not output.exists():
             raise BuildError(f"Expected output was not created: {output}")
         if output.stat().st_size == 0:
@@ -536,16 +546,19 @@ def validate_outputs() -> None:
 def build() -> None:
     require_tool("pandoc")
     require_tool("soffice")
-    if not SOURCE.exists():
-        raise BuildError(f"Resume source not found: {SOURCE}")
+    for source_path in [FULL_SOURCE, APPLICATION_SOURCE]:
+        if not source_path.exists():
+            raise BuildError(f"Resume source not found: {source_path}")
 
     WEB_DIR.mkdir(parents=True, exist_ok=True)
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
-    metadata, body_html = convert_markdown_to_html()
+    metadata, body_html = convert_markdown_to_html(FULL_SOURCE)
     WEB_OUTPUT.write_text(render_web_page(metadata, body_html), encoding="utf-8")
-    build_docx()
-    build_pdf()
+    build_docx(FULL_SOURCE, FULL_DOCX_OUTPUT)
+    build_docx(APPLICATION_SOURCE, APPLICATION_DOCX_OUTPUT)
+    build_pdf(FULL_DOCX_OUTPUT)
+    build_pdf(APPLICATION_DOCX_OUTPUT)
     validate_outputs()
 
 
@@ -561,8 +574,10 @@ def main() -> int:
         return 1
 
     print(f"Wrote {WEB_OUTPUT.relative_to(REPO_ROOT)}")
-    print(f"Wrote {DOCX_OUTPUT.relative_to(REPO_ROOT)}")
-    print(f"Wrote {PDF_OUTPUT.relative_to(REPO_ROOT)}")
+    print(f"Wrote {FULL_DOCX_OUTPUT.relative_to(REPO_ROOT)}")
+    print(f"Wrote {FULL_PDF_OUTPUT.relative_to(REPO_ROOT)}")
+    print(f"Wrote {APPLICATION_DOCX_OUTPUT.relative_to(REPO_ROOT)}")
+    print(f"Wrote {APPLICATION_PDF_OUTPUT.relative_to(REPO_ROOT)}")
     return 0
 
 

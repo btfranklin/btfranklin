@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Step-by-Step Process</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link href="/styles.min.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-gray-100 mb-10 px-4 max-w-full overflow-x-hidden [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_pre]:whitespace-pre [&_code]:break-words">
+
+    <main class="mx-auto max-w-4xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mt-10 mb-4">
+            Django Step-by-Step Process
+        </h1>
+
+        <div class="flex justify-center max-w-full">
+            <ol class="list-decimal list-outside ml-5 max-w-4xl w-full">
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Define or Update the Model</strong>
+                    <ul>
+                        <li><strong>Location</strong>: <code>models.py</code></li>
+                        <li><strong>Action</strong>: Add fields, relationships, constraints, and readable string
+                            output.</li>
+                        <li><strong>Example</strong>:
+                            <pre><code>from django.conf import settings
+from django.db import models
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_at']
+
+    def __str__(self):
+        return f'Comment by {self.author} on {self.post}'</code></pre>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Create and Review Migrations</strong>
+                    <ul>
+                        <li><strong>Command</strong>: <code>python manage.py makemigrations</code></li>
+                        <li><strong>Purpose</strong>: Generates migration files based on model changes.</li>
+                        <li><strong>Action</strong>: Review generated files before applying them, especially for field
+                            defaults, indexes, constraints, and relationship changes.</li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Apply Migrations</strong>
+                    <ul>
+                        <li><strong>Commands</strong>: <code>python manage.py migrate --plan</code> then
+                            <code>python manage.py migrate</code></li>
+                        <li><strong>Purpose</strong>: Shows the planned operations, then updates the database schema.
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Register the Model in Admin</strong>
+                    <ul>
+                        <li><strong>Location</strong>: <code>admin.py</code></li>
+                        <li><strong>Action</strong>: Register the model and add list/search configuration where useful.
+                        </li>
+                        <li><strong>Example</strong>:
+                            <pre><code>from django.contrib import admin
+from .models import Comment, Post
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['title']
+    search_fields = ['title', 'content']
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['post', 'author', 'created_at']
+    search_fields = ['content', 'author__username']</code></pre>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Create or Update Forms</strong>
+                    <ul>
+                        <li><strong>Location</strong>: <code>forms.py</code></li>
+                        <li><strong>Action</strong>: Use a form when the feature accepts user input.</li>
+                        <li><strong>Example</strong>:
+                            <pre><code>from django import forms
+from .models import Comment
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']</code></pre>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Create or Update Views</strong>
+                    <ul>
+                        <li><strong>Location</strong>: <code>views.py</code></li>
+                        <li><strong>Action</strong>: Fetch objects safely, validate forms, and redirect after successful
+                            POST requests.</li>
+                        <li><strong>Example</strong>:
+                            <pre><code>from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect, render
+from .forms import CommentForm
+from .models import Post
+
+@login_required
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.author = request.user
+            comment.save()
+            return redirect('post_detail', post_id=post.pk)
+    else:
+        form = CommentForm()
+
+    return render(request, 'blog/post_detail.html', {
+        'post': post,
+        'form': form,
+    })</code></pre>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Wire URLs</strong>
+                    <ul>
+                        <li><strong>Location</strong>: <code>urls.py</code></li>
+                        <li><strong>Action</strong>: Route requests to the view and give the pattern a stable name.</li>
+                        <li><strong>Example</strong>:
+                            <pre><code>from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('posts/&lt;int:post_id&gt;/', views.post_detail, name='post_detail'),
+]</code></pre>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Update Templates</strong>
+                    <ul>
+                        <li><strong>Location</strong>: <code>templates/blog/post_detail.html</code></li>
+                        <li><strong>Action</strong>: Render existing data, display validation errors, and protect POST
+                            forms with CSRF tokens.</li>
+                        <li><strong>Example</strong>:
+                            <pre><code>&lt;h1&gt;{{ post.title }}&lt;/h1&gt;
+&lt;p&gt;{{ post.content }}&lt;/p&gt;
+
+&lt;h2&gt;Comments&lt;/h2&gt;
+{% for comment in post.comments.all %}
+    &lt;p&gt;&lt;strong&gt;{{ comment.author }}&lt;/strong&gt;: {{ comment.content }}&lt;/p&gt;
+{% empty %}
+    &lt;p&gt;No comments yet.&lt;/p&gt;
+{% endfor %}
+
+&lt;h2&gt;Add a Comment&lt;/h2&gt;
+&lt;form method="post"&gt;
+    {% csrf_token %}
+    {{ form.as_p }}
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Run Checks and Tests</strong>
+                    <ul>
+                        <li><strong>Commands</strong>: <code>python manage.py check</code> and
+                            <code>python manage.py test</code></li>
+                        <li><strong>Action</strong>: Confirm the system check and test suite pass before shipping.</li>
+                    </ul>
+                </li>
+
+                <li class="my-4 bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <strong class="text-xl text-gray-700">Commit Changes</strong>
+                    <ul>
+                        <li><strong>Action</strong>: Commit the model, migrations, admin, form, view, URL, template, and
+                            test changes together when they form one feature.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+

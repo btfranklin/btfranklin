@@ -3,17 +3,20 @@
 ## Scope
 - `variants/full.md` is the complete source of truth for B.T. Franklin's resume.
 - `variants/application.md` is the shorter export-oriented resume derived from `variants/full.md`.
-- `scripts/build_resume.py` regenerates the public web page and downloadable resume files.
+- `scripts/build_resume.py` regenerates Eleventy resume include/data artifacts and downloadable resume files.
 
 ## Commands
-- `pdm run build` - regenerate `../docs/resume/index.html`, DOCX, and PDF outputs.
+- `pdm run build` - regenerate `../site/_includes/generated/resume-body.html`, `../site/_data/resume.json`, DOCX, and
+  PDF outputs.
 - `pdm run check` - run the same generator and verify expected outputs exist.
 
 ## Rules
 - Manage this folder with PDM.
-- Do not hand-edit generated files under `../docs/resume/` or `../docs/downloads/`.
+- Do not hand-edit generated resume artifacts under `../site/_includes/generated/`, `../site/_data/resume.json`, or
+  `../docs/downloads/`.
 - Keep resume source in Markdown and update `last_updated` when making substantive resume content changes.
-- The web resume is always generated from `variants/full.md`; do not publish the application variant as a web page.
+- The web resume is always rendered from `variants/full.md` through Eleventy; do not publish the application variant as
+  a web page.
 
 ## Application Variant Guidance
 - Start from `variants/full.md` and preserve factual accuracy. Do not invent metrics, savings, percentages, team sizes,

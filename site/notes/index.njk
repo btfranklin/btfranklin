@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: "Notes - B.T. Franklin"
+description: "Thoughts, guides, cheat sheets, and standalone artifacts by B.T. Franklin."
+navKey: notes
+---
+<main class="flex-grow">
+    <div class="container mx-auto px-4 pt-10 pb-12">
+        <h1 class="text-3xl font-bold mb-8 font-mono text-zinc-800 dark:text-zinc-100 flex items-center">
+            <span class="border-b-4 border-cyan-500 pb-2">Notes</span>
+        </h1>
+
+        <div class="space-y-6">
+            {% for note in collections.notes %}
+            <a href="{{ note.url }}"
+                class="group block border border-violet-300/70 dark:border-violet-700/60 bg-white/85 dark:bg-violet-950/30 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div>
+                        <h2
+                            class="font-mono text-2xl md:text-3xl font-bold text-zinc-950 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">
+                            {{ note.data.title }}
+                        </h2>
+                    </div>
+                </div>
+                {% if note.data.description %}
+                <p class="mt-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                    {{ note.data.description }}
+                </p>
+                {% endif %}
+            </a>
+            {% endfor %}
+
+            <a href="/cheat-sheets/"
+                class="group block border border-zinc-200 dark:border-zinc-800 bg-white/85 dark:bg-gray-900/75 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div>
+                        <h2
+                            class="font-mono text-2xl md:text-3xl font-bold text-zinc-950 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
+                            Django Cheat Sheets
+                        </h2>
+                    </div>
+                </div>
+                <p class="mt-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                    Quick references for common Django commands, project structure, and development workflow.
+                </p>
+            </a>
+        </div>
+    </div>
+</main>

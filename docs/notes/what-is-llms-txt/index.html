@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is llms.txt? A Guide for AI-Friendly Content</title>
+    <meta name="description" content="An explainer for the llms.txt format, with examples and practical formatting guidance." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link href="/styles.min.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
+        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
+    </div>
+    <script async defer src="/circuits.js"></script>
+
+    <div class="relative min-h-screen flex flex-col">
+<header
+    class="sticky top-0 z-20 border-b border-zinc-200/60 dark:border-zinc-800/70 bg-zinc-50/80 dark:bg-gray-950/75 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <a href="/" class="font-mono text-sm md:text-base font-bold uppercase tracking-wider">
+            B.T. Franklin
+        </a>
+        <nav class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-xs md:text-sm font-mono uppercase tracking-wider">
+            <a href="/"
+                class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Projects</a>
+            <a href="/creations/"
+                class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Creations</a>
+            <a href="/notes/"
+                class="text-cyan-600 dark:text-cyan-300">Notes</a>
+            <a href="/about/"
+                class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">About Me</a>
+        </nav>
+    </div>
+</header>
+        <main class="container mx-auto px-4 pt-10 pb-16 flex-grow">
+    <article
+        class="border border-zinc-200 dark:border-zinc-800 bg-white/85 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
+        <a href="/notes/"
+            class="font-mono text-sm uppercase tracking-widest text-cyan-600 dark:text-cyan-300 hover:text-cyan-500 transition-colors">Notes</a>
+        <h1 class="mt-4 font-mono text-3xl md:text-4xl font-bold text-zinc-950 dark:text-white">What is llms.txt? A Guide for AI-Friendly Content</h1>
+        <p class="mt-3 text-sm font-mono text-zinc-500 dark:text-zinc-400">August 28, 2025</p>
+        <div
+            class="mt-8 space-y-5 text-zinc-700 dark:text-zinc-300 leading-relaxed [&_h2]:pt-6 [&_h2]:font-mono [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-violet-600 dark:[&_h2]:text-violet-300 [&_h3]:pt-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-zinc-900 dark:[&_h3]:text-zinc-100 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_a]:text-cyan-700 dark:[&_a]:text-cyan-300 [&_a]:underline [&_code]:rounded [&_code]:bg-zinc-100 dark:[&_code]:bg-gray-800 [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-gray-900 [&_pre]:p-4 [&_pre]:text-gray-100 [&_pre_code]:bg-transparent [&_pre_code]:p-0">
+            <p><a href="/llms.txt">View this site's llms.txt</a></p>
+<h2>Overview</h2>
+<p>An llms.txt file is a curated, markdown-formatted guide placed at the root of a website domain
+(<code>https://example.com/llms.txt</code>). It helps Large Language Models (LLMs) quickly find your site’s most valuable,
+inference-friendly content.</p>
+<h2>Purpose</h2>
+<ul>
+<li>Not a replacement or extension of <code>robots.txt</code>. It doesn’t control crawling or indexing.</li>
+<li>Acts as a curated map highlighting your site’s best content for inference by AI models.</li>
+<li>Provides direct guidance to AI, increasing the likelihood of your content being cited by AI-driven search results.</li>
+</ul>
+<h2>Ideal Content for Inclusion</h2>
+<ul>
+<li>Evergreen, structured, authoritative resources.</li>
+<li>High-value guides, detailed FAQs, resource hubs, and clearly written blog posts.</li>
+<li>Content demonstrating expertise, experience, authority, and trustworthiness (E-E-A-T).</li>
+<li>Pages structured specifically for comprehension by AI.</li>
+</ul>
+<h2>Structure of llms.txt (Markdown Format)</h2>
+<ul>
+<li><strong>Filename</strong>: Must be exactly <code>llms.txt</code> (plural form).</li>
+<li><strong>Location</strong>: Root directory of your domain, such as <code>/llms.txt</code>.</li>
+</ul>
+<h3>Required Elements</h3>
+<ul>
+<li>A single H1 heading (<code>#</code>) naming your site or project.</li>
+<li>A blockquote (<code>&gt;</code>) summarizing the content that follows.</li>
+</ul>
+<h3>Optional Elements (Recommended for clarity)</h3>
+<ul>
+<li>Additional context or notes provided in standard Markdown paragraphs or lists.</li>
+<li>One or more H2 headings (<code>##</code>) categorizing your URLs clearly.</li>
+<li>Under each category, list URLs in Markdown link format, optionally followed by a colon and brief description:</li>
+</ul>
+<pre><code class="language-markdown">- [Link Title](https://example.com/url): Short description of content
+</code></pre>
+<h3>Special Section</h3>
+<p>You may include an <code>## OPTIONAL</code> section. URLs in this section can be skipped by AI if a shorter context is required.</p>
+<h2>Formatting Example</h2>
+<pre><code class="language-markdown"># Example.com: AI Resources and Insights
+
+&gt; Curated, structured content designed specifically for AI inference and citation.
+
+This file provides clear access points to authoritative, evergreen information.
+
+## Essential Content
+
+- [FAQ](https://example.com/faq): Common questions clearly answered
+- [AI Implementation Guide](https://example.com/resources/ai-guide): Detailed business resource for adopting AI
+- [llms.txt Explained](https://example.com/blog/llms-txt-overview): Plain-language introduction to llms.txt usage
+
+## OPTIONAL
+
+- [Secondary Resource](https://example.com/secondary): Useful, but less critical for immediate AI inference
+</code></pre>
+<h2>Content Formatting Recommendations for Linked Pages</h2>
+<ul>
+<li>Short, clear paragraphs.</li>
+<li>Explicit headings (H1-H3).</li>
+<li>Bullet points, numbered lists, and tables.</li>
+<li>Clear semantic signals, such as “Step 1” or “Key takeaway”.</li>
+<li>Minimal distractions, with no intrusive pop-ups or modals.</li>
+</ul>
+<h2>Homepage Inclusion</h2>
+<ul>
+<li>Include homepage only if it provides meaningful, structured content for inference.</li>
+<li>Typically, prioritize deeper, more content-rich pages over general homepage content.</li>
+</ul>
+<h2>Key Takeaway</h2>
+<p>Treat llms.txt as your AI “treasure map,” directing models straight to your most valuable, inference-ready content, not
+as a restrictive measure.</p>
+
+        </div>
+    </article>
+</main>
+
+<footer class="text-center py-8 text-zinc-500 dark:text-zinc-400 text-sm">
+    <p>&copy;
+        <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS, Coffee, and Codex.
+    </p>
+</footer>
+    </div>
+</body>
+
+</html>

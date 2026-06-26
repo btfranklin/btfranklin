@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import argparse
-import html
+import json
 import re
 import shutil
 import subprocess
@@ -23,9 +23,10 @@ VARIANTS_DIR = PROJECT_DIR / "variants"
 FULL_SOURCE = VARIANTS_DIR / "full.md"
 APPLICATION_SOURCE = VARIANTS_DIR / "application.md"
 DOCS_DIR = REPO_ROOT / "docs"
-WEB_DIR = DOCS_DIR / "resume"
+SITE_DIR = REPO_ROOT / "site"
 DOWNLOADS_DIR = DOCS_DIR / "downloads"
-WEB_OUTPUT = WEB_DIR / "index.html"
+RESUME_INCLUDE_OUTPUT = SITE_DIR / "_includes" / "generated" / "resume-body.html"
+RESUME_DATA_OUTPUT = SITE_DIR / "_data" / "resume.json"
 FULL_DOCX_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-full.docx"
 FULL_PDF_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-full.pdf"
 APPLICATION_DOCX_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-application.docx"
@@ -377,148 +378,34 @@ def convert_markdown_to_html(source_path: Path) -> tuple[dict[str, str], str]:
     return metadata, body_html
 
 
-def render_web_page(metadata: dict[str, str], body_html: str) -> str:
-    title = metadata.get("title", "B.T. Franklin Resume")
-    last_updated = metadata.get("last_updated")
-    updated_html = ""
-    if last_updated:
-        updated_html = (
-            f'<p class="mt-3 text-sm font-mono text-zinc-500 dark:text-zinc-400">'
-            f"Last updated {html.escape(last_updated)}</p>"
+def build_resume_site_artifacts(metadata: dict[str, str], body_html: str) -> None:
+    RESUME_INCLUDE_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    RESUME_DATA_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    RESUME_INCLUDE_OUTPUT.write_text(body_html + "\n", encoding="utf-8")
+    RESUME_DATA_OUTPUT.write_text(
+        json.dumps(
+            {
+                "title": metadata.get("title", "B.T. Franklin Resume"),
+                "last_updated": metadata.get("last_updated", ""),
+            },
+            indent=2,
         )
-
-    page_title = html.escape(title)
-    content_classes = " ".join(
-        [
-            "space-y-5",
-            "text-zinc-700",
-            "dark:text-zinc-300",
-            "leading-relaxed",
-            "[&_h1]:font-mono",
-            "[&_h1]:text-4xl",
-            "[&_h1]:font-bold",
-            "[&_h1]:text-center",
-            "[&_h1]:text-zinc-950",
-            "dark:[&_h1]:text-white",
-            "[&_h1+p]:text-center",
-            "[&_h1+p+p]:text-center",
-            "[&_h1+p+p+p]:text-center",
-            "[&_h1+p+p+p+p]:text-center",
-            "[&_h2]:pt-6",
-            "[&_h2]:font-mono",
-            "[&_h2]:text-2xl",
-            "[&_h2]:font-bold",
-            "[&_h2]:text-cyan-600",
-            "dark:[&_h2]:text-cyan-300",
-            "[&_h3]:pt-4",
-            "[&_h3]:font-mono",
-            "[&_h3]:text-xl",
-            "[&_h3]:font-semibold",
-            "[&_h3]:text-zinc-900",
-            "dark:[&_h3]:text-zinc-100",
-            "[&_h4]:pt-3",
-            "[&_h4]:font-semibold",
-            "[&_h4]:text-zinc-900",
-            "dark:[&_h4]:text-zinc-100",
-            "[&_ul]:list-disc",
-            "[&_ul]:space-y-2",
-            "[&_ul]:pl-6",
-            "[&_a]:text-cyan-700",
-            "dark:[&_a]:text-cyan-300",
-            "[&_a]:underline",
-            "[&_strong]:text-zinc-900",
-            "dark:[&_strong]:text-zinc-100",
-        ]
+        + "\n",
+        encoding="utf-8",
     )
-
-    return f"""<!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{page_title}</title>
-    <meta name="description"
-        content="Resume for B.T. Franklin, applied AI technical lead and software architect." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
-        rel="stylesheet">
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link href="../styles.min.css" rel="stylesheet" />
-</head>
-
-<body
-    class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
-
-    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
-        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
-    </div>
-    <script async defer src="../circuits.js"></script>
-
-    <div class="relative min-h-screen flex flex-col">
-        <header
-            class="sticky top-0 z-20 border-b border-zinc-200/60 dark:border-zinc-800/70 bg-zinc-50/80 dark:bg-gray-950/75 backdrop-blur-md">
-            <div
-                class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-                <a href="../index.html" class="font-mono text-sm md:text-base font-bold uppercase tracking-wider">
-                    B.T. Franklin
-                </a>
-                <nav
-                    class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-xs md:text-sm font-mono uppercase tracking-wider">
-                    <a href="../index.html"
-                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Projects</a>
-                    <a href="../creations/"
-                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Creations</a>
-                    <a href="../notes.html"
-                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Notes</a>
-                    <a href="../about.html"
-                        class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">About Me</a>
-                    <a href="./" class="text-cyan-600 dark:text-cyan-300">Resume</a>
-                </nav>
-            </div>
-        </header>
-
-        <main class="container mx-auto px-4 pt-10 pb-12 flex-grow">
-            <section
-                class="border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-gray-900/75 backdrop-blur-sm rounded-lg shadow-2xl">
-                <div class="border-b border-zinc-200 dark:border-zinc-800 p-6 md:p-8">
-                    <p class="font-mono text-sm uppercase tracking-widest text-cyan-600 dark:text-cyan-300">
-                        Resume
-                    </p>
-                    {updated_html}
-                    <div class="mt-6 flex flex-wrap gap-3">
-                        <a href="../downloads/bt-franklin-resume-full.pdf"
-                            class="inline-flex items-center rounded-md border border-cyan-500 px-4 py-2 text-sm font-mono text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500 hover:text-white transition-colors">
-                            Download PDF
-                        </a>
-                        <a href="../downloads/bt-franklin-resume-full.docx"
-                            class="inline-flex items-center rounded-md border border-cyan-500 px-4 py-2 text-sm font-mono text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500 hover:text-white transition-colors">
-                            Download DOCX
-                        </a>
-                    </div>
-                </div>
-                <article class="p-6 md:p-8">
-                    <div class="{content_classes}">
-{body_html}
-                    </div>
-                </article>
-            </section>
-        </main>
-    </div>
-</body>
-
-</html>
-"""
 
 
 def build_docx(source_path: Path, output_path: Path) -> None:
+    if output_path.exists() and output_path.stat().st_mtime >= source_path.stat().st_mtime:
+        return
     _metadata, body = parse_frontmatter(source_path.read_text(encoding="utf-8"))
     build_styled_docx(body, output_path)
 
 
 def build_pdf(docx_output: Path) -> None:
+    pdf_output = docx_output.with_suffix(".pdf")
+    if pdf_output.exists() and pdf_output.stat().st_mtime >= docx_output.stat().st_mtime:
+        return
     with tempfile.TemporaryDirectory(prefix="btfranklin-lo-") as profile_dir:
         run(
             [
@@ -536,7 +423,8 @@ def build_pdf(docx_output: Path) -> None:
 
 def validate_outputs() -> None:
     for output in [
-        WEB_OUTPUT,
+        RESUME_INCLUDE_OUTPUT,
+        RESUME_DATA_OUTPUT,
         FULL_DOCX_OUTPUT,
         FULL_PDF_OUTPUT,
         APPLICATION_DOCX_OUTPUT,
@@ -555,11 +443,10 @@ def build() -> None:
         if not source_path.exists():
             raise BuildError(f"Resume source not found: {source_path}")
 
-    WEB_DIR.mkdir(parents=True, exist_ok=True)
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
     metadata, body_html = convert_markdown_to_html(FULL_SOURCE)
-    WEB_OUTPUT.write_text(render_web_page(metadata, body_html), encoding="utf-8")
+    build_resume_site_artifacts(metadata, body_html)
     build_docx(FULL_SOURCE, FULL_DOCX_OUTPUT)
     build_docx(APPLICATION_SOURCE, APPLICATION_DOCX_OUTPUT)
     build_pdf(FULL_DOCX_OUTPUT)
@@ -578,7 +465,8 @@ def main() -> int:
         print(error, file=sys.stderr)
         return 1
 
-    print(f"Wrote {WEB_OUTPUT.relative_to(REPO_ROOT)}")
+    print(f"Wrote {RESUME_INCLUDE_OUTPUT.relative_to(REPO_ROOT)}")
+    print(f"Wrote {RESUME_DATA_OUTPUT.relative_to(REPO_ROOT)}")
     print(f"Wrote {FULL_DOCX_OUTPUT.relative_to(REPO_ROOT)}")
     print(f"Wrote {FULL_PDF_OUTPUT.relative_to(REPO_ROOT)}")
     print(f"Wrote {APPLICATION_DOCX_OUTPUT.relative_to(REPO_ROOT)}")

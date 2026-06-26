@@ -1,4 +1,23 @@
-tailwind/node_modules
+# macOS
 .DS_Store
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Node dependencies and build caches
+node_modules/
+.cache/
+.eleventy-cache/
+
+# Python and PDM local state
+__pycache__/
+.pytest_cache/
 resume/.pdm-python
 resume/.venv/
+
+# Generated local artifacts
+output/
+site/_data/resume.json
+site/_includes/generated/

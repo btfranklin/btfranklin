@@ -1,0 +1,5 @@
+---
+permalink: /sitemap.txt
+---
+{% for path in site.sitemap %}{{ site.url }}{{ path }}
+{% endfor %}

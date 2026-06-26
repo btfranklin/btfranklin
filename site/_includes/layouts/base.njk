@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+{% include "partials/head.njk" %}
+
+<body
+    class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
+        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
+    </div>
+    <script async defer src="/circuits.js"></script>
+
+    <div class="relative min-h-screen flex flex-col">
+        {% include "partials/nav.njk" %}
+        {{ content | safe }}
+        {% if footer !== false %}
+        {% include "partials/footer.njk" %}
+        {% endif %}
+    </div>
+</body>
+
+</html>

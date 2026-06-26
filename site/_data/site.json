@@ -1,0 +1,39 @@
+{
+  "title": "B.T. Franklin",
+  "url": "https://btfranklin.info",
+  "description": "Software architecture, applied AI, computational creativity, and selected projects by B.T. Franklin.",
+  "nav": [
+    {
+      "key": "projects",
+      "label": "Projects",
+      "url": "/"
+    },
+    {
+      "key": "creations",
+      "label": "Creations",
+      "url": "/creations/"
+    },
+    {
+      "key": "notes",
+      "label": "Notes",
+      "url": "/notes/"
+    },
+    {
+      "key": "about",
+      "label": "About Me",
+      "url": "/about/"
+    }
+  ],
+  "sitemap": [
+    "/",
+    "/creations/",
+    "/notes/",
+    "/notes/what-is-llms-txt/",
+    "/resume/",
+    "/about/",
+    "/cheat-sheets/",
+    "/cheat-sheets/django-cli-commands/",
+    "/cheat-sheets/django-project-structure/",
+    "/cheat-sheets/django-step-by-step/"
+  ]
+}

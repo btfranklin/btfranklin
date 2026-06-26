@@ -1,0 +1,22 @@
+{
+  "name": "btfranklin",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@11ty/eleventy": ">=3.1.6",
+    "@tailwindcss/cli": ">=4.3.1",
+    "html-validate": ">=11.5.3",
+    "tailwindcss": ">=4.3.1"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "build:css": "npx tailwindcss -i ./input.css -o ./docs/styles.min.css",
+    "build:resume": "cd resume && pdm run build",
+    "build:site": "npm run build:resume && npx eleventy",
+    "serve": "npm run build:resume && npx eleventy --serve",
+    "validate": "npm run validate:html && node ./scripts/validate-site.mjs",
+    "validate:html": "html-validate --config ./.htmlvalidate.json './docs/**/*.html'"
+  }
+}

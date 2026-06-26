@@ -2,7 +2,7 @@
 title: "hiredar"
 repo_url: "https://github.com/btfranklin/hiredar"
 status: "archived"
-order: 5
+order: 7
 updated: "November 2025"
 tags:
   - "project"

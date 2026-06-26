@@ -2,7 +2,7 @@
 title: "guru-translator"
 repo_url: "https://github.com/btfranklin/guru-translator"
 status: "archived"
-order: 6
+order: 8
 updated: "June 2025"
 tags:
   - "project"

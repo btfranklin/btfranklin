@@ -1,4 +1,4 @@
 interface:
   display_name: "Update Projects Page"
-  short_description: "Maintains docs/index.html from GitHub repo metadata"
-  default_prompt: "Update the projects landing page at docs/index.html using the update-projects-page workflow skill."
+  short_description: "Maintains Eleventy project card sources"
+  default_prompt: "Use $update-projects-page to refresh the btfranklin.info projects landing page from GitHub repo metadata."

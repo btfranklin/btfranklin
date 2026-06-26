@@ -2,7 +2,7 @@
 title: "pickled_pipeline"
 repo_url: "https://github.com/btfranklin/pickled_pipeline"
 status: "archived"
-order: 2
+order: 4
 updated: "May 2026"
 tags:
   - "project"

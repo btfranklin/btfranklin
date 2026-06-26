@@ -2,7 +2,7 @@
 title: "Wordsmith"
 repo_url: "https://github.com/btfranklin/Wordsmith"
 status: "archived"
-order: 13
+order: 15
 updated: "September 2023"
 tags:
   - "project"

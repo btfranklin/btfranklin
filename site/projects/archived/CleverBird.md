@@ -2,7 +2,7 @@
 title: "CleverBird"
 repo_url: "https://github.com/btfranklin/CleverBird"
 status: "archived"
-order: 8
+order: 10
 updated: "July 2024"
 tags:
   - "project"

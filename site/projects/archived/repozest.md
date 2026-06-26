@@ -2,7 +2,7 @@
 title: "repozest"
 repo_url: "https://github.com/btfranklin/repozest"
 status: "archived"
-order: 3
+order: 5
 updated: "April 2026"
 tags:
   - "project"

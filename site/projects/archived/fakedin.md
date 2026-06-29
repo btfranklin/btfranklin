@@ -2,7 +2,7 @@
 title: "fakedin"
 repo_url: "https://github.com/btfranklin/fakedin"
 status: "archived"
-order: 6
+order: 7
 updated: "January 2026"
 tags:
   - "project"

@@ -2,7 +2,7 @@
 title: "spooklight"
 repo_url: "https://github.com/btfranklin/spooklight"
 status: "active"
-order: 9
+order: 10
 updated: "December 2025"
 tags:
   - "project"

@@ -17,6 +17,12 @@
 - Keep resume source in Markdown and update `last_updated` when making substantive resume content changes.
 - The web resume is always rendered from `variants/full.md` through Eleventy; do not publish the application variant as
   a web page.
+- Treat Salesforce and Java as historical depth and enterprise-system credibility, not as target specializations.
+  Do not remove them in ways that create suspicious career gaps, but compress and translate them into enterprise
+  platform architecture, product modernization, integration design, UI modernization, technical leadership, and durable
+  software engineering foundations.
+- Do not optimize public or application resume variants toward Salesforce or Java roles unless B.T. explicitly asks for
+  that direction.
 
 ## Application Variant Guidance
 - Start from `variants/full.md` and preserve factual accuracy. Do not invent metrics, savings, percentages, team sizes,

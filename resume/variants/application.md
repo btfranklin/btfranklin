@@ -7,7 +7,7 @@ last_updated: "2026-07-03"
 
 Phoenix, Arizona
 
-Applied AI Technical Lead
+Applied AI Technical Lead / Software Architect
 
 602-247-0439 | <brandon.franklin@gmail.com>
 
@@ -31,9 +31,9 @@ Leadership.
 
 #### AI Tech Lead / Staff Software Engineer
 
-April 2025 - Present
+April 2025 - July 2026
 
-- Serve as organization-wide AI technical leader, guiding engineering teams on adoption of LLMs, agents, evaluation
+- Served as organization-wide AI technical leader, guiding engineering teams on adoption of LLMs, agents, evaluation
   practices, and modern AI development patterns aligned with business goals.
 - Architected the company's first Model Context Protocol (MCP) server, connecting the classic price management stack and
   formula evaluation service to agent workflows that retrieve calculated prices and explain start, target, and floor
@@ -52,12 +52,19 @@ August 2022 - March 2025
 - Served as chief architect for a data access API and designed the Zilliant Developer Experience (ZDX) CLI, reducing
   complex configuration migration work from a multi-day process to a few hours.
 
-#### Earlier Zilliant Engineering Roles
+#### Staff Software Engineer
 
-January 2009 - August 2022
+February 2020 - August 2022
 
-- Led UI modernization, proof-of-concept development, and cross-team product architecture work across long-running
-  enterprise platform evolution.
+- Led UI/UX strategy, proof-of-concept development, and cross-team product architecture work across enterprise platform
+  evolution.
+
+#### Senior Software Engineer
+
+January 2009 - September 2019
+
+- Led Salesforce Lightning Web Components adoption, SalesMax development, mentorship, and product modernization work
+  across long-running enterprise systems.
 
 ## Founder-Led and Open Source AI Work
 

@@ -7,7 +7,7 @@ last_updated: "2026-07-03"
 
 Phoenix, Arizona
 
-Applied AI Technical Lead
+Applied AI Technical Lead / Software Architect
 
 602-247-0439 | <brandon.franklin@gmail.com>
 
@@ -110,9 +110,9 @@ tooling, and product-facing systems.
 
 #### AI Tech Lead / Staff Software Engineer
 
-April 2025 - Present
+April 2025 - July 2026
 
-- Serve as organization-wide AI technical leader, guiding engineering teams on adoption of large language models (LLMs),
+- Served as organization-wide AI technical leader, guiding engineering teams on adoption of large language models (LLMs),
   agents, evaluation practices, and modern AI development patterns aligned with business goals.
 - Architected the company's first Model Context Protocol (MCP) server and directed implementation by a third-party
   contractor, connecting the classic price management stack and formula evaluation service to agent workflows.

@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-07-03"
+last_updated: "2026-07-04"
 ---
 
 # B.T. Franklin
@@ -286,8 +286,8 @@ Interactive Voice, Anthropic Claude, ElevenLabs Speech Generation
 **Technologies:** Large Language Model (LLM) Applications, Agentic Systems, Model Context Protocol (MCP), RAG,
 Embeddings, Vector Stores, Semantic Search, Pinecone, Structured Extraction, REST APIs, Django, Celery, HTMX,
 Pydantic, PydanticAI, OpenAI Agents SDK, Codex, Docker, PostgreSQL, SQLite, AWS Services, AWS QuickSight, Amazon Q,
-CI/CD, GitHub Actions, Terraform, React, Vue, Tailwind CSS, Salesforce Lightning, Lightning Web Components, Visual
-Studio Code, oclif
+CI/CD, GitHub Actions, Terraform, React, Tailwind CSS, Salesforce Lightning, Lightning Web Components, Visual Studio
+Code, oclif
 
 **Methodologies:** AI Development, Prompt Engineering, Tool Use, Planning Loops, Multi-Agent Systems, Guardrail Design,
 Rubric Grading, Human Review, Tracing, Observability, Large Language Model (LLM) Evaluation, Agent Evaluation,

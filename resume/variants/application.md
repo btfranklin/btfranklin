@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-07-03"
+last_updated: "2026-07-04"
 ---
 
 # B.T. Franklin
@@ -90,5 +90,5 @@ Published computational creativity research in the *Proceedings of Generative Ar
 
 Python; JavaScript/TypeScript; Java; OpenAI GPT, Image Generation, Embeddings, Speech-to-Text, and Interactive Voice;
 Anthropic Claude; ElevenLabs; Agentic Systems; MCP; RAG; Pinecone; Django; Celery; HTMX; Pydantic; PydanticAI; OpenAI
-Agents SDK; Codex; Docker; PostgreSQL; SQLite; AWS; QuickSight; Amazon Q; GitHub Actions; Terraform; React; Vue;
-Tailwind CSS; API Design; Platform Design; Technical Strategy.
+Agents SDK; Codex; Docker; PostgreSQL; SQLite; AWS; QuickSight; Amazon Q; GitHub Actions; Terraform; React; Tailwind
+CSS; API Design; Platform Design; Technical Strategy.

@@ -19,5 +19,6 @@ resume/.venv/
 
 # Generated local artifacts
 output/
+.playwright-cli/
 site/_data/resume.json
 site/_includes/generated/

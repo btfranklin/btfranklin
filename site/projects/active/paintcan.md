@@ -2,7 +2,7 @@
 title: "paintcan"
 repo_url: "https://github.com/btfranklin/paintcan"
 status: "active"
-order: 7
+order: 8
 updated: "May 2026"
 tags:
   - "project"

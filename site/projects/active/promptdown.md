@@ -2,8 +2,8 @@
 title: "promptdown"
 repo_url: "https://github.com/btfranklin/promptdown"
 status: "active"
-order: 9
-updated: "January 2026"
+order: 7
+updated: "July 2026"
 tags:
   - "project"
 permalink: false

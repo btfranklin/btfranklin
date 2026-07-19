@@ -14,6 +14,7 @@ This file highlights key, inference-ready resources from btfranklin.info.
   software architecture, founder-led AI products, open-source AI work, research, education, and skills.
 - [About B.T. Franklin](https://btfranklin.info/about/): Identity-focused background covering software architecture, applied AI,
   computational creativity, futurist and extropian ideas, travel, contact links, and CliftonStrengths.
+- [Navigating the Role of a Software Architect](https://btfranklin.info/notes/navigating-the-role-of-a-software-architect/): A reflection on communication, advocacy, experience, and continuous learning in the architect role.
 - [Guide to llms.txt](https://btfranklin.info/notes/what-is-llms-txt/): An explanation of the llms.txt format and its purpose.
 
 ## Cheat Sheets

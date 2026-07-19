@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigating the Role of a Software Architect: Insights and Surprises</title>
+    <meta name="description" content="A reflection on the communication, advocacy, breadth of experience, and continuous learning that shape software architecture." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link href="/styles.min.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-zinc-50 dark:bg-gray-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <div id="circuitContainer" class="fixed inset-0 z-[-1] pointer-events-none opacity-40 dark:opacity-30">
+        <canvas id="circuitCanvas" class="w-full h-full"></canvas>
+    </div>
+    <script async defer src="/circuits.js"></script>
+
+    <div class="relative min-h-screen flex flex-col">
+<header
+    class="sticky top-0 z-20 border-b border-zinc-200/60 dark:border-zinc-800/70 bg-zinc-50/80 dark:bg-gray-950/75 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <a href="/" class="font-mono text-sm md:text-base font-bold uppercase tracking-wider">
+            B.T. Franklin
+        </a>
+        <nav class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-xs md:text-sm font-mono uppercase tracking-wider">
+            <a href="/"
+                class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Projects</a>
+            <a href="/creations/"
+                class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Creations</a>
+            <a href="/notes/"
+                class="text-cyan-600 dark:text-cyan-300">Notes</a>
+            <a href="/about/"
+                class="text-zinc-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">About Me</a>
+        </nav>
+    </div>
+</header>
+        <main class="container mx-auto px-4 pt-10 pb-16 flex-grow">
+    <article
+        class="border border-zinc-200 dark:border-zinc-800 bg-white/85 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg shadow-2xl overflow-hidden">
+        <header class="relative isolate min-h-96 overflow-hidden">
+            <img src="/software-architect-insights-hero.jpg" alt="A software architect overlooking a futuristic city filled with digital interfaces" class="absolute inset-0 -z-10 h-full w-full object-cover"
+                fetchpriority="high">
+            <div class="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent"></div>
+            <div class="flex min-h-96 flex-col justify-end p-6 md:p-8">
+                <a href="/notes/"
+                    class="w-fit font-mono text-sm uppercase tracking-widest text-cyan-200 hover:text-cyan-100 transition-colors">Notes</a>
+                <h1 class="mt-4 max-w-4xl font-mono text-3xl md:text-5xl font-bold leading-tight text-white drop-shadow-lg">Navigating the Role of a Software Architect: Insights and Surprises</h1>
+                <div class="mt-5 flex flex-wrap items-center gap-4">
+                    <p class="text-sm font-mono text-zinc-200">December 28, 2023</p>
+                    <a href="https://www.linkedin.com/pulse/navigating-role-software-architect-insights-surprises-b-t-franklin-sga5c" rel="noopener noreferrer" title="Read on LinkedIn"
+                        class="inline-flex items-center gap-2 rounded-md bg-[#0a66c2] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#004182] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                        <span class="flex size-5 items-center justify-center rounded-sm bg-white/15 font-mono text-xs font-bold" aria-hidden="true">in</span>
+                        Read on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div
+            class="p-6 md:p-8 space-y-5 text-zinc-700 dark:text-zinc-300 leading-relaxed [&_h2]:pt-6 [&_h2]:font-mono [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-violet-600 dark:[&_h2]:text-violet-300 [&_h3]:pt-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-zinc-900 dark:[&_h3]:text-zinc-100 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_a]:text-cyan-700 dark:[&_a]:text-cyan-300 [&_a]:underline [&_code]:rounded [&_code]:bg-zinc-100 dark:[&_code]:bg-gray-800 [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-gray-900 [&_pre]:p-4 [&_pre]:text-gray-100 [&_pre_code]:bg-transparent [&_pre_code]:p-0">
+            <p>I've held the title of Software Architect for just under two years now, a role I unofficially stepped into slightly earlier. This followed a rich, decade-long journey as a senior-level software engineer. The transition has been an enlightening one, teaching me valuable lessons and reshaping me both personally and professionally. In this piece, I aim to share some key insights and unexpected aspects of my journey into Software Architecture.</p>
+<h2>The Art of Communication</h2>
+<p>One critical realization is the multifaceted nature of the Software Architect's role. Contrary to popular belief, a significant portion of this job transcends coding and technical expertise. In fact, it's deeply rooted in effective communication. This facet is arguably the cornerstone of a successful Architect.</p>
+<p>My daily interactions range from engaging with Product Managers to grasp the intended functionality of our software, aligning with other Architects for system-wide consistency, to guiding Software Engineers in how their tasks contribute to our architectural vision.</p>
+<h2>Persuasion and Advocacy</h2>
+<p>However, communication in this context isn't merely about information exchange. It's about advocacy and persuasion. A large part of my role involves championing my designs, repeatedly presenting them to various stakeholders, each needing tailored persuasion to align with the vision. This element of the job was unexpected and demands a blend of soft skills and political acumen – attributes that are rarely highlighted in traditional software development roles.</p>
+<h2>Growth and Adaptability</h2>
+<p>Reflecting on my earlier career, I acknowledge that these nuanced communication skills would have been challenging for a less experienced me, hindered by overconfidence and a narrower worldview. It's a humbling reminder of personal growth and the evolving demands of professional roles.</p>
+<h2>Broad Knowledge Base</h2>
+<p>Another indispensable aspect of being a Software Architect is possessing a broad and deep knowledge base. The role is arguably less suited for those early in their careers, as it requires a rich tapestry of experiences across various languages and systems. This extensive knowledge enables Architects to think holistically about software problems. While my current role doesn't involve much coding, the extensive coding experience from my past is a pillar that supports my current architectural decisions.</p>
+<h2>Commitment to Continuous Learning</h2>
+<p>Beyond technical and communication skills, a crucial attribute of an effective Software Architect is the commitment to continuous learning. The tech landscape is perpetually evolving, and staying abreast of new trends, technologies, and methodologies is paramount. This relentless pursuit of knowledge helps in understanding the fringes of technology – a realm where innovative architectural solutions are often conceived.</p>
+<p>Keeping a finger on the pulse of emerging tech trends is not just a responsibility; it's a necessity for forward-thinking architecture.</p>
+<h2>Conclusion</h2>
+<p>Embarking on the path of a Software Architect has been a journey of constant discovery, challenges, and personal growth. It has required a blend of technical proficiency, refined communication skills, and a commitment to perpetual learning. The role is more than designing systems. It's about leading, influencing, and envisioning the future of technology within an organization.</p>
+<p>As I continue my journey, I'm still excited about the endless possibilities and the opportunities to shape the technological landscapes of tomorrow.</p>
+
+        </div>
+    </article>
+</main>
+
+<footer class="text-center py-8 text-zinc-500 dark:text-zinc-400 text-sm">
+    <p>&copy;
+        <script>document.write(new Date().getFullYear())</script> B.T. Franklin. Built with Tailwind CSS, Coffee, and Codex.
+    </p>
+</footer>
+    </div>
+</body>
+
+</html>

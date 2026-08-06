@@ -32,7 +32,6 @@ const requiredOutputs = [
     'docs/cheat-sheets/django-step-by-step/index.html',
     'docs/downloads/bt-franklin-resume-full.docx',
     'docs/downloads/bt-franklin-resume-full.pdf',
-    'docs/downloads/bt-franklin-resume-application.docx',
     'docs/downloads/bt-franklin-resume-application.pdf',
     'docs/llms.txt',
     'docs/sitemap.txt',
@@ -46,6 +45,9 @@ const staleCleanBreakFiles = [
     'docs/cheat-sheets/django-cli-commands.html',
     'docs/cheat-sheets/django-project-structure.html',
     'docs/cheat-sheets/django-step-by-step.html',
+]
+const forbiddenOutputs = [
+    'docs/downloads/bt-franklin-resume-application.docx',
 ]
 
 const errors = []
@@ -246,6 +248,15 @@ function validateRequiredOutputs() {
     }
 }
 
+function validateForbiddenOutputs() {
+    for (const forbiddenOutput of forbiddenOutputs) {
+        const filePath = join(repoRoot, forbiddenOutput)
+        if (existsSync(filePath)) {
+            addError(filePath, 'forbidden generated output exists')
+        }
+    }
+}
+
 function validateCleanBreakRoutes() {
     for (const staleFile of staleCleanBreakFiles) {
         const filePath = join(repoRoot, staleFile)
@@ -257,6 +268,7 @@ function validateCleanBreakRoutes() {
 
 validateFreshCss()
 validateRequiredOutputs()
+validateForbiddenOutputs()
 validateCleanBreakRoutes()
 
 for (const htmlFile of walkFiles(docsDir, (filePath) => extname(filePath) === '.html')) {

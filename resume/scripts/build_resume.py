@@ -22,6 +22,7 @@ REPO_ROOT = PROJECT_DIR.parent
 VARIANTS_DIR = PROJECT_DIR / "variants"
 FULL_SOURCE = VARIANTS_DIR / "full.md"
 APPLICATION_SOURCE = VARIANTS_DIR / "application.md"
+APPLICATION_REFERENCE_ODT = PROJECT_DIR / "templates" / "application-reference.odt"
 DOCS_DIR = REPO_ROOT / "docs"
 SITE_DIR = REPO_ROOT / "site"
 DOWNLOADS_DIR = DOCS_DIR / "downloads"
@@ -29,7 +30,6 @@ RESUME_INCLUDE_OUTPUT = SITE_DIR / "_includes" / "generated" / "resume-body.html
 RESUME_DATA_OUTPUT = SITE_DIR / "_data" / "resume.json"
 FULL_DOCX_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-full.docx"
 FULL_PDF_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-full.pdf"
-APPLICATION_DOCX_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-application.docx"
 APPLICATION_PDF_OUTPUT = DOWNLOADS_DIR / "bt-franklin-resume-application.pdf"
 BODY_FONT = "Helvetica Neue"
 BODY_COLOR = RGBColor(0x0C, 0x0C, 0x0C)
@@ -215,12 +215,21 @@ def add_normal_paragraph(document: Document, text: str, *, before: int = 0, afte
 def add_bullet(document: Document, text: str, *, before: int = 0, after: int = 8) -> None:
     paragraph = document.add_paragraph(style="List Bullet")
     set_paragraph_spacing(paragraph, before=before, after=after)
+    paragraph.paragraph_format.keep_together = True
+    paragraph.paragraph_format.left_indent = Inches(0.25)
+    paragraph.paragraph_format.first_line_indent = Inches(-0.25)
+    paragraph.paragraph_format.tab_stops.add_tab_stop(Inches(0.25))
+    numbering = paragraph._p.get_or_add_pPr().get_or_add_numPr()
+    numbering.get_or_add_numId().val = 0
+    bullet = paragraph.add_run("•\t")
+    set_run_font(bullet)
     add_markdown_runs(paragraph, text)
 
 
 def add_section_heading(document: Document, text: str, *, before: int = 16) -> None:
     paragraph = document.add_paragraph()
     set_paragraph_spacing(paragraph, before=before, after=8)
+    paragraph.paragraph_format.keep_with_next = True
     run = paragraph.add_run(text)
     set_run_font(run, size=SECTION_SIZES.get(text, 16), bold=True)
 
@@ -228,6 +237,7 @@ def add_section_heading(document: Document, text: str, *, before: int = 16) -> N
 def add_bold_heading(document: Document, text: str, *, before: int = 0, after: int = 8) -> None:
     paragraph = document.add_paragraph()
     set_paragraph_spacing(paragraph, before=before, after=after)
+    paragraph.paragraph_format.keep_with_next = True
     run = paragraph.add_run(text)
     set_run_font(run, bold=True)
 
@@ -235,6 +245,7 @@ def add_bold_heading(document: Document, text: str, *, before: int = 0, after: i
 def add_role_paragraph(document: Document, title: str, dates: str) -> None:
     paragraph = document.add_paragraph()
     set_paragraph_spacing(paragraph)
+    paragraph.paragraph_format.keep_with_next = True
     title_run = paragraph.add_run(title)
     set_run_font(title_run, italic=True)
     paragraph.add_run().add_break()
@@ -245,6 +256,7 @@ def add_role_paragraph(document: Document, title: str, dates: str) -> None:
 def add_product_heading(document: Document, name: str, detail: str) -> None:
     paragraph = document.add_paragraph()
     set_paragraph_spacing(paragraph)
+    paragraph.paragraph_format.keep_with_next = True
     name_run = paragraph.add_run(name)
     set_run_font(name_run, bold=True)
     separator = paragraph.add_run(" - ")
@@ -256,6 +268,7 @@ def add_product_heading(document: Document, name: str, detail: str) -> None:
 def add_education_heading(document: Document, school: str, degree: str, minor: str) -> None:
     paragraph = document.add_paragraph()
     set_paragraph_spacing(paragraph)
+    paragraph.paragraph_format.keep_with_next = True
     school_run = paragraph.add_run(school)
     set_run_font(school_run, bold=True)
     paragraph.add_run().add_break()
@@ -396,13 +409,14 @@ def build_resume_site_artifacts(metadata: dict[str, str], body_html: str) -> Non
 
 
 def build_docx(source_path: Path, output_path: Path) -> None:
-    if output_path.exists() and output_path.stat().st_mtime >= source_path.stat().st_mtime:
+    newest_input_mtime = max(source_path.stat().st_mtime, Path(__file__).stat().st_mtime)
+    if output_path.exists() and output_path.stat().st_mtime >= newest_input_mtime:
         return
     _metadata, body = parse_frontmatter(source_path.read_text(encoding="utf-8"))
     build_styled_docx(body, output_path)
 
 
-def build_pdf(docx_output: Path) -> None:
+def build_pdf_from_docx(docx_output: Path) -> None:
     pdf_output = docx_output.with_suffix(".pdf")
     if pdf_output.exists() and pdf_output.stat().st_mtime >= docx_output.stat().st_mtime:
         return
@@ -421,13 +435,53 @@ def build_pdf(docx_output: Path) -> None:
         )
 
 
+def build_application_pdf(source_path: Path, output_path: Path) -> None:
+    newest_input_mtime = max(
+        source_path.stat().st_mtime,
+        APPLICATION_REFERENCE_ODT.stat().st_mtime,
+        Path(__file__).stat().st_mtime,
+    )
+    if output_path.exists() and output_path.stat().st_mtime >= newest_input_mtime:
+        return
+
+    _metadata, body = parse_frontmatter(source_path.read_text(encoding="utf-8"))
+    with tempfile.TemporaryDirectory(prefix="btfranklin-application-") as temp_dir:
+        temp_path = Path(temp_dir)
+        markdown_path = temp_path / "application.md"
+        odt_path = temp_path / "application.odt"
+        markdown_path.write_text(body, encoding="utf-8")
+        run(
+            [
+                "pandoc",
+                str(markdown_path),
+                "--from=gfm",
+                "--to=odt",
+                f"--reference-doc={APPLICATION_REFERENCE_ODT}",
+                f"--output={odt_path}",
+            ]
+        )
+        with tempfile.TemporaryDirectory(prefix="btfranklin-lo-") as profile_dir:
+            run(
+                [
+                    "soffice",
+                    f"-env:UserInstallation=file://{profile_dir}",
+                    "--headless",
+                    "--convert-to",
+                    "pdf",
+                    "--outdir",
+                    str(temp_path),
+                    str(odt_path),
+                ]
+            )
+        shutil.copy2(odt_path.with_suffix(".pdf"), output_path)
+
+
 def validate_outputs() -> None:
     for output in [
         RESUME_INCLUDE_OUTPUT,
         RESUME_DATA_OUTPUT,
         FULL_DOCX_OUTPUT,
         FULL_PDF_OUTPUT,
-        APPLICATION_DOCX_OUTPUT,
         APPLICATION_PDF_OUTPUT,
     ]:
         if not output.exists():
@@ -442,20 +496,21 @@ def build() -> None:
     for source_path in [FULL_SOURCE, APPLICATION_SOURCE]:
         if not source_path.exists():
             raise BuildError(f"Resume source not found: {source_path}")
+    if not APPLICATION_REFERENCE_ODT.exists():
+        raise BuildError(f"Application PDF reference document not found: {APPLICATION_REFERENCE_ODT}")
 
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
     metadata, body_html = convert_markdown_to_html(FULL_SOURCE)
     build_resume_site_artifacts(metadata, body_html)
     build_docx(FULL_SOURCE, FULL_DOCX_OUTPUT)
-    build_docx(APPLICATION_SOURCE, APPLICATION_DOCX_OUTPUT)
-    build_pdf(FULL_DOCX_OUTPUT)
-    build_pdf(APPLICATION_DOCX_OUTPUT)
+    build_pdf_from_docx(FULL_DOCX_OUTPUT)
+    build_application_pdf(APPLICATION_SOURCE, APPLICATION_PDF_OUTPUT)
     validate_outputs()
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build resume web, DOCX, and PDF outputs.")
+    parser = argparse.ArgumentParser(description="Build resume web and downloadable resume outputs.")
     parser.add_argument("--check", action="store_true", help="Build and verify expected outputs.")
     parser.parse_args()
 
@@ -469,7 +524,6 @@ def main() -> int:
     print(f"Wrote {RESUME_DATA_OUTPUT.relative_to(REPO_ROOT)}")
     print(f"Wrote {FULL_DOCX_OUTPUT.relative_to(REPO_ROOT)}")
     print(f"Wrote {FULL_PDF_OUTPUT.relative_to(REPO_ROOT)}")
-    print(f"Wrote {APPLICATION_DOCX_OUTPUT.relative_to(REPO_ROOT)}")
     print(f"Wrote {APPLICATION_PDF_OUTPUT.relative_to(REPO_ROOT)}")
     return 0
 

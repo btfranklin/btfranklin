@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-07-04"
+last_updated: "2026-08-06"
 ---
 
 # B.T. Franklin
@@ -33,7 +33,7 @@ tooling, and product-facing systems.
 - Multimodal AI API Integration
 - AI Product Architecture
 - Developer Experience and Platform Tooling
-- Full-Stack Product Engineering
+- Full-Stack Product Engineering with React, Next.js, Node.js, and Python
 - Technical Leadership
 
 ## AI Platform Experience
@@ -46,23 +46,25 @@ tooling, and product-facing systems.
   self-correcting guardrail loops, and custom headless processing loops.
 - Built RAG, embedding, vector-search, semantic matching, structured extraction, and document-processing systems using
   custom pipelines and vector stores.
-- Applied AI quality and evaluation practices including rubric grading, human review, tracing, observability,
+- Has practical AI quality and evaluation experience through rubric grading, human review, tracing, observability,
   guardrail-style parsing checks, skill/workflow evaluation, automation-oriented review loops, and practical output
-  quality checks.
+  quality checks; interested in moving deeper into formal LLM and agent evaluation without claiming deep
+  platform-specific eval-tool specialization.
 
 ## Domain Experience
 
 - Deepest domain experience is in pricing and revenue optimization, including pricing workflows, price management
   systems, formula-driven price calculations, analytics, and customer-facing explanation of pricing outputs.
 - Historical domain experience in Salesforce and GTM systems, including Salesforce UI/UX, Lightning Web Components,
-  enterprise implementation strategy, and configuration migration workflows.
+  enterprise implementation strategy, and configuration migration workflows; this is supporting context for
+  enterprise/platform architecture, not a desired future specialization.
 - Strong working knowledge of GitHub and repository intelligence, including repository architecture analysis,
   contributor expertise modeling, development-history analysis, agent-legible repositories, and GitHub-integrated AI
   product workflows.
 - Practical recruiting-domain experience from building Hiredar, including resume ingestion, candidate profile
   extraction, explainable candidate matching, recruiter-facing workflows, and job-to-candidate semantic comparison.
-- Earlier medical imaging software experience, including refactoring product systems that expanded clinical
-  applicability and strengthened product value.
+- Historical medical imaging software experience from earlier career work, with the understanding that the domain
+  knowledge is older and less current than the pricing, Salesforce, AI tooling, and repository-intelligence domains.
 
 ## Architecture and Technical Leadership Evidence
 
@@ -98,9 +100,9 @@ tooling, and product-facing systems.
   taste into usable systems.
 - Combines enterprise architecture judgment from long Zilliant tenure with founder-style product execution from solo
   SaaS builds, public open-source tooling, marketing experiments, deployment work, and go-to-market attempts.
-- Brings a broad AI perspective spanning agent workflows, tool use, MCP, structured prompts, RAG, semantic matching,
-  computational creativity, human-facing AI product UX, developer workflow acceleration, and evidence-grounded
-  automation.
+- Brings a broader AI perspective than model-training-focused ML alone: agent workflows, tool use, MCP, structured
+  prompts, RAG, semantic matching, computational creativity, human-facing AI product UX, developer workflow
+  acceleration, and evidence-grounded automation.
 - Comfortable operating in ambiguous spaces where product goals, technical constraints, user experience, and evolving AI
   capabilities have to be reconciled into a design that engineers can actually build.
 
@@ -114,8 +116,12 @@ April 2025 - July 2026
 
 - Served as organization-wide AI technical leader, guiding engineering teams on adoption of large language models (LLMs),
   agents, evaluation practices, and modern AI development patterns aligned with business goals.
-- Architected the company's first Model Context Protocol (MCP) server and directed implementation by a third-party
-  contractor, connecting the classic price management stack and formula evaluation service to agent workflows.
+- Contributed across the client and server sides of Zilliant's Pricing Plus application, a React application built with
+  Next.js and a Node.js server.
+- Served as technical lead and prototype implementer for an agentic offering deployed on AWS and built with the Strands
+  Agents SDK, enabling users to explore and understand pricing formulas through a conversational interface.
+- Architected the company's first Model Context Protocol (MCP) server and worked alongside a third-party contractor on
+  its implementation, connecting the classic price management stack and formula evaluation service to agent workflows.
 - Designed MCP tools that allow agents to retrieve calculated prices and explain the formula reasoning behind start,
   target, and floor price values shown in customer-facing pricing experiences.
 - Shipped the MCP server work for existing customers on Zilliant's older stack, supporting modernization, customer
@@ -171,7 +177,7 @@ January 2009 - September 2019
 Founder / Product Architect, 2026
 
 - Built and publicly deployed a solo GitHub App-backed repository intelligence SaaS, later sunset and open-sourced as an
-  archived reference project after market validation.
+  archived reference project after it did not gain customer traction.
 - Designed a Django monolith with web, worker, and beat services; GitHub App authentication and installation scope;
   repository indexing; analytics derivation; AI artifact generation; billing; operator pages; and Sevalla deployment
   infrastructure.
@@ -286,8 +292,8 @@ Interactive Voice, Anthropic Claude, ElevenLabs Speech Generation
 **Technologies:** Large Language Model (LLM) Applications, Agentic Systems, Model Context Protocol (MCP), RAG,
 Embeddings, Vector Stores, Semantic Search, Pinecone, Structured Extraction, REST APIs, Django, Celery, HTMX,
 Pydantic, PydanticAI, OpenAI Agents SDK, Codex, Docker, PostgreSQL, SQLite, AWS Services, AWS QuickSight, Amazon Q,
-CI/CD, GitHub Actions, Terraform, React, Tailwind CSS, Salesforce Lightning, Lightning Web Components, Visual Studio
-Code, oclif
+Strands Agents SDK, CI/CD, GitHub Actions, Terraform, React, Next.js, Node.js, Tailwind CSS, Salesforce Lightning,
+Lightning Web Components, Visual Studio Code, oclif
 
 **Methodologies:** AI Development, Prompt Engineering, Tool Use, Planning Loops, Multi-Agent Systems, Guardrail Design,
 Rubric Grading, Human Review, Tracing, Observability, Large Language Model (LLM) Evaluation, Agent Evaluation,

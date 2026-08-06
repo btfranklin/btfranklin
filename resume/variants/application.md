@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-07-04"
+last_updated: "2026-08-06"
 ---
 
 # B.T. Franklin
@@ -15,15 +15,14 @@ Applied AI Technical Lead / Software Architect
 
 ## Professional Summary
 
-Applied AI technical lead and software architect with 20+ years of experience across enterprise software, developer
-tooling, and product-facing systems. Focused on generative AI, LLMs, agentic systems, multimodal AI integrations, AI
-product architecture, developer tooling, and full-stack AI product execution.
+Applied AI technical lead and software architect with 20+ years building enterprise software, developer tools, and
+full-stack products. Focused on generative AI, LLMs, agentic systems, multimodal integrations, and AI product
+architecture.
 
 ## Core Expertise
 
-Applied AI and LLM Systems; Agentic Workflow Design; MCP Server Architecture; RAG, Embeddings, and Semantic Matching;
-AI Product Architecture; Developer Experience and Platform Tooling; Full-Stack AI Product Engineering; Technical
-Leadership.
+Applied AI and LLM Systems; Agentic Workflows and MCP Server Architecture; RAG, Embeddings, and Semantic Matching; AI
+Product Architecture; Developer Tooling; Full-Stack AI Product Engineering; Technical Leadership.
 
 ## Professional Experience
 
@@ -35,9 +34,11 @@ April 2025 - July 2026
 
 - Served as organization-wide AI technical leader, guiding engineering teams on adoption of LLMs, agents, evaluation
   practices, and modern AI development patterns aligned with business goals.
-- Architected the company's first Model Context Protocol (MCP) server, connecting the classic price management stack and
-  formula evaluation service to agent workflows that retrieve calculated prices and explain start, target, and floor
-  price reasoning.
+- Served as technical lead and prototype implementer for an agentic offering deployed on AWS and built with the Strands
+  Agents SDK, enabling conversational exploration and explanation of pricing formulas.
+- Architected the company's first Model Context Protocol (MCP) server and worked alongside a third-party contractor on
+  its implementation, connecting pricing and formula services to agent workflows that retrieve calculated prices and
+  explain start, target, and floor price reasoning.
 - Drove AI tooling adoption across engineering through Codex workflow training, reusable code-review skills, and
   agent-assisted development patterns that moved PR review and code-production workflows toward faster turnaround.
 
@@ -51,36 +52,23 @@ August 2022 - March 2025
   answering into the product UI.
 - Served as chief architect for a data access API and designed the Zilliant Developer Experience (ZDX) CLI, reducing
   complex configuration migration work from a multi-day process to a few hours.
-
-#### Staff Software Engineer
-
-February 2020 - August 2022
-
-- Led UI/UX strategy, proof-of-concept development, and cross-team product architecture work across enterprise platform
-  evolution.
-
-#### Senior Software Engineer
-
-January 2009 - September 2019
-
-- Led Salesforce Lightning Web Components adoption, SalesMax development, mentorship, and product modernization work
-  across long-running enterprise systems.
+- **Earlier Zilliant roles:** Staff Software Engineer (2020-2022) and Senior Software Engineer (2009-2019), leading
+  UI/UX strategy, proof-of-concept and cross-team architecture work, Lightning Web Components adoption, SalesMax
+  development, mentorship, and product modernization.
 
 ## Founder-Led and Open Source AI Work
 
-- **RepoZest:** Built and publicly deployed a solo GitHub App-backed repository intelligence SaaS for architecture
-  analysis, contributor expertise modeling, hotspot detection, ownership-fragility signals, and AI-generated repository
-  reports; later sunset and open-sourced as an archived reference project.
-- **Hiredar:** Built and deployed a complete solo AI recruiting SaaS in roughly two months, including Stripe Checkout,
-  background workers, resume ingestion, structured extraction, OpenAI API processing, embeddings, Pinecone vector
-  search, RAG-based candidate matching, and recruiter-facing UI.
-- **Open source AI tooling:** Created projects including contract4agents, agentic-django, agent-simulator, promptdown,
-  compendiumscribe, release-notes-scribe, pywebview-htmx, and reusable AI agent skills.
+- **RepoZest:** Built and deployed a solo GitHub App-backed repository intelligence SaaS for architecture analysis,
+  expertise modeling, hotspots, ownership risk, and AI-generated reports; later sunset and open-sourced.
+- **Hiredar:** Built and deployed a solo AI recruiting SaaS in roughly two months using OpenAI extraction, embeddings,
+  Pinecone vector search, RAG-based candidate matching, background workers, Stripe, and recruiter-facing UI.
+- **Open source AI tooling:** Created contract4agents, agentic-django, compendiumscribe, promptdown,
+  release-notes-scribe, and reusable AI agent skills.
 
 ## Research and Publications
 
-Published computational creativity research in the *Proceedings of Generative Art Conference* and *Proceedings of the
-3rd Computer Simulation of Musical Creativity Conference*, covering AI-driven storytelling and generative music systems.
+Published computational creativity research on AI-driven storytelling and generative music in the *Proceedings of
+Generative Art Conference* and *Computer Simulation of Musical Creativity Conference*.
 
 ## Education
 
@@ -88,7 +76,5 @@ Published computational creativity research in the *Proceedings of Generative Ar
 
 ## Skills
 
-Python; JavaScript/TypeScript; Java; OpenAI GPT, Image Generation, Embeddings, Speech-to-Text, and Interactive Voice;
-Anthropic Claude; ElevenLabs; Agentic Systems; MCP; RAG; Pinecone; Django; Celery; HTMX; Pydantic; PydanticAI; OpenAI
-Agents SDK; Codex; Docker; PostgreSQL; SQLite; AWS; QuickSight; Amazon Q; GitHub Actions; Terraform; React; Tailwind
-CSS; API Design; Platform Design; Technical Strategy.
+Python; JavaScript/TypeScript; OpenAI and Anthropic APIs; Agentic Systems; MCP; RAG; Strands and OpenAI Agents SDKs;
+Codex; AWS; Django; React; Next.js; Node.js; API and Platform Design; Technical Strategy.

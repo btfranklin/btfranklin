@@ -23,5 +23,5 @@ The site still deploys from committed files in `docs/`, so run `npm run build` b
 - Notes live under `notes/` and are rendered through the notes collection.
 - Static assets live under `assets/` and are passed through to `docs/`.
 
-Resume source remains in `../resume/`; the root build regenerates the resume web include plus downloadable DOCX/PDF
-exports.
+Resume source remains in `../resume/`; the root build regenerates the resume web include, the full-resume DOCX/PDF
+exports, and the PDF-only application resume.

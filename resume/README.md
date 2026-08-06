@@ -11,8 +11,10 @@ This folder owns B.T. Franklin's resume variants and generated resume artifacts.
   - `../site/_data/resume.json`
   - `../docs/downloads/bt-franklin-resume-full.docx`
   - `../docs/downloads/bt-franklin-resume-full.pdf`
-  - `../docs/downloads/bt-franklin-resume-application.docx`
   - `../docs/downloads/bt-franklin-resume-application.pdf`
+
+The application variant is intentionally PDF-only. Its build uses a temporary ODT plus
+`templates/application-reference.odt`; it does not create or publish an application DOCX.
 
 ## Usage
 
@@ -40,5 +42,5 @@ Run the generator and verify the expected files exist:
 pdm run check
 ```
 
-The build uses `python-docx` for the downloadable DOCX, `pandoc` for the web HTML fragment consumed by Eleventy, and
-LibreOffice `soffice` for PDF generation.
+The build uses `python-docx` for the downloadable full-resume DOCX, `pandoc` for the web HTML fragment and temporary
+application ODT, and LibreOffice `soffice` for PDF generation.

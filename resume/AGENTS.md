@@ -3,11 +3,12 @@
 ## Scope
 - `variants/full.md` is the complete source of truth for B.T. Franklin's resume.
 - `variants/application.md` is the shorter export-oriented resume derived from `variants/full.md`.
-- `scripts/build_resume.py` regenerates Eleventy resume include/data artifacts and downloadable resume files.
+- `scripts/build_resume.py` regenerates Eleventy resume include/data artifacts, the full-resume DOCX/PDF downloads, and
+  the PDF-only application resume.
 
 ## Commands
-- `pdm run build` - regenerate `../site/_includes/generated/resume-body.html`, `../site/_data/resume.json`, DOCX, and
-  PDF outputs.
+- `pdm run build` - regenerate `../site/_includes/generated/resume-body.html`, `../site/_data/resume.json`, the full
+  DOCX/PDF outputs, and the application PDF.
 - `pdm run check` - run the same generator and verify expected outputs exist.
 
 ## Rules
@@ -29,10 +30,12 @@
   revenue impact, or other quantification that is not known.
 - Keep the top third strong: contact header, headline, Professional Summary, Core Expertise, and the most recent
   Zilliant AI/architecture roles should remain prominent without implying current employment there.
-- Cut content before shrinking type. The generated DOCX/PDF style is intentionally matched to the original resume and
-  should not be made smaller just to fit more history.
+- Cut content before shrinking type. The generated application PDF style should not be made smaller just to fit more
+  history.
 - Target a two-page exported PDF when practical. If it spills slightly because of meaningful content, shorten older or
   less relevant material before touching the summary or recent AI leadership work.
+- Do not generate, publish, link, or validate an application DOCX. The application variant is PDF-only; its temporary
+  build intermediate is ODT.
 - Condense older Zilliant history first. Keep the 2025-2026 AI Tech Lead role and 2022-2025 Software Architect role
   detailed; compress 2020-2022 and 2009-2019 into fewer bullets or an earlier-roles summary.
 - Compress founder-led products to one role line and one bullet each unless the application target makes them central.

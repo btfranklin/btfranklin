@@ -7,8 +7,8 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ 'site/assets': '.' })
     eleventyConfig.ignores.add('site/README.md')
 
-    eleventyConfig.addCollection('notes', (collectionApi) => {
-        return collectionApi.getFilteredByTag('notes').sort((left, right) => right.date - left.date)
+    eleventyConfig.addCollection('writing', (collectionApi) => {
+        return collectionApi.getFilteredByTag('writing').sort((left, right) => right.date - left.date)
     })
 
     eleventyConfig.addCollection('activeProjects', (collectionApi) => {

@@ -3,9 +3,12 @@ title: "Navigating the Role of a Software Architect: Insights and Surprises"
 description: "A reflection on the communication, advocacy, breadth of experience, and continuous learning that shape software architecture."
 date: 2023-12-28
 tags:
-  - notes
-permalink: /notes/navigating-the-role-of-a-software-architect/
-layout: layouts/note.njk
+  - writing
+permalink: /writing/navigating-the-role-of-a-software-architect/
+layout: layouts/article.njk
+navKey: writing
+sectionLabel: Writing
+sectionUrl: /writing/
 heroImage: /software-architect-insights-hero.jpg
 heroAlt: "A software architect overlooking a futuristic city filled with digital interfaces"
 externalUrl: "https://www.linkedin.com/pulse/navigating-role-software-architect-insights-surprises-b-t-franklin-sga5c"

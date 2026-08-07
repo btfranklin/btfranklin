@@ -5,7 +5,10 @@ date: 2025-08-28
 tags:
   - notes
 permalink: /notes/what-is-llms-txt/
-layout: layouts/note.njk
+layout: layouts/article.njk
+navKey: creations
+sectionLabel: Notes
+sectionUrl: /creations/#notes
 ---
 
 [View this site's llms.txt](/llms.txt)

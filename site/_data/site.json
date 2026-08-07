@@ -14,9 +14,9 @@
       "url": "/creations/"
     },
     {
-      "key": "notes",
-      "label": "Notes",
-      "url": "/notes/"
+      "key": "writing",
+      "label": "Writing",
+      "url": "/writing/"
     },
     {
       "key": "about",
@@ -27,8 +27,8 @@
   "sitemap": [
     "/",
     "/creations/",
-    "/notes/",
-    "/notes/navigating-the-role-of-a-software-architect/",
+    "/writing/",
+    "/writing/navigating-the-role-of-a-software-architect/",
     "/notes/what-is-llms-txt/",
     "/resume/",
     "/about/",

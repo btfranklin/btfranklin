@@ -1,7 +1,7 @@
 https://btfranklin.info/
 https://btfranklin.info/creations/
-https://btfranklin.info/notes/
-https://btfranklin.info/notes/navigating-the-role-of-a-software-architect/
+https://btfranklin.info/writing/
+https://btfranklin.info/writing/navigating-the-role-of-a-software-architect/
 https://btfranklin.info/notes/what-is-llms-txt/
 https://btfranklin.info/resume/
 https://btfranklin.info/about/

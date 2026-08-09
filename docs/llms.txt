@@ -9,6 +9,7 @@ This file highlights key, inference-ready resources from btfranklin.info.
 
 - [Software Projects](https://btfranklin.info/): A curated showcase of active and archived open-source projects with detailed descriptions.
 - [Creations](https://btfranklin.info/creations/): Interactive web experiences, simulations, and practical notes.
+- [The Long Intelligence Handoff](https://btfranklin.info/ai-2050/): An evidence-based, branching forecast that follows AI, scientific breakthroughs, health, abundance, and housing from 2026 to 2050.
 - [Writing](https://btfranklin.info/writing/): Essays and longer-form reflections on software architecture and technology.
 - [Resume](https://btfranklin.info/resume/): Structured resume for B.T. Franklin, including applied AI leadership,
   software architecture, founder-led AI products, open-source AI work, research, education, and skills.

@@ -5,6 +5,7 @@ export default function (eleventyConfig) {
     })
 
     eleventyConfig.addPassthroughCopy({ 'site/assets': '.' })
+    eleventyConfig.addPassthroughCopy({ 'site/sub-sites/ai-2050': 'ai-2050' })
     eleventyConfig.ignores.add('site/README.md')
 
     eleventyConfig.addCollection('writing', (collectionApi) => {

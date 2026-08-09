@@ -90,6 +90,12 @@
     --blur-md: 12px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: Inter, sans-serif;
+    --default-font-feature-settings: normal;
+    --default-font-variation-settings: normal;
+    --default-mono-font-family: JetBrains Mono, monospace;
+    --default-mono-font-feature-settings: normal;
+    --default-mono-font-variation-settings: normal;
   }
 }
 @layer base {
@@ -357,6 +363,9 @@
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
+  .mb-16 {
+    margin-bottom: calc(var(--spacing) * 16);
+  }
   .mb-24 {
     margin-bottom: calc(var(--spacing) * 24);
   }
@@ -374,6 +383,9 @@
   }
   .grid {
     display: grid;
+  }
+  .hidden {
+    display: none;
   }
   .inline {
     display: inline;
@@ -399,6 +411,9 @@
   }
   .min-h-64 {
     min-height: calc(var(--spacing) * 64);
+  }
+  .min-h-72 {
+    min-height: calc(var(--spacing) * 72);
   }
   .min-h-96 {
     min-height: calc(var(--spacing) * 96);
@@ -431,6 +446,9 @@
     max-width: 100%;
   }
   .flex-grow {
+    flex-grow: 1;
+  }
+  .grow {
     flex-grow: 1;
   }
   .transform {
@@ -635,6 +653,9 @@
   }
   .bg-\[\#0a66c2\] {
     background-color: #0a66c2;
+  }
+  .bg-\[\#f2efe7\] {
+    background-color: #f2efe7;
   }
   .bg-amber-500\/10 {
     background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 10%, transparent);
@@ -1149,6 +1170,13 @@
       }
     }
   }
+  .hover\:scale-\[1\.02\] {
+    &:hover {
+      @media (hover: hover) {
+        scale: 1.02;
+      }
+    }
+  }
   .hover\:scale-\[1\.005\] {
     &:hover {
       @media (hover: hover) {
@@ -1386,9 +1414,24 @@
       margin-inline: 0;
     }
   }
+  .lg\:grid {
+    @media (width >= 64rem) {
+      display: grid;
+    }
+  }
   .lg\:grid-cols-\[220px_1fr\] {
     @media (width >= 64rem) {
       grid-template-columns: 220px 1fr;
+    }
+  }
+  .lg\:grid-cols-\[minmax\(0\,1\.15fr\)_minmax\(0\,0\.85fr\)\] {
+    @media (width >= 64rem) {
+      grid-template-columns: minmax(0,1.15fr) minmax(0,0.85fr);
+    }
+  }
+  .lg\:p-10 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 10);
     }
   }
   .dark\:border-violet-700\/60 {

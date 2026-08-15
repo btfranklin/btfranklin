@@ -2,7 +2,7 @@
 title: "pywebview-htmx"
 repo_url: "https://github.com/btfranklin/pywebview-htmx"
 status: "active"
-order: 9
+order: 10
 updated: "July 2026"
 tags:
   - "project"

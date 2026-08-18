@@ -35,7 +35,6 @@ BODY_FONT = "Helvetica Neue"
 BODY_COLOR = RGBColor(0x0C, 0x0C, 0x0C)
 LINK_COLOR = RGBColor(0x05, 0x63, 0xC1)
 SECTION_SIZES = {
-    "Core Expertise": 12,
     "Additional Experience": 13,
 }
 
@@ -206,6 +205,35 @@ def parse_markdown_blocks(body: str) -> list[tuple[str, int | None, str]]:
     return blocks
 
 
+def find_long_bullets(source: str, *, threshold: int = 35) -> list[tuple[int, int, str]]:
+    findings: list[tuple[int, int, str]] = []
+    lines = source.splitlines()
+    index = 0
+    while index < len(lines):
+        if not lines[index].startswith("- "):
+            index += 1
+            continue
+        line_number = index + 1
+        item = lines[index][2:].strip()
+        index += 1
+        while index < len(lines) and lines[index].startswith("  "):
+            item += " " + lines[index].strip()
+            index += 1
+        word_count = len(re.findall(r"\b[\w'-]+\b", item))
+        if word_count > threshold:
+            findings.append((line_number, word_count, item))
+    return findings
+
+
+def report_long_bullets(source_path: Path) -> None:
+    source = source_path.read_text(encoding="utf-8")
+    for line_number, word_count, item in find_long_bullets(source):
+        print(
+            f"Warning: {source_path}:{line_number}: bullet has {word_count} words: {item}",
+            file=sys.stderr,
+        )
+
+
 def add_normal_paragraph(document: Document, text: str, *, before: int = 0, after: int = 8) -> None:
     paragraph = document.add_paragraph()
     set_paragraph_spacing(paragraph, before=before, after=after)
@@ -265,26 +293,47 @@ def add_product_heading(document: Document, name: str, detail: str) -> None:
     set_run_font(detail_run, italic=True)
 
 
-def add_education_heading(document: Document, school: str, degree: str, minor: str) -> None:
+def add_education_heading(document: Document, school: str, details: list[str]) -> None:
+    if not details:
+        raise BuildError(f"Education entry requires a degree: {school}")
     paragraph = document.add_paragraph()
     set_paragraph_spacing(paragraph)
     paragraph.paragraph_format.keep_with_next = True
     school_run = paragraph.add_run(school)
     set_run_font(school_run, bold=True)
-    paragraph.add_run().add_break()
-    degree_run = paragraph.add_run(degree)
-    set_run_font(degree_run)
-    paragraph.add_run().add_break()
-    minor_run = paragraph.add_run(minor)
-    set_run_font(minor_run)
+    for detail in details:
+        paragraph.add_run().add_break()
+        detail_run = paragraph.add_run(detail)
+        set_run_font(detail_run)
 
 
-def add_contact_header(document: Document, blocks: list[tuple[str, int | None, str]]) -> int:
+def add_contact_header(
+    document: Document,
+    blocks: list[tuple[str, int | None, str]],
+    *,
+    headline: str | None = None,
+) -> int:
+    expected = [
+        ("heading", 1, "name"),
+        ("paragraph", None, "city"),
+        ("paragraph", None, "contact"),
+        ("paragraph", None, "links"),
+    ]
+    if len(blocks) < len(expected):
+        raise BuildError("Resume source is missing the expected header blocks.")
+    for index, (kind, level, label) in enumerate(expected):
+        actual_kind, actual_level, _text = blocks[index]
+        if actual_kind != kind or actual_level != level:
+            raise BuildError(f"Resume header has an invalid {label} block.")
+
     name = blocks[0][2]
     city = blocks[1][2]
-    headline = blocks[2][2]
-    contact = blocks[3][2]
-    links = blocks[4][2]
+    contact = blocks[2][2]
+    links = blocks[3][2]
+    if "|" not in contact:
+        raise BuildError("Resume contact block must contain phone and email separated by '|'.")
+    if not re.search(r"\[[^\]]+\]\([^)]+\)", links):
+        raise BuildError("Resume links block must contain at least one Markdown link.")
 
     paragraph = document.add_paragraph()
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -298,9 +347,10 @@ def add_contact_header(document: Document, blocks: list[tuple[str, int | None, s
     set_run_font(run)
     paragraph.add_run().add_break()
 
-    run = paragraph.add_run(headline)
-    set_run_font(run)
-    paragraph.add_run().add_break()
+    if headline:
+        run = paragraph.add_run(headline)
+        set_run_font(run)
+        paragraph.add_run().add_break()
 
     phone, email_text = [part.strip() for part in contact.split("|", 1)]
     run = paragraph.add_run(f"{phone} | ")
@@ -315,13 +365,11 @@ def add_contact_header(document: Document, blocks: list[tuple[str, int | None, s
             set_run_font(run)
         add_hyperlink(paragraph, label, url)
 
-    return 5
+    return 4
 
 
-def build_styled_docx(body: str, output_path: Path) -> None:
+def build_styled_docx(body: str, output_path: Path, *, headline: str | None = None) -> None:
     blocks = parse_markdown_blocks(body)
-    if len(blocks) < 5:
-        raise BuildError("Resume source is missing the expected header blocks.")
 
     document = Document()
     section = document.sections[0]
@@ -334,7 +382,7 @@ def build_styled_docx(body: str, output_path: Path) -> None:
     normal_style.font.size = Pt(12)
     normal_style.font.color.rgb = BODY_COLOR
 
-    index = add_contact_header(document, blocks)
+    index = add_contact_header(document, blocks, headline=headline)
     current_section = ""
     while index < len(blocks):
         kind, level, text = blocks[index]
@@ -349,10 +397,13 @@ def build_styled_docx(body: str, output_path: Path) -> None:
             index += 2
             continue
         if kind == "heading" and level == 3 and current_section == "Education":
-            degree = blocks[index + 1][2] if index + 1 < len(blocks) else ""
-            minor = blocks[index + 2][2] if index + 2 < len(blocks) else ""
-            add_education_heading(document, text, degree, minor)
-            index += 3
+            details: list[str] = []
+            detail_index = index + 1
+            while detail_index < len(blocks) and blocks[detail_index][0] == "paragraph":
+                details.append(blocks[detail_index][2])
+                detail_index += 1
+            add_education_heading(document, text, details)
+            index = detail_index
             continue
         if kind == "heading" and level == 3:
             add_bold_heading(document, text)
@@ -412,8 +463,8 @@ def build_docx(source_path: Path, output_path: Path) -> None:
     newest_input_mtime = max(source_path.stat().st_mtime, Path(__file__).stat().st_mtime)
     if output_path.exists() and output_path.stat().st_mtime >= newest_input_mtime:
         return
-    _metadata, body = parse_frontmatter(source_path.read_text(encoding="utf-8"))
-    build_styled_docx(body, output_path)
+    metadata, body = parse_frontmatter(source_path.read_text(encoding="utf-8"))
+    build_styled_docx(body, output_path, headline=metadata.get("headline") or None)
 
 
 def build_pdf_from_docx(docx_output: Path) -> None:
@@ -433,6 +484,15 @@ def build_pdf_from_docx(docx_output: Path) -> None:
                 str(docx_output),
             ]
         )
+
+
+def get_pdf_page_count(pdf_output: Path) -> int:
+    output = run([require_tool("pdfinfo"), str(pdf_output)], capture=True)
+    for line in output.splitlines():
+        key, separator, value = line.partition(":")
+        if separator and key.strip() == "Pages":
+            return int(value.strip())
+    raise BuildError(f"Could not determine PDF page count: {pdf_output}")
 
 
 def build_application_pdf(source_path: Path, output_path: Path) -> None:
@@ -493,9 +553,11 @@ def validate_outputs() -> None:
 def build() -> None:
     require_tool("pandoc")
     require_tool("soffice")
+    require_tool("pdfinfo")
     for source_path in [FULL_SOURCE, APPLICATION_SOURCE]:
         if not source_path.exists():
             raise BuildError(f"Resume source not found: {source_path}")
+        report_long_bullets(source_path)
     if not APPLICATION_REFERENCE_ODT.exists():
         raise BuildError(f"Application PDF reference document not found: {APPLICATION_REFERENCE_ODT}")
 
@@ -507,6 +569,11 @@ def build() -> None:
     build_pdf_from_docx(FULL_DOCX_OUTPUT)
     build_application_pdf(APPLICATION_SOURCE, APPLICATION_PDF_OUTPUT)
     validate_outputs()
+    application_pages = get_pdf_page_count(APPLICATION_PDF_OUTPUT)
+    if application_pages > 2:
+        raise BuildError(
+            f"Application resume exceeds 2-page limit: {application_pages} pages ({APPLICATION_PDF_OUTPUT})"
+        )
 
 
 def main() -> int:

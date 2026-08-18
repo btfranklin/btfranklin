@@ -6,6 +6,7 @@ This folder owns B.T. Franklin's resume variants and generated resume artifacts.
 
 - `variants/full.md` is the complete editable source of truth.
 - `variants/application.md` is a shorter export-oriented variant derived from the full source.
+- Other local projects must link to `variants/full.md` instead of maintaining copied resume content.
 - Generated site artifacts and downloads are written outside this folder:
   - `../site/_includes/generated/resume-body.html`
   - `../site/_data/resume.json`

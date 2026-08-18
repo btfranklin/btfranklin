@@ -11,4 +11,5 @@ distribution = false
 
 [tool.pdm.scripts]
 build = "python scripts/build_resume.py"
-check = "python scripts/build_resume.py --check"
+test = "python -m unittest discover -s tests"
+check = {composite = ["python -m unittest discover -s tests", "python scripts/build_resume.py --check"]}

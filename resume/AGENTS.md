@@ -28,12 +28,20 @@
 ## Application Variant Guidance
 - Start from `variants/full.md` and preserve factual accuracy. Do not invent metrics, savings, percentages, team sizes,
   revenue impact, or other quantification that is not known.
-- Keep the top third strong: contact header, headline, Professional Summary, Core Expertise, and the most recent
-  Zilliant AI/architecture roles should remain prominent without implying current employment there.
+- Omit a branding headline unless B.T. explicitly requests one. Use a Professional Summary of no more than 45 words,
+  then show the most recent Zilliant AI and architecture roles without implying current employment there.
+- Do not add a Core Expertise section. Keep one compact, evidence-backed Skills section at the bottom.
+- Give each bullet one primary competency, action, or result. Target 30 words or fewer and review every bullet over 35
+  words before export.
 - Cut content before shrinking type. The generated application PDF style should not be made smaller just to fit more
   history.
-- Target a two-page exported PDF when practical. If it spills slightly because of meaningful content, shorten older or
-  less relevant material before touching the summary or recent AI leadership work.
+- Treat two pages as a hard ceiling, not a content target. Remove older or less relevant content before changing the
+  summary or recent AI leadership work.
+- Include only skills that support the target role, are truthful in `variants/full.md`, and have selected experience or
+  project evidence.
+- Show the highest relevant degree by default. Omit minors, academic honors, and awards unless the target makes them
+  relevant.
+- Omit certifications, awards, hobbies, and references unless they are directly relevant and credible.
 - Do not generate, publish, link, or validate an application DOCX. The application variant is PDF-only; its temporary
   build intermediate is ODT.
 - Condense older Zilliant history first. Keep the 2025-2026 AI Tech Lead role and 2022-2025 Software Architect role
@@ -43,4 +51,4 @@
 - Convert Additional Experience to a single concise earlier-roles paragraph unless a specific target role needs those
   details.
 - Keep Research and Publications because it differentiates B.T.; use compact citations.
-- Keep Skills, but allow dense line-oriented content at the bottom.
+- Keep Skills compact and line-oriented at the bottom.

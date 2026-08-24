@@ -27,11 +27,11 @@ April 2025 - July 2026
 
 - Served as organization-wide AI technical leader, guiding teams on LLMs, agents, evaluation practices, and modern AI
   development aligned with business goals.
-- Contributed to the React, Next.js, and Node.js client and server layers of Zilliant's Pricing Plus application.
-- Architected and shipped a customer-facing read-only data API across a legacy microservice stack in less than one month,
-  earning a delivery bonus.
-- Refactored Pricing Plus data access behind semantic adapters, reducing LEDS coupling and preparing the API for an
-  independent service boundary.
+- Contributed to the React, Next.js, and Node.js client and server layers of an enterprise pricing application.
+- Architected and shipped a secure, customer-facing read-only data API across a legacy enterprise microservice stack in
+  less than one month, earning a delivery bonus.
+- Refactored application data access behind semantic adapters, reducing coupling to a legacy internal data service and
+  preparing the API for an independent service boundary.
 - Led and prototyped an AWS offering built with the Strands Agents SDK for conversational exploration of pricing
   formulas.
 - Architected the company's first Model Context Protocol (MCP) server and guided a third-party implementation team.

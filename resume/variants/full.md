@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-08-18"
+last_updated: "2026-08-24"
 ---
 
 # B.T. Franklin
@@ -28,6 +28,10 @@ April 2025 - July 2026
 - Served as organization-wide AI technical leader, guiding teams on LLMs, agents, evaluation practices, and modern AI
   development aligned with business goals.
 - Contributed to the React, Next.js, and Node.js client and server layers of Zilliant's Pricing Plus application.
+- Architected and shipped a customer-facing read-only data API across a legacy microservice stack in less than one month,
+  earning a delivery bonus.
+- Refactored Pricing Plus data access behind semantic adapters, reducing LEDS coupling and preparing the API for an
+  independent service boundary.
 - Led and prototyped an AWS offering built with the Strands Agents SDK for conversational exploration of pricing
   formulas.
 - Architected the company's first Model Context Protocol (MCP) server and guided a third-party implementation team.
@@ -49,11 +53,9 @@ August 2022 - March 2025
 - Built a generative AI pipeline that integrated diverse pricing insights into customer-facing analytics in real time.
 - Led and shipped an AWS QuickSight and Amazon Q integration with embedded visualization and generative AI-assisted
   analysis.
-- Served as chief architect for a public data API that exposed supported CRUD operations across a legacy microservice
-  stack.
 - Designed and launched the Zilliant Developer Experience CLI, reducing complex environment migrations from multiple
   days to a few hours.
-- Shaped architecture across AI, analytics, public APIs, and developer enablement initiatives.
+- Shaped architecture across AI, analytics, and developer enablement initiatives.
 
 #### Staff Software Engineer
 

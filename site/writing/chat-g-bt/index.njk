@@ -74,11 +74,23 @@ navKey: writing
                         Posts
                     </h2>
                 </div>
-                {% if collections.chatGBTPosts.length %}
-                <p class="font-mono text-sm text-zinc-500 dark:text-zinc-400">
-                    {{ collections.chatGBTPosts.length }} post{% if collections.chatGBTPosts.length != 1 %}s{% endif %}
-                </p>
-                {% endif %}
+                <div class="flex flex-wrap items-center gap-4">
+                    {% if collections.chatGBTPosts.length %}
+                    <p class="font-mono text-sm text-zinc-500 dark:text-zinc-400">
+                        {{ collections.chatGBTPosts.length }} post{% if collections.chatGBTPosts.length != 1 %}s{% endif %}
+                    </p>
+                    {% endif %}
+                    <a href="{{ feed.url }}" title="Subscribe to Chat G B.T. via RSS"
+                        class="inline-flex items-center gap-2 rounded-md border border-cyan-500/60 px-3 py-2 font-mono text-sm font-bold text-cyan-700 transition hover:border-cyan-500 hover:bg-cyan-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500 dark:text-cyan-300 dark:hover:bg-cyan-950/60">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" class="size-4">
+                            <path d="M4 11a9 9 0 0 1 9 9"></path>
+                            <path d="M4 4a16 16 0 0 1 16 16"></path>
+                            <circle cx="5" cy="19" r="1" fill="currentColor" stroke="none"></circle>
+                        </svg>
+                        Subscribe via RSS
+                    </a>
+                </div>
             </div>
 
             {% if collections.chatGBTPosts.length %}

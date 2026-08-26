@@ -1,3 +1,5 @@
+import { feedPlugin } from '@11ty/eleventy-plugin-rss'
+
 export default function (eleventyConfig) {
     eleventyConfig.setNunjucksEnvironmentOptions({
         lstripBlocks: true,
@@ -14,6 +16,24 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addCollection('chatGBTPosts', (collectionApi) => {
         return collectionApi.getFilteredByTag('chat-g-bt').sort((left, right) => right.date - left.date)
+    })
+
+    eleventyConfig.addPlugin(feedPlugin, {
+        type: 'rss',
+        outputPath: '/writing/chat-g-bt/feed.xml',
+        collection: {
+            name: 'chatGBTPosts',
+            limit: 0,
+        },
+        metadata: {
+            language: 'en',
+            title: 'Chat G B.T.',
+            subtitle: 'The Original Chat G',
+            base: 'https://btfranklin.info/writing/chat-g-bt/',
+            author: {
+                name: 'B.T. Franklin',
+            },
+        },
     })
 
     eleventyConfig.addCollection('articles', (collectionApi) => {

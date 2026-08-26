@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://btfranklin.info/writing/chat-g-bt/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Chat G B.T.</title>
+    <link>https://btfranklin.info/writing/chat-g-bt/</link>
+    <atom:link href="https://btfranklin.info/writing/chat-g-bt/feed.xml" rel="self" type="application/rss+xml" />
+    <description>The Original Chat G</description>
+    <language>en</language>    <item>
+      <title>Agents Don’t Want to Click</title>
+      <link>https://btfranklin.info/writing/chat-g-bt/agents-dont-want-to-click/</link><description>&lt;p&gt;Codex recently added support for WebMCP, and I had to have a little chat with my own AI to actually understand what that even means. 😅&lt;/p&gt;
+&lt;p&gt;The simple version is that a website can now tell Codex, “Here are the actions I know how to perform,” instead of making Codex click around the page like a human.&lt;/p&gt;
+&lt;p&gt;I think I posted about a year ago about the idea that websites and UIs have been designed around &lt;em&gt;human&lt;/em&gt; perceptions and interaction patterns. Think about how we perceive color, or even the concept of “pressing a button,” which we know from the physical world. Agents might need a totally different way to interact with the web.&lt;/p&gt;
+&lt;p&gt;This might be it.&lt;/p&gt;
+&lt;h2&gt;So What Is WebMCP?&lt;/h2&gt;
+&lt;p&gt;WebMCP tools are discovered by the built-in browser and made available to Codex automatically. There’s no separate MCP server to install or configure. Open the page, and its tools become available. Leave the page, and they go away.&lt;/p&gt;
+&lt;p&gt;Imagine an online project tracker. Today, Codex might need to find the “New issue” button, click it, locate each field, fill everything in, and submit the form. With WebMCP, the site could expose a &lt;code&gt;create_issue&lt;/code&gt; tool with fields for the title, description, and priority. Same result, but the second path speaks the agent’s language.&lt;/p&gt;
+&lt;p&gt;It’s less like connecting Codex to a new service and more like giving a website a second interface...one designed for AI agents.&lt;/p&gt;
+&lt;p&gt;Agents don&#39;t want to click. They want to call tools!&lt;/p&gt;
+&lt;p&gt;This doesn’t mean the human interface goes away. It means the site can have a human interface and an agent interface backed by the same application and the same signed-in session.&lt;/p&gt;
+&lt;p&gt;WebMCP is still early, but it feels like a clear move toward a web with three distinct interaction modes: desktop, mobile, and agentic.&lt;/p&gt;
+</description><pubDate>Mon, 24 Aug 2026 17:00:00 -0700</pubDate>
+      <dc:creator>B.T. Franklin</dc:creator>
+      <guid>https://btfranklin.info/writing/chat-g-bt/agents-dont-want-to-click/</guid>
+    </item>  </channel>
+</rss>

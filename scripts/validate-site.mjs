@@ -42,6 +42,8 @@ const requiredOutputs = [
     'docs/llms.txt',
     'docs/sitemap.txt',
     'docs/styles.min.css',
+    'docs/writing/chat-g-bt/index.html',
+    'docs/writing/chat-g-bt/feed.xml',
 ]
 const staleCleanBreakFiles = [
     'docs/about.html',
@@ -206,7 +208,7 @@ function validateBtfranklinDomain() {
     const files = [
         join(repoRoot, 'AGENTS.md'),
         ...walkFiles(join(repoRoot, 'site'), (filePath) => ['.md', '.njk', '.txt', '.js', '.json'].includes(extname(filePath))),
-        ...walkFiles(docsDir, (filePath) => ['.html', '.txt', '.js'].includes(extname(filePath))),
+        ...walkFiles(docsDir, (filePath) => ['.html', '.txt', '.js', '.xml'].includes(extname(filePath))),
     ]
     for (const filePath of files) {
         const source = readFileSync(filePath, 'utf8')
@@ -243,6 +245,34 @@ function validateLlmsTxtLinks() {
         if (!localReferenceExists(llms, pathPart)) {
             addError(llms, `llms.txt URL path does not resolve: ${pathPart}`, lineForIndex(source, match.index))
         }
+    }
+}
+
+function validateChatGBTFeed() {
+    const feed = join(docsDir, 'writing/chat-g-bt/feed.xml')
+    const source = readFileSync(feed, 'utf8')
+    const selfLinkAttributes =
+        'href="https://btfranklin.info/writing/chat-g-bt/feed.xml" rel="self" type="application/rss+xml"'
+    const requiredContent = [
+        '<?xml',
+        '<rss version="2.0"',
+        '<title>Chat G B.T.</title>',
+        '<link>https://btfranklin.info/writing/chat-g-bt/agents-dont-want-to-click/</link>',
+        '<item>',
+    ]
+
+    for (const content of requiredContent) {
+        if (!source.includes(content)) {
+            addError(feed, `RSS feed is missing expected content: ${content}`)
+        }
+    }
+
+    if (!source.includes(`<atom:link ${selfLinkAttributes} />`)) {
+        addError(feed, 'RSS feed is missing its self-discovery link')
+    }
+
+    if (source.includes('localhost')) {
+        addError(feed, 'RSS feed contains a local URL')
     }
 }
 
@@ -285,6 +315,7 @@ for (const htmlFile of walkFiles(docsDir, (filePath) => extname(filePath) === '.
 validateBtfranklinDomain()
 validateSitemap()
 validateLlmsTxtLinks()
+validateChatGBTFeed()
 
 if (errors.length > 0) {
     console.error(`Site validation failed with ${errors.length} issue${errors.length === 1 ? '' : 's'}:`)

@@ -4,6 +4,7 @@ description: "A reflection on the communication, advocacy, breadth of experience
 date: 2023-12-28
 tags:
   - writing
+  - articles
 permalink: /writing/navigating-the-role-of-a-software-architect/
 layout: layouts/article.njk
 navKey: writing

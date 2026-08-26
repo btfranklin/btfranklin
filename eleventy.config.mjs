@@ -12,6 +12,14 @@ export default function (eleventyConfig) {
         return collectionApi.getFilteredByTag('writing').sort((left, right) => right.date - left.date)
     })
 
+    eleventyConfig.addCollection('chatGBTPosts', (collectionApi) => {
+        return collectionApi.getFilteredByTag('chat-g-bt').sort((left, right) => right.date - left.date)
+    })
+
+    eleventyConfig.addCollection('articles', (collectionApi) => {
+        return collectionApi.getFilteredByTag('articles').sort((left, right) => right.date - left.date)
+    })
+
     eleventyConfig.addCollection('activeProjects', (collectionApi) => {
         return collectionApi
             .getFilteredByTag('project')

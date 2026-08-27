@@ -22,5 +22,38 @@
 </description><pubDate>Mon, 24 Aug 2026 17:00:00 -0700</pubDate>
       <dc:creator>B.T. Franklin</dc:creator>
       <guid>https://btfranklin.info/writing/chat-g-bt/agents-dont-want-to-click/</guid>
+    </item>    <item>
+      <title>Make Your Coding Agent Speak Simplified English</title>
+      <link>https://btfranklin.info/writing/chat-g-bt/make-your-coding-agent-speak-simplified-english/</link><description>&lt;p&gt;Getting tired of your very smart coding agent explaining simple things in exhausting language?&lt;/p&gt;
+&lt;p&gt;Sick of convoluted wording that you have to read three times?&lt;/p&gt;
+&lt;p&gt;I’m about to change your life. :)&lt;/p&gt;
+&lt;p&gt;Let me introduce you to &lt;a href=&quot;https://www.asd-ste100.org/&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Learn about ASD-STE100 Simplified Technical English&quot;&gt;ASD-STE100 Simplified Technical English&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It was originally developed for aerospace documentation, where unclear language can cause real problems. It uses clear writing rules and a controlled vocabulary of approximately 900 approved general words. Necessary technical terms are still permitted.&lt;/p&gt;
+&lt;p&gt;The goal is simple: Say exactly what you mean. Use short sentences. Use consistent terms. Do not make the reader decode clever metaphors or trendy jargon.&lt;/p&gt;
+&lt;p&gt;No metaphorical “load-bearing.” No “worth stating plainly” before a routine observation. No “the real tension” when you mean “the trade-off.”&lt;/p&gt;
+&lt;p&gt;Just tell me what the code does.&lt;/p&gt;
+&lt;p&gt;Here is a deliberately Claude-ish example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The configuration boundary is load-bearing here. The real tension is between local flexibility and system-wide consistency. It is worth stating plainly that centralization is the right move.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here is the same idea in simpler language:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The application keeps its settings in one file. All components read that file. This keeps the settings consistent and makes them easier to change.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For me, this has been a &lt;em&gt;huge&lt;/em&gt; improvement during complex project work. I already have to understand the architecture, requirements, risks, and code. I do not also want to translate the agent’s explanation into normal human thought.&lt;/p&gt;
+&lt;p&gt;Add this to your Codex Personalization settings, your project instructions, or the equivalent area in another coding agent:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;## Communication Style
+
+- When writing a message to the user, always use ASD-STE100 Simplified Technical English.
+- When writing a README, architectural document, code comment, or other technical document, always use ASD-STE100 Simplified Technical English.
+- For non-technical documents and creative writing, use normal English as appropriate for the reader.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now look. This is not a cure-all. The agent will not follow every STE rule perfectly, and it can still produce a long answer when the subject requires one.&lt;/p&gt;
+&lt;p&gt;But it does move the needle.&lt;/p&gt;
+&lt;p&gt;The answers are clearer, more direct, and much easier to tolerate when the agent needs to explain how something complicated works.&lt;/p&gt;
+&lt;p&gt;Give it a try and tell me what you think.&lt;/p&gt;
+</description><pubDate>Tue, 25 Aug 2026 17:00:00 -0700</pubDate>
+      <dc:creator>B.T. Franklin</dc:creator>
+      <guid>https://btfranklin.info/writing/chat-g-bt/make-your-coding-agent-speak-simplified-english/</guid>
     </item>  </channel>
 </rss>

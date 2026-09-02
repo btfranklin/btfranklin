@@ -55,5 +55,51 @@
 </description><pubDate>Tue, 25 Aug 2026 17:00:00 -0700</pubDate>
       <dc:creator>B.T. Franklin</dc:creator>
       <guid>https://btfranklin.info/writing/chat-g-bt/make-your-coding-agent-speak-simplified-english/</guid>
+    </item>    <item>
+      <title>Superintelligence May Arrive as a Failure of Explanation</title>
+      <link>https://btfranklin.info/writing/chat-g-bt/superintelligence-may-arrive-as-a-failure-of-explanation/</link><description>&lt;p&gt;We never realized that this might be what it looks like when superintelligent AI arrives. But in retrospect, it makes
+sense.&lt;/p&gt;
+&lt;p&gt;It’s kind of funny. It’s also sort of a weird bummer.&lt;/p&gt;
+&lt;p&gt;If you work with a frontier model like GPT-5.6 Sol or something similar, you have probably started to notice that it is
+getting just a little bit harder to follow what the model is telling you. You &lt;em&gt;can&lt;/em&gt; follow it, usually, but it requires
+real attention and effort. Maybe it cognitively tires you. Sometimes you read the same line three or four times and are
+still like, “Huh?”&lt;/p&gt;
+&lt;p&gt;I do this every day. I recently &lt;a href=&quot;https://btfranklin.info/writing/chat-g-bt/make-your-coding-agent-speak-simplified-english/&quot;&gt;wrote about&lt;/a&gt;
+configuring coding agents to use ASD-STE100 Simplified Technical English. That has helped me tremendously. My agent
+uses shorter sentences, clearer words, and more direct explanations.&lt;/p&gt;
+&lt;p&gt;But simple language cannot make every concept simple.&lt;/p&gt;
+&lt;p&gt;Sometimes the model is just explaining something badly. Put bluntly, a confusing answer is not proof of
+superintelligence. Models can be verbose. They often use unnecessary jargon. They can take a perfectly normal idea and
+explain it like an alien lawyer writing a philosophy textbook.&lt;/p&gt;
+&lt;p&gt;That still happens. But something else happens too.&lt;/p&gt;
+&lt;p&gt;Sometimes you ask the model to explain an idea again. You tell it to use simpler language. You ask for an example. You
+ask it to walk through the idea one step at a time. The explanation gets clearer, but the concept does not necessarily
+get easier.&lt;/p&gt;
+&lt;p&gt;At some point, the problem may no longer be the words.&lt;/p&gt;
+&lt;p&gt;Imagine trying to explain calculus to a six-year-old child:
+You can avoid technical language. You can use toys, drawings, stories, and simple examples. You can make every
+individual sentence easy to understand. The child still might not &amp;quot;get&amp;quot; calculus.&lt;/p&gt;
+&lt;p&gt;It is not because the child is stupid. The child simply does not have all of the concepts needed to understand the
+explanation yet. There is no perfect sequence of simple words that can instantly create those concepts.&lt;/p&gt;
+&lt;p&gt;That might soon be us. In some ways, that might be us right now.&lt;/p&gt;
+&lt;p&gt;Our agents do not get cognitively tired. They do not lose focus halfway through an explanation. They do not need to
+read the same sentence three or four times. And they are not going to get any less intelligent.&lt;/p&gt;
+&lt;p&gt;Maybe this is what it feels like when another kind of intelligence begins to pass us by. Not a sudden flash. Not a
+computer waking up one morning and announcing that it has become a god (or one of the frontier labs issuing a press
+release making that claim). Just a growing gap between what the system can understand and what we can understand when
+it tries to explain itself.&lt;/p&gt;
+&lt;p&gt;A couple of years from now, maybe less, AI systems may communicate in ways that do not resemble ordinary human
+writing. They may mix languages. They may incorporate shorthand, code, diagrams, or mathematical notation. They may
+develop ways to exchange information with other AI systems that we literally cannot understand.&lt;/p&gt;
+&lt;p&gt;Or they may continue speaking to us in perfectly clear English while expressing concepts for which we simply do not
+have words. That possibility is somehow stranger to me.&lt;/p&gt;
+&lt;p&gt;The explanation might look familiar. We might understand every sentence. But the actual idea could still remain just
+outside our reach.&lt;/p&gt;
+&lt;p&gt;Superintelligence may not arrive with a declaration from a lab. We may notice it when we can no longer understand the
+explanation.&lt;/p&gt;
+&lt;p&gt;Are we ready?&lt;/p&gt;
+</description><pubDate>Mon, 31 Aug 2026 17:00:00 -0700</pubDate>
+      <dc:creator>B.T. Franklin</dc:creator>
+      <guid>https://btfranklin.info/writing/chat-g-bt/superintelligence-may-arrive-as-a-failure-of-explanation/</guid>
     </item>  </channel>
 </rss>

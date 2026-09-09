@@ -9,4 +9,4 @@ I'm a software developer and entrepreneur specializing in **AI-driven applicatio
 ### What I'm Into
 - Building tools that push creative boundaries
 - Making AI more accessible and useful
-- Open source Swift and Python libraries
+- Open source Swift, Python, and TypeScript libraries

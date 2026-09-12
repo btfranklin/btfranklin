@@ -2,8 +2,8 @@
 title: "agentic-django"
 repo_url: "https://github.com/btfranklin/agentic-django"
 status: "active"
-order: 4
-updated: "August 2026"
+order: 5
+updated: "September 2026"
 tags:
   - "project"
 permalink: false

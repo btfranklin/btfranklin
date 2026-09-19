@@ -2,7 +2,7 @@
 title: "django-pyturso"
 repo_url: "https://github.com/btfranklin/django-pyturso"
 status: "active"
-order: 3
+order: 1
 updated: "September 2026"
 tags:
   - "project"

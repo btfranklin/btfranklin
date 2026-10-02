@@ -47,7 +47,7 @@
     <div class="container mx-auto px-4 pt-10 pb-16">
         <section class="overflow-hidden rounded-xl border border-cyan-300/70 bg-gray-950 shadow-2xl dark:border-cyan-800/70"
             aria-labelledby="chat-g-bt-title">
-            <div>
+            <div                class="grid lg:grid-cols-[minmax(18rem,0.75fr)_minmax(0,1.25fr)] lg:items-stretch">
                 <header
                     class="relative isolate flex flex-col justify-center overflow-hidden bg-gradient-to-br from-cyan-950 via-gray-950 to-violet-950 p-7 md:p-10 lg:p-12">
                     <div class="absolute -left-20 -top-20 -z-10 size-64 rounded-full bg-cyan-400/20 blur-3xl"
@@ -66,6 +66,40 @@
                     </p>
                 </header>
 
+                <div class="relative bg-black">
+                    <video data-chat-g-bt-banner controls muted loop playsinline preload="metadata"
+                        aria-describedby="chat-g-bt-transcript"
+                        class="aspect-video h-full w-full object-cover">
+                        <source src="/writing/chat-g-bt/videos/chatg-bt-horizontal-1.mp4" type="video/mp4">
+                        <p>
+                            Your browser cannot play this video.
+                            <a href="/writing/chat-g-bt/videos/chatg-bt-horizontal-1.mp4">Open the Chat G B.T. video</a>.
+                        </p>
+                    </video>
+                    <button data-chat-g-bt-audio-toggle type="button" hidden aria-pressed="false"
+                        class="absolute bottom-4 right-4 z-10 flex size-12 items-center justify-center rounded-full border border-white/50 bg-black/75 text-white shadow-lg backdrop-blur-sm transition hover:bg-black/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+                        title="Turn sound on">
+                        <svg data-chat-g-bt-muted-icon aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="size-6">
+                            <path d="M11 5 6 9H2v6h4l5 4V5Z"></path>
+                            <path d="m22 9-6 6"></path>
+                            <path d="m16 9 6 6"></path>
+                        </svg>
+                        <svg data-chat-g-bt-audible-icon aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="size-6" hidden>
+                            <path d="M11 5 6 9H2v6h4l5 4V5Z"></path>
+                            <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+                            <path d="M18.5 5.5a9 9 0 0 1 0 13"></path>
+                        </svg>
+                        <span data-chat-g-bt-audio-label class="sr-only">Turn sound on</span>
+                    </button>
+                    <p id="chat-g-bt-transcript" class="sr-only">
+                        Video transcript: They call me Chat G B.T., the Original Chat G. Hell yeah. Only real G's roll
+                        with me!
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -137,6 +171,7 @@
     </div>
 </main>
 
+<script defer src="/chat-g-bt.js"></script>
 
 <footer class="text-center py-8 text-zinc-500 dark:text-zinc-400 text-sm">
     <p>&copy;

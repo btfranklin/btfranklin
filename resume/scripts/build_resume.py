@@ -281,18 +281,6 @@ def add_role_paragraph(document: Document, title: str, dates: str) -> None:
     set_run_font(date_run, italic=True)
 
 
-def add_product_heading(document: Document, name: str, detail: str) -> None:
-    paragraph = document.add_paragraph()
-    set_paragraph_spacing(paragraph)
-    paragraph.paragraph_format.keep_with_next = True
-    name_run = paragraph.add_run(name)
-    set_run_font(name_run, bold=True)
-    separator = paragraph.add_run(" - ")
-    set_run_font(separator)
-    detail_run = paragraph.add_run(detail)
-    set_run_font(detail_run, italic=True)
-
-
 def add_education_heading(document: Document, school: str, details: list[str]) -> None:
     if not details:
         raise BuildError(f"Education entry requires a degree: {school}")
@@ -390,11 +378,6 @@ def build_styled_docx(body: str, output_path: Path, *, headline: str | None = No
             current_section = text
             add_section_heading(document, text, before=0 if text == "Professional Summary" else 16)
             index += 1
-            continue
-        if kind == "heading" and level == 3 and current_section == "Selected Founder-Led AI Products":
-            detail = blocks[index + 1][2] if index + 1 < len(blocks) else ""
-            add_product_heading(document, text, detail)
-            index += 2
             continue
         if kind == "heading" and level == 3 and current_section == "Education":
             details: list[str] = []

@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-08-24"
+last_updated: "2026-10-04"
 ---
 
 # B.T. Franklin
@@ -75,52 +75,10 @@ January 2009 - September 2019
 - Contributed to full-stack engineering, front-end architecture, and product modernization across a decade of platform
   evolution.
 
-## Selected Founder-Led AI Products
+## Selected Independent and Open Source AI Work
 
-### RepoZest
-
-Founder / Product Architect, 2026
-
-- Built and publicly deployed a solo GitHub App-backed repository intelligence SaaS, then sunset and open-sourced it after
-  it did not gain customer traction.
-- Designed a Django monolith with web, worker, and scheduler services, GitHub App authentication, repository indexing,
-  AI artifacts, billing, and operator workflows.
-- Built deterministic extraction across branch snapshots, file trees, source excerpts, commits, contributor aliases,
-  pull requests, reviews, and path-level ownership facts.
-- Derived architecture areas before mapping paths to semantic systems and grounding contributor expertise inference.
-- Produced architecture and expertise reports, expert-routing suggestions, hotspot signals, maintenance pressure, and
-  interactive answers from published expertise graphs.
-- Focused the product on architecture visibility, current-team expert discovery, knowledge concentration, ownership
-  fragility, and coordination risk.
-- Built provider-neutral billing with Stripe-hosted payments, entitlement enforcement, trials, subscription
-  normalization, and a future GitHub Marketplace adapter path.
-- Created Terraform, GitHub Actions workflows, deployment manifests, helper scripts, and operator runbooks for Sevalla.
-- Owned opportunity definition, product strategy, architecture, UX, AI pipelines, GitHub integration, billing,
-  deployment, and go-to-market positioning.
-
-### Hiredar
-
-Founder / Product Architect, 2025
-
-- Built and deployed a solo AI recruiting SaaS in roughly two months, accelerating product, engineering, UI, deployment,
-  and go-to-market work with AI tools.
-- Designed resume parsing, structured candidate extraction, and explainable candidate-to-role matching.
-- Built self-service recruiting flows for authentication, job creation, bulk uploads, candidate review, match lists, and
-  shortlist export.
-- Built a Django and Celery pipeline that extracted candidate data with OpenAI APIs and stored embedding vectors in
-  Pinecone.
-- Designed RAG and semantic matching across skills, experience, career direction, qualifications, and holistic fit.
-- Implemented holistic, skills, experience, wildcard, and qualifications matching lenses with Pinecone namespaces.
-- Built pay-as-you-go monetization with free credits, Stripe Checkout, recruiter balances, and premium-action credit
-  deduction.
-- Built HTMX polling interfaces for long-running jobs, task status, and per-owner asynchronous work visibility.
-- Deployed hosted data, Celery workers, queued email, S3-style storage, and production settings on Sevalla.
-- Created positioning, landing-page messaging, demos, video concepts, and recruiter-focused campaign materials.
-- Added guardrail checks and corrective loops for resume parsing and candidate extraction quality.
-- Owned product strategy, architecture, full-stack implementation, UX, deployment, pricing, and live-market validation.
-
-## Selected Open Source AI Work
-
+- Built and deployed independent AI applications with structured extraction, semantic matching, background processing,
+  and subscription billing.
 - Published open-source AI and developer tools for agent orchestration, grounding, prompt engineering, and engineering
   automation.
 - Created contract4agents, a typed language and toolchain for agent interfaces, context, capabilities, policies, guards,
@@ -191,6 +149,7 @@ Pinecone, Structured Extraction, Prompt Engineering, Tool Use, Planning Loops, M
 Rubric Grading, Human Review, Tracing, Observability, LLM Evaluation, Agent Evaluation
 
 **Architecture and Leadership:** Framework Design, API Design, Platform Design, AI Product Architecture, Reference
-Implementations, Technical Strategy, UI/UX Design, Developer Experience, Cross-Functional Leadership, Mentorship
+Implementations, Background Processing, Subscription Billing, Technical Strategy, UI/UX Design, Developer Experience,
+Cross-Functional Leadership, Mentorship
 
 **Engineering Tools:** Codex, Git, Perforce, Jira, Confluence, Visual Studio Code, CI/CD, HTML/CSS

@@ -46,7 +46,8 @@
   build intermediate is ODT.
 - Condense older Zilliant history first. Keep the 2025-2026 AI Tech Lead role and 2022-2025 Software Architect role
   detailed; compress 2020-2022 and 2009-2019 into fewer bullets or an earlier-roles summary.
-- Compress founder-led products to one role line and one bullet each unless the application target makes them central.
+- Keep independent AI application work to one evidence-backed bullet. Do not restore separate founder-led product
+  sections unless B.T. requests them.
 - Keep selected open-source AI work, but make it compact.
 - Convert Additional Experience to a single concise earlier-roles paragraph unless a specific target role needs those
   details.

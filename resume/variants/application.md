@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-08-24"
+last_updated: "2026-10-04"
 ---
 
 # B.T. Franklin
@@ -46,12 +46,10 @@ August 2022 - March 2025
 - **Earlier Zilliant progression (2009-2022):** Staff Software Engineer (2020-2022) and Senior Software Engineer
   (2009-2019), spanning architecture, product modernization, and mentorship.
 
-## Founder-Led and Open Source AI Work
+## Selected Independent and Open Source AI Work
 
-- **RepoZest:** Built and deployed a GitHub App-backed repository intelligence SaaS for architecture, expertise, hotspots,
-  ownership risk, and AI reports; later sunset and open-sourced.
-- **Hiredar:** Built and deployed an AI recruiting SaaS with OpenAI extraction, embeddings, Pinecone, RAG-based matching,
-  background workers, Stripe, and recruiter-facing UI.
+- Built and deployed independent AI applications with structured extraction, semantic matching, background processing,
+  and subscription billing.
 - **Open source AI tooling:** Created contract4agents, agentic-django, compendiumscribe, promptdown,
   release-notes-scribe, and reusable agent skills.
 
@@ -66,5 +64,6 @@ Generative Art Conference* and *Computer Simulation of Musical Creativity Confer
 
 ## Skills
 
-Python; JavaScript/TypeScript; OpenAI and Anthropic APIs; Agentic Systems; MCP; RAG; Strands and OpenAI Agents SDKs;
-AWS; Django; React; Next.js; Node.js; API and Platform Design; Evaluation; Technical Strategy.
+Python; JavaScript/TypeScript; OpenAI and Anthropic APIs; Agentic Systems; MCP; RAG; Structured Extraction;
+Semantic Search; Strands and OpenAI Agents SDKs; AWS; Django; React; Next.js; Node.js; API and Platform Design;
+Background Processing; Evaluation; Technical Strategy.

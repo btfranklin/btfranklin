@@ -23,6 +23,7 @@ gh repo list btfranklin \
 
 - Exclude the website repo: `btfranklin`
 - Exclude the public skills repo: `skills`
+- Exclude the Homebrew tap repo: `homebrew-tap`
 - Exclude forks: `isFork == true`
 - Exclude example repos: names containing `example` case-insensitively
 - Split remaining repos by `isArchived`

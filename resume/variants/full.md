@@ -13,11 +13,30 @@ Phoenix, Arizona
 
 ## Professional Summary
 
-Applied AI technical lead and software architect with 20+ years building enterprise software, developer tools, and
+Principal engineer and software architect with 20+ years building enterprise software, developer tools, and
 product-facing systems. Combines hands-on agentic AI, platform architecture, full-stack engineering, product judgment,
 and published computational creativity research.
 
 ## Professional Experience
+
+### ManageAI
+
+#### Founding Principal Engineer
+
+February 2026 - Present
+
+- Use an AI-first approach for all engineering work, directing coding agents and agentic workflows to build
+  applications, services, and complex AWS infrastructure.
+- Built Workforce Management with Django, PostgreSQL, and HTMX for customer-owned AI workforces, covering opportunities,
+  deployments, evaluation evidence, performance reviews, and governance.
+- Designed tenant-scoped APIs with authenticated customer isolation, capability-based access, idempotent commands,
+  optimistic concurrency, and audit history.
+- Built Knowledge services with shared HTTP and MCP application rules, immutable document revisions, human approval,
+  and controlled publication.
+- Replaced repository-based agent record writes with governed API publishers, durable intent ledgers, safe retries,
+  and verification of stored results.
+- Built customer-specific AWS deployments with Terraform, ECS Fargate, and RDS, including guarded data transfers,
+  staging refresh, migration checks, and rollback safeguards.
 
 ### Zilliant, Inc.
 
@@ -141,15 +160,15 @@ Minor in Psychology
 Interactive Voice, Anthropic Claude, ElevenLabs Speech Generation
 
 **Frameworks and Platforms:** REST APIs, Django, Celery, HTMX, Pydantic, PydanticAI, OpenAI Agents SDK, Docker,
-PostgreSQL, SQLite, AWS Services, AWS QuickSight, Amazon Q, Strands Agents SDK, GitHub Actions, Terraform, React,
-Next.js, Node.js, Tailwind CSS, Salesforce Lightning, Lightning Web Components, oclif
+PostgreSQL, SQLite, Django Ninja, AWS Services, ECS Fargate, RDS, Cognito, DynamoDB, S3, AWS QuickSight, Amazon Q,
+Strands Agents SDK, GitHub Actions, Terraform, React, Next.js, Node.js, Tailwind CSS, Salesforce Lightning, Lightning Web Components, oclif
 
 **AI Methods:** Agentic Systems, Model Context Protocol (MCP), RAG, Embeddings, Vector Stores, Semantic Search,
 Pinecone, Structured Extraction, Prompt Engineering, Tool Use, Planning Loops, Multi-Agent Systems, Guardrail Design,
 Rubric Grading, Human Review, Tracing, Observability, LLM Evaluation, Agent Evaluation
 
 **Architecture and Leadership:** Framework Design, API Design, Platform Design, AI Product Architecture, Reference
-Implementations, Background Processing, Subscription Billing, Technical Strategy, UI/UX Design, Developer Experience,
-Cross-Functional Leadership, Mentorship
+Implementations, Multi-Tenant Architecture, AI Governance, Background Processing, Subscription Billing,
+Technical Strategy, UI/UX Design, Developer Experience, Cross-Functional Leadership, Mentorship
 
 **Engineering Tools:** Codex, Git, Perforce, Jira, Confluence, Visual Studio Code, CI/CD, HTML/CSS

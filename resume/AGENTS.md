@@ -29,7 +29,8 @@
 - Start from `variants/full.md` and preserve factual accuracy. Do not invent metrics, savings, percentages, team sizes,
   revenue impact, or other quantification that is not known.
 - Omit a branding headline unless B.T. explicitly requests one. Use a Professional Summary of no more than 45 words,
-  then show the most recent Zilliant AI and architecture roles without implying current employment there.
+  then show the current ManageAI role before the recent Zilliant AI and architecture roles.
+  Do not imply current employment at Zilliant.
 - Do not add a Core Expertise section. Keep one compact, evidence-backed Skills section at the bottom.
 - Give each bullet one primary competency, action, or result. Target 30 words or fewer and review every bullet over 35
   words before export.
@@ -44,8 +45,9 @@
 - Omit certifications, awards, hobbies, and references unless they are directly relevant and credible.
 - Do not generate, publish, link, or validate an application DOCX. The application variant is PDF-only; its temporary
   build intermediate is ODT.
-- Condense older Zilliant history first. Keep the 2025-2026 AI Tech Lead role and 2022-2025 Software Architect role
-  detailed; compress 2020-2022 and 2009-2019 into fewer bullets or an earlier-roles summary.
+- Condense older Zilliant history first. Keep the current ManageAI role, the 2025-2026 AI Tech Lead role, and the
+  2022-2025 Software Architect role detailed; compress 2020-2022 and 2009-2019 into fewer bullets or an earlier-roles
+  summary.
 - Keep independent AI application work to one evidence-backed bullet. Do not restore separate founder-led product
   sections unless B.T. requests them.
 - Keep selected open-source AI work, but make it compact.

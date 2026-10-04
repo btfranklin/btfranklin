@@ -13,11 +13,25 @@ Phoenix, Arizona
 
 ## Professional Summary
 
-Applied AI technical lead and software architect with 20+ years building enterprise software, developer tools, and
+Principal engineer and software architect with 20+ years building enterprise software, developer tools, and
 product-facing systems. Combines hands-on agentic AI, platform architecture, full-stack engineering, technical
 leadership, and published computational creativity research.
 
 ## Professional Experience
+
+### ManageAI
+
+#### Founding Principal Engineer
+
+February 2026 - Present
+
+- Use an AI-first approach for all engineering work, directing coding agents and agentic workflows to build
+  applications, services, and complex AWS infrastructure.
+- Built a Django, PostgreSQL, and HTMX platform to manage customer AI workforces, deployments, evaluations, and governance.
+- Designed tenant-scoped APIs and agent record publishers with capability-based access, idempotent operations,
+  and audit history.
+- Built Knowledge services with HTTP and MCP access, immutable revisions, human approval, and controlled publication.
+- Built customer-specific AWS deployments with Terraform, staging validation, guarded data transfers, and rollback safeguards.
 
 ### Zilliant, Inc.
 
@@ -32,8 +46,6 @@ April 2025 - July 2026
   formulas.
 - Architected the company's first MCP server and tools for retrieving calculated prices and explaining formula
   reasoning.
-- Expanded AI-assisted engineering through Codex training, reusable review skills, and agent-guided development
-  workflows.
 
 #### Software Architect
 
@@ -65,5 +77,5 @@ Generative Art Conference* and *Computer Simulation of Musical Creativity Confer
 ## Skills
 
 Python; JavaScript/TypeScript; OpenAI and Anthropic APIs; Agentic Systems; MCP; RAG; Structured Extraction;
-Semantic Search; Strands and OpenAI Agents SDKs; AWS; Django; React; Next.js; Node.js; API and Platform Design;
-Background Processing; Evaluation; Technical Strategy.
+Semantic Search; Strands and OpenAI Agents SDKs; AWS; Terraform; Django; PostgreSQL; HTMX; React; Next.js; Node.js;
+API and Platform Design; Multi-Tenant Architecture; AI Governance; Background Processing; Evaluation; Technical Strategy.

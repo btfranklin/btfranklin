@@ -2,7 +2,7 @@
 title: "compendiumscribe"
 repo_url: "https://github.com/btfranklin/compendiumscribe"
 status: "active"
-order: 6
+order: 11
 updated: "August 2026"
 tags:
   - "project"

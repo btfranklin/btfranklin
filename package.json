@@ -17,7 +17,8 @@
     "build:resume": "cd resume && pdm run build",
     "build:site": "npm run build:resume && npx eleventy",
     "serve": "npm run build:resume && npx eleventy --serve",
-    "validate": "npm run validate:html && node ./scripts/validate-site.mjs",
+    "validate": "npm run check:docs && npm run validate:html && node ./scripts/validate-site.mjs",
+    "check:docs": "perfect-doc check . --offline --no-banner",
     "validate:html": "html-validate --config ./.htmlvalidate.json './docs/**/*.html'"
   }
 }

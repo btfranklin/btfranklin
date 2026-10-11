@@ -15,6 +15,11 @@ python3 -m http.server 9000 --directory docs
 
 The site still deploys from committed files in `docs/`, so run `npm run build` before committing site changes.
 
+Install the native Perfect Doc executable on `PATH` as described in [the root README](../README.md#project-checks).
+After Markdown changes, run `npm run check:docs` from the repository root. This uses `perfect-doc.toml` and runs
+`perfect-doc check . --offline --no-banner`. It scans maintained Markdown and resolves site links from `docs/`.
+Run the build first if a linked page or asset changed. `npm run validate` includes this check.
+
 ## Content
 
 - Shared layouts and partials live in `_includes/`.

@@ -1,0 +1,31 @@
+# Check maintained Markdown. The existing site checks own generated HTML.
+include = ["**/*.md"]
+exclude = [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.venv/**",
+    "**/.pytest_cache/**",
+    "**/.cache/**",
+    "**/docs/**",
+    "**/output/**",
+]
+
+[markdown]
+dialect = "gfm"
+anchors = "github"
+single_h1 = true
+nonempty_headings = true
+closed_fences = true
+table_columns = true
+undefined_references = true
+# Eleventy supplies headings for article and project card fragments.
+# The profile README also uses H3 headings directly below its H1.
+
+[links]
+# Site links start at the generated web root. Markdown sources are outside it.
+root = "docs"
+allow_outside_root = true
+strict_case = true
+
+[network]
+enabled = false

@@ -14,7 +14,11 @@
 - `npm run build` — cleanly regenerates committed `docs/` output, resume exports, Eleventy pages, and Tailwind CSS.
 - `npm run build:site` — runs Eleventy only; use `npm run build` for normal full-site regeneration.
 - `npm run build:css` — compiles Tailwind utilities into `docs/styles.min.css`.
-- `npm run validate` — verifies generated CSS freshness, static links/assets, semantic page structure, clean-break routes,
+- `npm run check:docs` — runs `perfect-doc check . --offline --no-banner` with `perfect-doc.toml` after Markdown changes.
+  Install the native Perfect Doc executable on `PATH`. The check scans maintained Markdown and resolves site links
+  from `docs/`. Sources can be outside this web root. Eleventy supplies some headings, so allow source fragments.
+- `npm run validate` — runs the offline documentation check and verifies generated CSS freshness, static links/assets,
+  semantic page structure, clean-break routes,
   link policy, and crawler metadata.
 - `npm run serve` — serves Eleventy for local development.
 - `python3 -m http.server 9000 --directory docs` — serves the site locally; visit `http://localhost:9000` to verify content and assets.

@@ -54,6 +54,15 @@ export default function (eleventyConfig) {
             .sort((left, right) => left.data.order - right.data.order)
     })
 
+    eleventyConfig.addFilter('bylineDate', (value) => {
+        return new Intl.DateTimeFormat('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            timeZone: 'UTC',
+        }).format(new Date(value))
+    })
+
     eleventyConfig.addFilter('displayDate', (value) => {
         return new Intl.DateTimeFormat('en-US', {
             month: 'long',

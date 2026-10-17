@@ -2,7 +2,7 @@
 title: "startunnel"
 repo_url: "https://github.com/btfranklin/startunnel"
 status: "active"
-order: 1
+order: 3
 updated: "October 2026"
 tags:
   - "project"

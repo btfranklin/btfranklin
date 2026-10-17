@@ -2,7 +2,7 @@
 title: "nanorobotics_simulator"
 repo_url: "https://github.com/btfranklin/nanorobotics_simulator"
 status: "archived"
-order: 4
+order: 5
 updated: "June 2026"
 tags:
   - "project"

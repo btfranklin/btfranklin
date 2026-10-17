@@ -2,7 +2,7 @@
 title: "PersonalityKit"
 repo_url: "https://github.com/btfranklin/PersonalityKit"
 status: "archived"
-order: 17
+order: 18
 updated: "January 2023"
 tags:
   - "project"

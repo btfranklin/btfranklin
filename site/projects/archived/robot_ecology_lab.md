@@ -2,7 +2,7 @@
 title: "robot_ecology_lab"
 repo_url: "https://github.com/btfranklin/robot_ecology_lab"
 status: "archived"
-order: 3
+order: 4
 updated: "June 2026"
 tags:
   - "project"

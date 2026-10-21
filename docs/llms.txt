@@ -8,8 +8,9 @@ This file highlights key, inference-ready resources from btfranklin.info.
 ## Essential Content
 
 - [Software Projects](https://btfranklin.info/): A curated showcase of active and archived open-source projects with detailed descriptions.
-- [Creations](https://btfranklin.info/creations/): Interactive web experiences, simulations, and practical notes.
+- [Creations](https://btfranklin.info/creations/): Browser games, interactive web experiences, simulations, and practical notes.
 - [The Long Intelligence Handoff](https://btfranklin.info/ai-2050/): An evidence-based, branching forecast that follows AI, scientific breakthroughs, health, abundance, and housing from 2026 to 2050.
+- [Smashup Derby](https://smashup.btfranklin.info/): A browser demolition derby game with five-round Career Night and seven AI opponents.
 - [Writing](https://btfranklin.info/writing/): Chat G B.T. posts and longer-form articles on software architecture and technology.
 - [Chat G B.T.](https://btfranklin.info/writing/chat-g-bt/): The Original Chat G blog by B.T. Franklin.
 - [Superintelligence May Arrive as a Failure of Explanation](https://btfranklin.info/writing/chat-g-bt/superintelligence-may-arrive-as-a-failure-of-explanation/): What if we notice superintelligence when we can no longer understand what AI is trying to tell us?

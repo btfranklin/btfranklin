@@ -2,7 +2,7 @@
 title: "hiredar-saas-archive"
 repo_url: "https://github.com/btfranklin/hiredar-saas-archive"
 status: "archived"
-order: 3
+order: 5
 updated: "June 2026"
 tags:
   - "project"

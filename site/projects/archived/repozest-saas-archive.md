@@ -2,7 +2,7 @@
 title: "repozest-saas-archive"
 repo_url: "https://github.com/btfranklin/repozest-saas-archive"
 status: "archived"
-order: 2
+order: 4
 updated: "June 2026"
 tags:
   - "project"

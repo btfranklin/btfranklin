@@ -2,7 +2,7 @@
 title: "Aesthete"
 repo_url: "https://github.com/btfranklin/Aesthete"
 status: "archived"
-order: 15
+order: 17
 updated: "January 2024"
 tags:
   - "project"

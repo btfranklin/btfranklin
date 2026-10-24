@@ -2,7 +2,7 @@
 title: "ShipShape"
 repo_url: "https://github.com/btfranklin/ShipShape"
 status: "archived"
-order: 13
+order: 15
 updated: "January 2024"
 tags:
   - "project"

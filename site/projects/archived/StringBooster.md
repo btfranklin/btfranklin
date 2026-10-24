@@ -2,7 +2,7 @@
 title: "StringBooster"
 repo_url: "https://github.com/btfranklin/StringBooster"
 status: "archived"
-order: 17
+order: 19
 updated: "May 2023"
 tags:
   - "project"

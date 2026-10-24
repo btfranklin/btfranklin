@@ -2,7 +2,7 @@
 title: "openai-for-ai"
 repo_url: "https://github.com/btfranklin/openai-for-ai"
 status: "archived"
-order: 6
+order: 8
 updated: "May 2026"
 tags:
   - "project"

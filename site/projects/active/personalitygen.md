@@ -2,7 +2,7 @@
 title: "personalitygen"
 repo_url: "https://github.com/btfranklin/personalitygen"
 status: "active"
-order: 9
+order: 3
 updated: "October 2026"
 tags:
   - "project"

@@ -2,7 +2,7 @@
 title: "contract4agents"
 repo_url: "https://github.com/btfranklin/contract4agents"
 status: "active"
-order: 6
+order: 1
 updated: "October 2026"
 tags:
   - "project"

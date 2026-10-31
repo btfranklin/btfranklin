@@ -2,7 +2,7 @@
 title: "perfect-doc"
 repo_url: "https://github.com/btfranklin/perfect-doc"
 status: "active"
-order: 8
+order: 9
 updated: "October 2026"
 tags:
   - "project"

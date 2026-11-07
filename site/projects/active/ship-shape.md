@@ -2,7 +2,7 @@
 title: "ship-shape"
 repo_url: "https://github.com/btfranklin/ship-shape"
 status: "active"
-order: 8
+order: 10
 updated: "October 2026"
 tags:
   - "project"

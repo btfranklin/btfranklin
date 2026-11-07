@@ -2,7 +2,7 @@
 title: "release-notes-scribe"
 repo_url: "https://github.com/btfranklin/release-notes-scribe"
 status: "active"
-order: 10
+order: 12
 updated: "October 2026"
 tags:
   - "project"

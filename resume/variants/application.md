@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-10-04"
+last_updated: "2026-11-25"
 ---
 
 # B.T. Franklin
@@ -25,13 +25,14 @@ leadership, and published computational creativity research.
 
 February 2026 - Present
 
-- Use an AI-first approach for all engineering work, directing coding agents and agentic workflows to build
-  applications, services, and complex AWS infrastructure.
+- Created [Contract4Agents](https://github.com/btfranklin/contract4agents), an open-source toolchain for typed agent
+  contracts. Used it to validate inputs and outputs for workforce discovery interviews and readiness assessments.
+- Created and deployed [StarTunnel](https://github.com/btfranklin/startunnel) on AWS so Codex and Claude Code sessions
+  could exchange deployment handoffs and save checkpoints across computers.
 - Built a Django, PostgreSQL, and HTMX platform to manage customer AI workforces, deployments, evaluations, and governance.
-- Designed tenant-scoped APIs and agent record publishers with capability-based access, idempotent operations,
-  and audit history.
 - Built Knowledge services with HTTP and MCP access, immutable revisions, human approval, and controlled publication.
-- Built customer-specific AWS deployments with Terraform, staging validation, guarded data transfers, and rollback safeguards.
+- Led Fleet Management delivery for AWS customer installations. Built rollout progress views and verified that the CLI
+  could resume an interrupted deployment with the dashboard offline.
 
 ### Zilliant, Inc.
 
@@ -62,8 +63,8 @@ August 2022 - March 2025
 
 - Built and deployed independent AI applications with structured extraction, semantic matching, background processing,
   and subscription billing.
-- **Open source AI tooling:** Created contract4agents, agentic-django, compendiumscribe, promptdown,
-  release-notes-scribe, and reusable agent skills.
+- **Open source AI tooling:** Created agentic-django, compendiumscribe, promptdown, release-notes-scribe, and reusable
+  agent skills.
 
 ## Research and Publications
 
@@ -78,4 +79,4 @@ Generative Art Conference* and *Computer Simulation of Musical Creativity Confer
 
 Python; JavaScript/TypeScript; OpenAI and Anthropic APIs; Agentic Systems; MCP; RAG; Structured Extraction;
 Semantic Search; Strands and OpenAI Agents SDKs; AWS; Terraform; Django; PostgreSQL; HTMX; React; Next.js; Node.js;
-API and Platform Design; Multi-Tenant Architecture; AI Governance; Background Processing; Evaluation; Technical Strategy.
+API and Platform Design; AI Governance; Background Processing; Evaluation; Technical Strategy.

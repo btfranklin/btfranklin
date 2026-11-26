@@ -50,7 +50,7 @@
             <p class="font-mono text-sm uppercase tracking-widest text-cyan-600 dark:text-cyan-300">
                 Resume
             </p>
-            <p class="mt-3 text-sm font-mono text-zinc-500 dark:text-zinc-400">Last updated 2026-10-04</p>
+            <p class="mt-3 text-sm font-mono text-zinc-500 dark:text-zinc-400">Last updated 2026-11-25</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="/downloads/bt-franklin-resume-full.pdf"
                     class="inline-flex items-center rounded-md border border-cyan-500 px-4 py-2 text-sm font-mono text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500 hover:text-white transition-colors">
@@ -82,24 +82,28 @@ research.</p>
 <h4 id="founding-principal-engineer">Founding Principal Engineer</h4>
 <p>February 2026 - Present</p>
 <ul>
-<li>Use an AI-first approach for all engineering work, directing coding
-agents and agentic workflows to build applications, services, and
-complex AWS infrastructure.</li>
+<li>Created <a
+href="https://github.com/btfranklin/contract4agents">Contract4Agents</a>,
+an open-source language and compiler for typed agent contracts. Used
+generated schemas to validate workforce discovery interviews and
+readiness assessments.</li>
+<li>Created <a
+href="https://github.com/btfranklin/startunnel">StarTunnel</a> and
+deployed it on AWS for Codex and Claude Code to exchange deployment
+handoffs and save checkpoints across computers. Verified live message
+exchange and backup restoration.</li>
 <li>Built Workforce Management with Django, PostgreSQL, and HTMX for
 customer-owned AI workforces, covering opportunities, deployments,
 evaluation evidence, performance reviews, and governance.</li>
-<li>Designed tenant-scoped APIs with authenticated customer isolation,
-capability-based access, idempotent commands, optimistic concurrency,
-and audit history.</li>
 <li>Built Knowledge services with shared HTTP and MCP application rules,
 immutable document revisions, human approval, and controlled
 publication.</li>
-<li>Replaced repository-based agent record writes with governed API
-publishers, durable intent ledgers, safe retries, and verification of
-stored results.</li>
-<li>Built customer-specific AWS deployments with Terraform, ECS Fargate,
-and RDS, including guarded data transfers, staging refresh, migration
-checks, and rollback safeguards.</li>
+<li>Replaced repository-based agent record writes with APIs that track
+pending writes, retry safely, and verify the stored results.</li>
+<li>Led Fleet Management delivery for AWS customer installations. Built
+operator views for release and rollout progress and verified that an
+independent CLI could resume an interrupted deployment while the
+dashboard and its database were unavailable.</li>
 </ul>
 <h3 id="zilliant-inc">Zilliant, Inc.</h3>
 <h4 id="ai-tech-lead--staff-software-engineer">AI Tech Lead / Staff
@@ -177,12 +181,6 @@ Independent and Open Source AI Work</h2>
 <li>Built and deployed independent AI applications with structured
 extraction, semantic matching, background processing, and subscription
 billing.</li>
-<li>Published open-source AI and developer tools for agent
-orchestration, grounding, prompt engineering, and engineering
-automation.</li>
-<li>Created contract4agents, a typed language and toolchain for agent
-interfaces, context, capabilities, policies, guards, assertions, eval
-packs, monitors, and provider-neutral manifests.</li>
 <li>Created agentic-django for OpenAI Agents SDK applications with
 persistent sessions, tool calls, background tasks, and HTMX or REST
 status polling.</li>
@@ -267,9 +265,9 @@ Multi-Agent Systems, Guardrail Design, Rubric Grading, Human Review,
 Tracing, Observability, LLM Evaluation, Agent Evaluation</p>
 <p><strong>Architecture and Leadership:</strong> Framework Design, API
 Design, Platform Design, AI Product Architecture, Reference
-Implementations, Multi-Tenant Architecture, AI Governance, Background
-Processing, Subscription Billing, Technical Strategy, UI/UX Design,
-Developer Experience, Cross-Functional Leadership, Mentorship</p>
+Implementations, AI Governance, Background Processing, Subscription
+Billing, Technical Strategy, UI/UX Design, Developer Experience,
+Cross-Functional Leadership, Mentorship</p>
 <p><strong>Engineering Tools:</strong> Codex, Git, Perforce, Jira,
 Confluence, Visual Studio Code, CI/CD, HTML/CSS</p>
             </div>

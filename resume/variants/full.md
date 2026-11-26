@@ -1,6 +1,6 @@
 ---
 title: "B.T. Franklin's Resume"
-last_updated: "2026-10-04"
+last_updated: "2026-11-25"
 ---
 
 # B.T. Franklin
@@ -25,18 +25,19 @@ and published computational creativity research.
 
 February 2026 - Present
 
-- Use an AI-first approach for all engineering work, directing coding agents and agentic workflows to build
-  applications, services, and complex AWS infrastructure.
+- Created [Contract4Agents](https://github.com/btfranklin/contract4agents), an open-source language and compiler for typed
+  agent contracts. Used generated schemas to validate workforce discovery interviews and readiness assessments.
+- Created [StarTunnel](https://github.com/btfranklin/startunnel) and deployed it on AWS for Codex and Claude Code to
+  exchange deployment handoffs and save checkpoints across computers. Verified live message exchange and backup restoration.
 - Built Workforce Management with Django, PostgreSQL, and HTMX for customer-owned AI workforces, covering opportunities,
   deployments, evaluation evidence, performance reviews, and governance.
-- Designed tenant-scoped APIs with authenticated customer isolation, capability-based access, idempotent commands,
-  optimistic concurrency, and audit history.
 - Built Knowledge services with shared HTTP and MCP application rules, immutable document revisions, human approval,
   and controlled publication.
-- Replaced repository-based agent record writes with governed API publishers, durable intent ledgers, safe retries,
-  and verification of stored results.
-- Built customer-specific AWS deployments with Terraform, ECS Fargate, and RDS, including guarded data transfers,
-  staging refresh, migration checks, and rollback safeguards.
+- Replaced repository-based agent record writes with APIs that track pending writes, retry safely, and verify the
+  stored results.
+- Led Fleet Management delivery for AWS customer installations. Built operator views for release and rollout progress
+  and verified that an independent CLI could resume an interrupted deployment while the dashboard and its database
+  were unavailable.
 
 ### Zilliant, Inc.
 
@@ -98,10 +99,6 @@ January 2009 - September 2019
 
 - Built and deployed independent AI applications with structured extraction, semantic matching, background processing,
   and subscription billing.
-- Published open-source AI and developer tools for agent orchestration, grounding, prompt engineering, and engineering
-  automation.
-- Created contract4agents, a typed language and toolchain for agent interfaces, context, capabilities, policies, guards,
-  assertions, eval packs, monitors, and provider-neutral manifests.
 - Created agentic-django for OpenAI Agents SDK applications with persistent sessions, tool calls, background tasks, and
   HTMX or REST status polling.
 - Created agent-simulator to test realistic agent conversations against configurable mock MCP tools and real provider
@@ -168,7 +165,7 @@ Pinecone, Structured Extraction, Prompt Engineering, Tool Use, Planning Loops, M
 Rubric Grading, Human Review, Tracing, Observability, LLM Evaluation, Agent Evaluation
 
 **Architecture and Leadership:** Framework Design, API Design, Platform Design, AI Product Architecture, Reference
-Implementations, Multi-Tenant Architecture, AI Governance, Background Processing, Subscription Billing,
+Implementations, AI Governance, Background Processing, Subscription Billing,
 Technical Strategy, UI/UX Design, Developer Experience, Cross-Functional Leadership, Mentorship
 
 **Engineering Tools:** Codex, Git, Perforce, Jira, Confluence, Visual Studio Code, CI/CD, HTML/CSS

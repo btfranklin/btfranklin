@@ -19,7 +19,7 @@ and published computational creativity research.
 
 ## Professional Experience
 
-### ManageAI
+### Manage AI
 
 #### Founding Principal Engineer
 

@@ -2,7 +2,7 @@
 title: "wordsmith-engine"
 repo_url: "https://github.com/btfranklin/wordsmith-engine"
 status: "active"
-order: 4
+order: 2
 updated: "November 2026"
 tags:
   - "project"
